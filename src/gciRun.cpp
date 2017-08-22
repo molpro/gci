@@ -20,18 +20,17 @@ using namespace gci;
 
 using namespace LinearAlgebra;
 
-const static gci::Operator* currentHamiltonian;
 static double _lastEnergy;
 static double _mu;
-static bool _residual_subtract_Energy;
 static double _residual_q;
 static bool parallel_stringset;
 struct residual : IterativeSolverBase::ParameterSetTransformation {
-private:
+protected:
+  const gci::Operator& m_hamiltonian;
   const bool m_subtract_Energy;
   const gci::Operator* m_Q;
 public:
-  residual(bool subtract_Energy, gci::Operator* Q=nullptr) : m_subtract_Energy(subtract_Energy) {}
+  residual(const gci::Operator& hamiltonian, bool subtract_Energy, gci::Operator* Q=nullptr) : m_hamiltonian(hamiltonian), m_subtract_Energy(subtract_Energy), m_Q(Q) {}
 void operator() (const ParameterVectorSet & psx, ParameterVectorSet & outputs, std::vector<double> shift=std::vector<double>(), bool append=false) const override {
     for (size_t k=0; k<psx.size(); k++) {
         const std::shared_ptr<Wavefunction>  x=std::static_pointer_cast<Wavefunction>(psx[k]);
@@ -51,7 +50,7 @@ void operator() (const ParameterVectorSet & psx, ParameterVectorSet & outputs, s
 //          g->operatorOnWavefunction(*activeHamiltonian, *x, parallel_stringset);
 //        xout << "g "<<g->str(2)<<std::endl;
 //        g->zero();
-          g->operatorOnWavefunction(*currentHamiltonian, *x, parallel_stringset);
+          g->operatorOnWavefunction(m_hamiltonian, *x, parallel_stringset);
 //        xout << "g "<<g->str(2)<<std::endl;
         profiler->stop("Hc");
 //        xout << "g=Hc "<<g->str(2)<<std::endl;
@@ -93,7 +92,10 @@ static std::vector<double> _IPT_eta;
 static std::vector<Wavefunction> _IPT_c;
 static std::unique_ptr<Wavefunction> _IPT_b0m;
 static std::unique_ptr<gci::Operator> _IPT_Q;
-struct : IterativeSolverBase::ParameterSetTransformation {
+struct meanfield_residual : residual {
+public:
+  meanfield_residual(const gci::Operator& hamiltonian, bool subtract_Energy, gci::Operator* Q=nullptr)
+    : residual(hamiltonian, subtract_Energy, Q) {}
 void operator()(const ParameterVectorSet & psx, ParameterVectorSet & outputs, std::vector<double> shift=std::vector<double>(), bool append=false) const override {
     for (size_t k=0; k<psx.size(); k++) {
         const std::shared_ptr<Wavefunction>  x=std::static_pointer_cast<Wavefunction>(psx[k]);
@@ -108,13 +110,11 @@ void operator()(const ParameterVectorSet & psx, ParameterVectorSet & outputs, st
 //            *(g->begin()+bb-_IPT_b0m->begin()) = - (*bb);
 //        else
           *g -= *_IPT_b0m;
-//        gci::Operator dd = g->density(1, false, true, _IPT_c[0].get(), "", parallel_stringset);
-//        gci::Operator f0=currentHamiltonian->fock(dd);
         g->operatorOnWavefunction(_IPT_Fock[0], *x, parallel_stringset);
         g->axpy(-_IPT_Epsilon[0],x);
         gci::Wavefunction Qc(*g); Qc.set(0); Qc.operatorOnWavefunction(*_IPT_Q,*x);
         g->axpy(-_IPT_eta[0],&Qc);
-        g->operatorOnWavefunction(currentHamiltonian->fock(x->density(1,false,true,&_IPT_c[0]),false),_IPT_c[0],parallel_stringset);
+        g->operatorOnWavefunction(m_hamiltonian.fock(x->density(1,false,true,&_IPT_c[0]),false),_IPT_c[0],parallel_stringset);
         auto dd = _IPT_c[0] * *g;
         g->axpy(-dd,&_IPT_c[0]);
 //        xout << "final residual "<<g->str(2)<<std::endl;
@@ -124,7 +124,7 @@ void operator()(const ParameterVectorSet & psx, ParameterVectorSet & outputs, st
         xout << "_meanfield_residual: g"<<g->values()<<std::endl;
     }
 }
-} _meanfield_residual;
+} ;
 
 struct preconditioner : IterativeSolverBase::ParameterSetTransformation {
   preconditioner(const Wavefunction& diagonals, bool subtractDiagonal)
@@ -431,8 +431,7 @@ std::vector<double> Run::DIIS(const Operator &ham, const State &prototype, doubl
   //  g -= (e0-(double)1e-10);
   //    xout << "Diagonal H: " << g.str(2) << std::endl;
   preconditioner precon(d,true);
-  currentHamiltonian = &ham;
-  residual resid(true,residual_Q.get());
+  residual resid(ham,true,residual_Q.get());
   LinearAlgebra::DIIS solver(resid,precon);
   solver.m_verbosity=1;
   solver.m_thresh=energyThreshold;
@@ -467,9 +466,7 @@ std::vector<double> Run::Davidson(
   Wavefunction d(prototype);
   d.diagonalOperator(ham);
   preconditioner precon(d,false);
-  currentHamiltonian = &ham;
-  _residual_subtract_Energy=false;
-  residual resid(false);
+  residual resid(ham,false);
   LinearAlgebra::Davidson solver(resid,precon);
   LinearAlgebra::ParameterVectorSet gg;
   LinearAlgebra::ParameterVectorSet ww;
@@ -934,9 +931,8 @@ void Run::IPT(const gci::Operator& ham, const State &prototype, const size_t ref
       std::static_pointer_cast<Wavefunction>(ww.back())->set((double)0);
       std::static_pointer_cast<Wavefunction>(ww.back())->set(referenceLocation, (double) 1);
       preconditioner precon(d,false);
-      currentHamiltonian=&ham;
-      _residual_subtract_Energy=false;
-      LinearAlgebra::DIIS solver(_meanfield_residual,precon);
+      meanfield_residual resid(ham,false);
+      LinearAlgebra::DIIS solver(resid,precon);
       solver.m_verbosity=1;
       solver.m_thresh=parameter("TOL",std::vector<double>(1,(double)1e-8)).at(0);
       solver.m_maxIterations=parameter("MAXIT",std::vector<int>(1,1000)).at(0);
@@ -1021,8 +1017,7 @@ std::vector<double> Run::ISRSPT(
   std::static_pointer_cast<Wavefunction>(ww.back())->set((double)0);
   std::static_pointer_cast<Wavefunction>(ww.back())->set(reference, (double) 1);
   preconditioner precon(d,false);
-  currentHamiltonian=&ham;
-  residual resid(false);
+  residual resid(ham,false);
   LinearAlgebra::RSPT solver(resid,precon);
   solver.m_verbosity=1;
   solver.m_thresh=energyThreshold;
