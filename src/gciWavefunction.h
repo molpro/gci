@@ -242,7 +242,8 @@ public:
 private:
   void buildStrings(); ///< build alphaStrings and betaStrings
   size_t dimension; ///< the size of the space
-  memory::vector<double> buffer; ///< buffer to hold coefficients describing the object
+  memory::vector<double> bufferContainer; ///< buffer to hold coefficients describing the object
+  double* buffer; ///< pointer to bufferContainer[0]
   memory::vector<double>::iterator begin(); ///< beginning of this processor's data
   memory::vector<double>::iterator end(); ///< end of this processor's data
   memory::vector<double>::const_iterator cbegin() const; ///< beginning of this processor's data
