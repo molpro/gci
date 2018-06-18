@@ -17,6 +17,7 @@ using namespace gci;
 
 
 using namespace LinearAlgebra;
+using WavefunctionSet = std::vector<std::shared_ptr<Wavefunction> >;
 using ParameterVectorSet = LinearAlgebra::vectorSet<double>;
 using scalar = double;
 
@@ -31,7 +32,7 @@ protected:
   const gci::Operator* m_Q;
 public:
   residual(const gci::Operator& hamiltonian, bool subtract_Energy, gci::Operator* Q=nullptr) : m_hamiltonian(hamiltonian), m_subtract_Energy(subtract_Energy), m_Q(Q) {}
-void operator() (const ParameterVectorSet & psx, ParameterVectorSet & outputs, bool append=false) const {
+void operator() (const WavefunctionSet & psx, WavefunctionSet & outputs, bool append=false) const {
     for (size_t k=0; k<psx.size(); k++) {
         const std::shared_ptr<Wavefunction>  x=std::static_pointer_cast<Wavefunction>(psx[k]);
         std::shared_ptr<Wavefunction>  g=std::static_pointer_cast<Wavefunction>(outputs[k]);
@@ -95,7 +96,7 @@ struct meanfield_residual : residual {
 public:
   meanfield_residual(const gci::Operator& hamiltonian, bool subtract_Energy, gci::Operator* Q=nullptr)
     : residual(hamiltonian, subtract_Energy, Q) {}
-void operator()(const ParameterVectorSet & psx, ParameterVectorSet & outputs, std::vector<double> shift=std::vector<double>(), bool append=false) const {
+void operator()(const WavefunctionSet & psx, WavefunctionSet & outputs, std::vector<double> shift=std::vector<double>(), bool append=false) const {
     for (size_t k=0; k<psx.size(); k++) {
         const std::shared_ptr<Wavefunction>  x=std::static_pointer_cast<Wavefunction>(psx[k]);
         std::shared_ptr<Wavefunction>  g=std::static_pointer_cast<Wavefunction>(outputs[k]);
@@ -142,7 +143,7 @@ private:
   const Wavefunction& m_diagonals;
   const bool m_subtractDiagonal;
 public:
-void operator()(ParameterVectorSet & psc, const ParameterVectorSet & psg, std::vector<double> shift=std::vector<double>(), bool append=false) const {
+void operator()(WavefunctionSet & psc, const WavefunctionSet & psg, std::vector<double> shift=std::vector<double>(), bool append=false) const {
     std::vector<double> shifts=shift;
     for (size_t state=0; state<psc.size(); state++){
         if (m_subtractDiagonal)
@@ -415,6 +416,8 @@ using namespace itf;
 #endif
 
 #include <cmath>
+#include <PagedVector.h>
+
 std::vector<double> Run::DIIS(const Operator &ham, const State &prototype, double energyThreshold, int maxIterations)
 {
   std::unique_ptr<gci::Operator> residual_Q;
@@ -438,9 +441,9 @@ std::vector<double> Run::DIIS(const Operator &ham, const State &prototype, doubl
   Wavefunction d(prototype);
   d.diagonalOperator(ham);
   size_t reference = d.minloc();
-  ParameterVectorSet gg;
+  WavefunctionSet gg;
   gg.push_back(std::make_shared<Wavefunction>(prototype));
-  ParameterVectorSet ww;
+  WavefunctionSet ww;
   ww.push_back(std::make_shared<Wavefunction>(prototype));
   std::static_pointer_cast<Wavefunction>(ww.back())->set((double)0);
   std::static_pointer_cast<Wavefunction>(ww.back())->set(reference, (double) 1);
@@ -450,6 +453,8 @@ std::vector<double> Run::DIIS(const Operator &ham, const State &prototype, doubl
   updater precon(d,true);
   residual resid(ham,true,residual_Q.get());
   LinearAlgebra::DIIS<scalar> solver;
+  ParameterVectorSet wwp, ggp;
+  wwp.push_back(std::make_shared(LinearAlgebra::PagedVector<double>(ww.back()->)
   solver.m_verbosity = options.parameter("SOLVER_VERBOSITY",std::vector<int>(1,1)).at(0);
   solver.m_thresh=energyThreshold;
   solver.m_maxIterations=maxIterations;
@@ -492,8 +497,8 @@ std::vector<double> Run::Davidson(
   residual resid(ham,false);
   LinearAlgebra::LinearEigensystem<scalar> solver;
   solver.m_thresh=energyThreshold;
-  ParameterVectorSet gg;
-  ParameterVectorSet ww;
+  WavefunctionSet gg;
+  WavefunctionSet ww;
   for (int root=0; root<nState; root++) {
       std::shared_ptr<Wavefunction>  w=std::make_shared<Wavefunction>(prototype);
       ww.push_back(w);
@@ -983,8 +988,8 @@ void Run::IPT(const gci::Operator& ham, const State &prototype, const size_t ref
       xout << "b0m: "<<_IPT_b0m->values()<<std::endl;
       xout << "solve for c0"+std::to_string(m)<<std::endl;
       // solve for c0m
-      ParameterVectorSet gg; gg.push_back(std::make_shared<Wavefunction>(prototype));
-      ParameterVectorSet ww; ww.push_back(std::make_shared<Wavefunction>(prototype));
+      WavefunctionSet gg; gg.push_back(std::make_shared<Wavefunction>(prototype));
+      WavefunctionSet ww; ww.push_back(std::make_shared<Wavefunction>(prototype));
       updater update(d,false);
       meanfield_residual resid(ham,false);
       if (false) { // print A
@@ -1208,8 +1213,8 @@ std::vector<double> Run::ISRSPT(
   xout <<"RSPT wavefunction size="<<d.size()<<std::endl;
   d.diagonalOperator(ham0);
   size_t reference = d.minloc();
-  ParameterVectorSet gg; gg.push_back(std::make_shared<Wavefunction>(prototype));
-  ParameterVectorSet ww; ww.push_back(std::make_shared<Wavefunction>(prototype));
+  WavefunctionSet gg; gg.push_back(std::make_shared<Wavefunction>(prototype));
+  WavefunctionSet ww; ww.push_back(std::make_shared<Wavefunction>(prototype));
   std::static_pointer_cast<Wavefunction>(ww.back())->set((double)0);
   std::static_pointer_cast<Wavefunction>(ww.back())->set(reference, (double) 1);
   updater update(d,false);
