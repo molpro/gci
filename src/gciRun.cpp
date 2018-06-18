@@ -454,16 +454,17 @@ std::vector<double> Run::DIIS(const Operator &ham, const State &prototype, doubl
   residual resid(ham,true,residual_Q.get());
   LinearAlgebra::DIIS<scalar> solver;
   ParameterVectorSet wwp, ggp;
-  wwp.push_back(std::make_shared(LinearAlgebra::PagedVector<double>(ww.back()->)
+  wwp.push_back(std::make_shared<LinearAlgebra::PagedVector<double> >(ww.back()->data(),ww.back()->size()));
+  ggp.push_back(std::make_shared<LinearAlgebra::PagedVector<double> >(gg.back()->data(),gg.back()->size()));
   solver.m_verbosity = options.parameter("SOLVER_VERBOSITY",std::vector<int>(1,1)).at(0);
   solver.m_thresh=energyThreshold;
   solver.m_maxIterations=maxIterations;
   for (size_t iteration=0; iteration<maxIterations; iteration++) {
    resid(ww,gg);
-   solver.addVector(ww,gg);
+   solver.addVector(wwp,ggp);
    std::vector<double> shift; shift.push_back(0);
    precon(ww,gg,shift);
-   if (solver.endIteration(ww,gg)) break;
+   if (solver.endIteration(wwp,ggp)) break;
   }
   //      xout << "Final w: "<<w.str(2)<<std::endl;
   //      xout << "Final g: "<<g.str(2)<<std::endl;
