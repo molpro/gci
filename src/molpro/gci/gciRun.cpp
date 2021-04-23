@@ -13,6 +13,7 @@
 #include <molpro/linalg/itsolv/SolverFactory-implementation.h>
 #include <stdint.h>
 #include "gciOptions.h"
+#include <molpro/linalg/array/DistrArrayFile.h>
 #ifdef MOLPRO
 #include "cic/ItfFortranInt.h"
 #endif
@@ -82,15 +83,15 @@ namespace {
 // }
 auto make_handlers() {
   using R = Wavefunction;
-  using Q = Wavefunction;
+  using Q = molpro::linalg::array::DistrArrayFile;
   using P = std::map<size_t, R::value_type>;
   auto rr = std::make_shared<wavefunction::WavefunctionHandler<R, R>>();
-  auto qq = std::make_shared<wavefunction::WavefunctionHandler<R, R>>();
+  auto qq = std::make_shared<molpro::linalg::array::ArrayHandlerDistr<Q, Q>>();
   auto pp = std::make_shared<molpro::linalg::array::ArrayHandlerSparse<P, P>>();
-  auto rq = std::make_shared<wavefunction::WavefunctionHandler<R, R>>();
+  auto rq = std::make_shared<wavefunction::WavefunctionHandlerDistr<R, Q>>();
   auto rp = std::make_shared<wavefunction::WavefunctionHandlerSparse<R, P>>();
-  auto qr = std::make_shared<wavefunction::WavefunctionHandler<R, R>>();
-  auto qp = std::make_shared<wavefunction::WavefunctionHandlerSparse<R, P>>();
+  auto qr = std::make_shared<wavefunction::DistrWavefunctionHandler<Q, R>>();
+  auto qp = std::make_shared<molpro::linalg::array::ArrayHandlerDistrSparse<Q, P>>();
   return std::make_shared<molpro::linalg::itsolv::ArrayHandlers<R, Q, P>>(rr, qq, pp, rq, rp, qr, qp);
 }
 } // namespace
@@ -472,8 +473,10 @@ std::vector<double> Run::run() {
         throw std::runtime_error("Polynomial Hamiltonian is not supported in the new version");
       }
     } else if (options.parameter("SIMPLIFIED", 1)) {
-      auto solver = linalg::itsolv::create_LinearEigensystem<Wavefunction, Wavefunction>(
-          "Davidson", "max_size_qspace=10", make_handlers());
+      auto solver = linalg::itsolv::create_LinearEigensystem<Wavefunction, molpro::linalg::array::DistrArrayFile>(
+          "Davidson", "max_size_qspace=10"
+          , make_handlers()
+          );
       auto verbosity = options.parameter("SOLVER_VERBOSITY",1);
       if (verbosity == 0) solver->set_verbosity(linalg::itsolv::Verbosity::Summary);
       if (verbosity == 1) solver->set_verbosity(linalg::itsolv::Verbosity::Iteration);

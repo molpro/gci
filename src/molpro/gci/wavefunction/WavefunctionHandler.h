@@ -78,22 +78,146 @@ public:
   void axpy(value_type alpha, const AR &x, AL &y) override { y.axpy(alpha, x); }
 
   value_type dot(const AL &x, const AR &y) override { return x.dot(y); }
-  
+
   void gemm_outer(const Matrix<value_type> alphas, const CVecRef<AR> &xx, const VecRef<AL> &yy) override {
     molpro::linalg::array::util::gemm_outer_default(*this, alphas, xx, yy);
   }
-  
+
   Matrix<value_type> gemm_inner(const CVecRef<AL> &xx, const CVecRef<AR> &yy) override {
     return molpro::linalg::array::util::gemm_inner_default(*this, xx, yy);
   }
 
   std::map<size_t, value_type_abs> select_max_dot(size_t n, const AL &x, const AR &y) override {
     throw std::logic_error("unimplemented");
-//    return x.distr_buffer->select_max_dot(n, *y.distr_buffer);
+    //    return x.distr_buffer->select_max_dot(n, *y.distr_buffer);
   }
 
   std::map<size_t, value_type> select(size_t n, const AL &x, bool max = false, bool ignore_sign = false) override {
     return x.distr_buffer->select(n, max, ignore_sign);
+  }
+
+protected:
+  using linalg::array::ArrayHandler<AL, AR>::error;
+};
+template <class AL, class AR>
+class WavefunctionHandlerDistr : public linalg::array::ArrayHandler<AL, AR> {
+public:
+  using typename linalg::array::ArrayHandler<AL, AR>::value_type_L;
+  using typename linalg::array::ArrayHandler<AL, AR>::value_type_R;
+  using typename linalg::array::ArrayHandler<AL, AR>::value_type;
+  using typename linalg::array::ArrayHandler<AL, AR>::value_type_abs;
+  using typename linalg::array::ArrayHandler<AL, AR>::ProxyHandle;
+
+  ProxyHandle lazy_handle() override { return this->lazy_handle(*this); };
+
+  using linalg::array::ArrayHandler<AL, AR>::lazy_handle;
+
+  AL copy(const AR &source) override { throw std::logic_error("unimplementable"); };
+
+  void copy(AL &x, const AR &y) override { x.distr_buffer->copy(y); };
+
+  void scal(value_type alpha, AL &x) override { x.scal(alpha); }
+
+  void fill(value_type alpha, AL &x) override { x.fill(alpha); }
+
+  void axpy(value_type alpha, const AR &x, AL &y) override { y.distr_buffer->axpy(alpha, x); }
+
+  value_type dot(const AL &x, const AR &y) override { return x.distr_buffer->dot(y); }
+
+  void gemm_outer(const Matrix<value_type> alphas, const CVecRef<AR> &xx, const VecRef<AL> &yy) override {
+    //    std::vector<double> buffer(102400); // TODO chunked implementation with the segments of x cached
+    for (size_t ix=0; ix<xx.size(); ix++) {
+      auto x = xx[ix].get();
+//      auto distribution = x.distribution();
+      for (size_t iy=0; iy<yy.size(); iy++) {
+        const auto y = yy[iy].get();
+        y.distr_buffer->axpy(alphas(ix,iy),x);
+      }
+    }
+    //    molpro::linalg::array::util::gemm_outer_default(*this, alphas, xx, y);
+  }
+
+  Matrix<value_type> gemm_inner(const CVecRef<AL> &xx, const CVecRef<AR> &yy) override {
+    auto mat = Matrix<double>({xx.size(), yy.size()});
+    //    std::vector<double> buffer(102400); // TODO chunked implementation with the segments of x cached
+    for (size_t ix=0; ix<xx.size(); ix++) {
+      const auto x = xx[ix].get();
+//      auto distribution = x.distribution();
+      for (size_t iy=0; iy<yy.size(); iy++) {
+        const auto y = yy[iy].get();
+        mat(ix,iy) = x.distr_buffer->dot(y);
+        mat(ix,iy) = y.dot(*x.distr_buffer);
+      }
+    }
+    std::cout << "WavefunctionHandlerDistr::gemm_inner:"<<xx.size()<<","<<yy.size()<<"\n"<<as_string(mat)<<std::endl;
+    return mat;
+//    return molpro::linalg::array::util::gemm_inner_default(*this, xx, yy);
+  }
+
+  std::map<size_t, value_type_abs> select_max_dot(size_t n, const AL &x, const AR &y) override {
+    throw std::logic_error("unimplemented");
+    //    return x.distr_buffer->select_max_dot(n, *y.distr_buffer);
+  }
+
+  std::map<size_t, value_type> select(size_t n, const AL &x, bool max = false, bool ignore_sign = false) override {
+    return x.distr_buffer->select(n, max, ignore_sign);
+  }
+
+protected:
+  using linalg::array::ArrayHandler<AL, AR>::error;
+};
+template <class AL, class AR>
+class DistrWavefunctionHandler : public linalg::array::ArrayHandler<AL, AR> {
+public:
+  using typename linalg::array::ArrayHandler<AL, AR>::value_type_L;
+  using typename linalg::array::ArrayHandler<AL, AR>::value_type_R;
+  using typename linalg::array::ArrayHandler<AL, AR>::value_type;
+  using typename linalg::array::ArrayHandler<AL, AR>::value_type_abs;
+  using typename linalg::array::ArrayHandler<AL, AR>::ProxyHandle;
+
+  ProxyHandle lazy_handle() override { return this->lazy_handle(*this); };
+
+  using linalg::array::ArrayHandler<AL, AR>::lazy_handle;
+
+  AL copy(const AR &source) override {
+      return AL(*source.distr_buffer);
+  };
+
+  void copy(AL &x, const AR &y) override { x.copy(*y.distr_buffer); };
+
+  void scal(value_type alpha, AL &x) override { x.scal(alpha); }
+
+  void fill(value_type alpha, AL &x) override { x.fill(alpha); }
+
+  void axpy(value_type alpha, const AR &x, AL &y) override { y.axpy(alpha, *x.distr_buffer); }
+
+  value_type dot(const AL &x, const AR &y) override { return x.dot(*y.distr_buffer); }
+
+  void gemm_outer(const Matrix<value_type> alphas, const CVecRef<AR> &xx, const VecRef<AL> &yy) override {
+    throw std::logic_error("unimplementable");
+  }
+
+  Matrix<value_type> gemm_inner(const CVecRef<AL> &xx, const CVecRef<AR> &yy) override {
+    auto mat = Matrix<double>({xx.size(), yy.size()});
+    //    std::vector<double> buffer(102400); // TODO chunked implementation with the segments of x cached
+    for (size_t ix=0; ix<xx.size(); ix++) {
+      const auto x = xx[ix].get();
+//      auto distribution = x.distribution();
+      for (size_t iy=0; iy<yy.size(); iy++) {
+        const auto y = yy[iy].get();
+        mat(ix,iy) = x.dot(*y.distr_buffer);
+      }
+    }
+    return mat;
+//    return molpro::linalg::array::util::gemm_inner_default(*this, xx, yy);
+  }
+
+  std::map<size_t, value_type_abs> select_max_dot(size_t n, const AL &x, const AR &y) override {
+        return x.select_max_dot(n, *y.distr_buffer);
+  }
+
+  std::map<size_t, value_type> select(size_t n, const AL &x, bool max = false, bool ignore_sign = false) override {
+    return x.select(n, max, ignore_sign);
   }
 
 protected:

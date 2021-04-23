@@ -279,11 +279,13 @@ public:
 
 protected:
   void buildStrings();                                   ///< build alphaStrings and betaStrings
+public:
   molpro::vector<double>::iterator begin();              ///< beginning of this processor's data
   molpro::vector<double>::iterator end();                ///< end of this processor's data
   molpro::vector<double>::const_iterator cbegin() const; ///< beginning of this processor's data
   molpro::vector<double>::const_iterator cend() const;   ///< end of this processor's data
-public:
+  molpro::vector<double>::const_iterator begin() const {return cbegin();}
+  molpro::vector<double>::const_iterator end() const {return cend();}
   bool compatible(const Wavefunction &other) const; ///< whether this wavefunction is on the same space as another
 };
 

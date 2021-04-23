@@ -13,9 +13,11 @@ void molpro::gci::Problem::action(const CVecRef<container_t>& parameters, const 
 //      MPI_Bcast((void*)(v.buffer.data() + distribution.range(rank).first),
 //                distribution.range(rank).second - distribution.range(rank).first, MPI_DOUBLE, rank, mpi::comm_global());
 //#endif
+    std::cout << "Problem::action v="<<v<<std::endl;
     auto& a = actions[k].get();
     a.fill(0);
     a.operatorOnWavefunction(m_hamiltonian, v);
+    std::cout << "Problem::action a="<<a<<std::endl;
   }
 }
 
