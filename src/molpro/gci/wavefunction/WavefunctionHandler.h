@@ -76,11 +76,7 @@ public:
 
   void fill(value_type alpha, AL &x) override { x.fill(alpha); }
 
-  void axpy(value_type alpha, const AR &x, AL &y) override {
-    std::cout <<"axpy initial y.y="<<y.dot(y)<<std::endl;
-  y.axpy(alpha, x);
-    std::cout <<"axpy final y.y="<<y.dot(y)<<std::endl;
-  }
+  void axpy(value_type alpha, const AR &x, AL &y) override { y.axpy(alpha, x); }
 
   value_type dot(const AL &x, const AR &y) override { return x.dot(y); }
 
@@ -131,24 +127,24 @@ public:
 
   void gemm_outer(const Matrix<value_type> alphas, const CVecRef<AR> &xx, const VecRef<AL> &yy) override {
     //    std::vector<double> buffer(102400); // TODO chunked implementation with the segments of x cached
-    for (size_t ix=0; ix<xx.size(); ix++) {
-      auto& x = xx[ix].get();
-//      auto distribution = x.distribution();
-      for (size_t iy=0; iy<yy.size(); iy++) {
-        auto& y = yy[iy].get();
-        auto& buffer = y.distr_buffer;
+    for (size_t ix = 0; ix < xx.size(); ix++) {
+      auto &x = xx[ix].get();
+      //      auto distribution = x.distribution();
+      for (size_t iy = 0; iy < yy.size(); iy++) {
+        auto &y = yy[iy].get();
+        auto &buffer = y.distr_buffer;
         auto lb = buffer->local_buffer();
-        for (int i=0; i<y.buffer.size(); i++) {
-        std::cout << "initial element of target buffer " << &y.buffer[i] <<": "<<y.buffer[i]<<std::endl;
-        std::cout << "initial element of target local buffer " << &(*lb)[i] <<": "<<(*lb)[i]<<std::endl;
-        }
-//        buffer->axpy(alphas(ix,iy),x);
-       axpy(alphas(ix,iy),x,y);
-       std::cout << "alpha "<<alphas(ix,iy)<<std::endl;
-        for (int i=0; i<y.buffer.size(); i++) {
-         std::cout << "final element of target buffer " << &y.buffer[i] << ": " << y.buffer[i] << std::endl;
-         std::cout << "final element of target local buffer " << &(*lb)[i] << ": " << (*lb)[i] << std::endl;
-       }
+        //        for (int i=0; i<y.buffer.size(); i++) {
+        //        std::cout << "initial element of target buffer " << &y.buffer[i] <<": "<<y.buffer[i]<<std::endl;
+        //        std::cout << "initial element of target local buffer " << &(*lb)[i] <<": "<<(*lb)[i]<<std::endl;
+        //        }
+        //        buffer->axpy(alphas(ix,iy),x);
+        axpy(alphas(ix, iy), x, y);
+        //       std::cout << "alpha "<<alphas(ix,iy)<<std::endl;
+        //        for (int i=0; i<y.buffer.size(); i++) {
+        //         std::cout << "final element of target buffer " << &y.buffer[i] << ": " << y.buffer[i] << std::endl;
+        //         std::cout << "final element of target local buffer " << &(*lb)[i] << ": " << (*lb)[i] << std::endl;
+        //       }
       }
     }
     //    molpro::linalg::array::util::gemm_outer_default(*this, alphas, xx, y);
@@ -157,18 +153,19 @@ public:
   Matrix<value_type> gemm_inner(const CVecRef<AL> &xx, const CVecRef<AR> &yy) override {
     auto mat = Matrix<double>({xx.size(), yy.size()});
     //    std::vector<double> buffer(102400); // TODO chunked implementation with the segments of x cached
-    for (size_t ix=0; ix<xx.size(); ix++) {
-      const auto& x = xx[ix].get();
-//      auto distribution = x.distribution();
-      for (size_t iy=0; iy<yy.size(); iy++) {
-        const auto& y = yy[iy].get();
-        mat(ix,iy) = x.distr_buffer->dot(y);
-        mat(ix,iy) = y.dot(*x.distr_buffer);
+    for (size_t ix = 0; ix < xx.size(); ix++) {
+      const auto &x = xx[ix].get();
+      //      auto distribution = x.distribution();
+      for (size_t iy = 0; iy < yy.size(); iy++) {
+        const auto &y = yy[iy].get();
+        mat(ix, iy) = x.distr_buffer->dot(y);
+        mat(ix, iy) = y.dot(*x.distr_buffer);
       }
     }
-    std::cout << "WavefunctionHandlerDistr::gemm_inner:"<<xx.size()<<","<<yy.size()<<"\n"<<as_string(mat)<<std::endl;
+    //    std::cout <<
+    //    "WavefunctionHandlerDistr::gemm_inner:"<<xx.size()<<","<<yy.size()<<"\n"<<as_string(mat)<<std::endl;
     return mat;
-//    return molpro::linalg::array::util::gemm_inner_default(*this, xx, yy);
+    //    return molpro::linalg::array::util::gemm_inner_default(*this, xx, yy);
   }
 
   std::map<size_t, value_type_abs> select_max_dot(size_t n, const AL &x, const AR &y) override {
@@ -196,9 +193,7 @@ public:
 
   using linalg::array::ArrayHandler<AL, AR>::lazy_handle;
 
-  AL copy(const AR &source) override {
-      return AL(*source.distr_buffer);
-  };
+  AL copy(const AR &source) override { return AL(*source.distr_buffer); };
 
   void copy(AL &x, const AR &y) override { x.copy(*y.distr_buffer); };
 
@@ -217,20 +212,20 @@ public:
   Matrix<value_type> gemm_inner(const CVecRef<AL> &xx, const CVecRef<AR> &yy) override {
     auto mat = Matrix<double>({xx.size(), yy.size()});
     //    std::vector<double> buffer(102400); // TODO chunked implementation with the segments of x cached
-    for (size_t ix=0; ix<xx.size(); ix++) {
-      const auto& x = xx[ix].get();
-//      auto distribution = x.distribution();
-      for (size_t iy=0; iy<yy.size(); iy++) {
-        const auto& y = yy[iy].get();
-        mat(ix,iy) = x.dot(*y.distr_buffer);
+    for (size_t ix = 0; ix < xx.size(); ix++) {
+      const auto &x = xx[ix].get();
+      //      auto distribution = x.distribution();
+      for (size_t iy = 0; iy < yy.size(); iy++) {
+        const auto &y = yy[iy].get();
+        mat(ix, iy) = x.dot(*y.distr_buffer);
       }
     }
     return mat;
-//    return molpro::linalg::array::util::gemm_inner_default(*this, xx, yy);
+    //    return molpro::linalg::array::util::gemm_inner_default(*this, xx, yy);
   }
 
   std::map<size_t, value_type_abs> select_max_dot(size_t n, const AL &x, const AR &y) override {
-        return x.select_max_dot(n, *y.distr_buffer);
+    return x.select_max_dot(n, *y.distr_buffer);
   }
 
   std::map<size_t, value_type> select(size_t n, const AL &x, bool max = false, bool ignore_sign = false) override {

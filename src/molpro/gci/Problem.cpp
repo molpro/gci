@@ -13,11 +13,11 @@ void molpro::gci::Problem::action(const CVecRef<container_t>& parameters, const 
 //      MPI_Bcast((void*)(v.buffer.data() + distribution.range(rank).first),
 //                distribution.range(rank).second - distribution.range(rank).first, MPI_DOUBLE, rank, mpi::comm_global());
 //#endif
-    std::cout << "Problem::action v="<<v<<std::endl;
+//    std::cout << "Problem::action v="<<v<<std::endl;
     auto& a = actions[k].get();
     a.fill(0);
     a.operatorOnWavefunction(m_hamiltonian, v);
-    std::cout << "Problem::action a="<<a<<std::endl;
+//    std::cout << "Problem::action a="<<a<<std::endl;
   }
 }
 
@@ -73,8 +73,8 @@ void molpro::gci::Problem::precondition(const VecRef<container_t>& action, const
   for (int k = 0; k < action.size(); k++) {
     auto& a = action[k].get();
     auto alb = a.distr_buffer->local_buffer();
-    for (int i = 0; i < alb->size(); i++)
-      std::cout << "precondition "<<i<<" "<<(*alb)[i]<<" "<<(*dlb)[i]<<std::endl;
+//    for (int i = 0; i < alb->size(); i++)
+//      std::cout << "precondition "<<i<<" "<<(*alb)[i]<<" "<<(*dlb)[i]<<std::endl;
     for (int i = 0; i < alb->size(); i++)
       (*alb)[i] /= ((*dlb)[i] - shift[k] + 1e-15);
 #ifdef HAVE_MPI_H
