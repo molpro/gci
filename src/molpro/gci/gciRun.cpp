@@ -487,10 +487,15 @@ std::vector<double> Run::run() {
       solver->set_hermiticity(true);
       std::vector<Wavefunction> parameters, actions;
       for (int work = 0; work < solver->n_roots(); work++) {
+        std::cout << "before creating parameter vector"<<std::endl;
         parameters.emplace_back(prototype, mpi_comm_compute);
+        std::cout << "before allocating parameter vector"<<std::endl;
         parameters.back().allocate_buffer();
+        std::cout << "after allocating parameter vector"<<std::endl;
         actions.emplace_back(prototype, mpi_comm_compute);
+        std::cout << "before allocating action vector"<<std::endl;
         actions.back().allocate_buffer();
+        std::cout << "after allocating action vector"<<std::endl;
         actions.back().settilesize(options.parameter("TILESIZE", std::vector<int>(1, -1)).at(0),
                                    options.parameter("ALPHATILESIZE", std::vector<int>(1, -1)).at(0),
                                    options.parameter("BETATILESIZE", std::vector<int>(1, -1)).at(0));
@@ -499,7 +504,11 @@ std::vector<double> Run::run() {
                                  static_cast<int>(parameters.front().size())));
       if (options.parameter("P_THRESHOLD",double(0))!=0) solver->set_p_threshold(options.parameter("P_THRESHOLD",double(0)));
       Problem problem(m_hamiltonian, prototype);
+      std::cout << "before solve, buffer addresses for parameters: "<<parameters.front().buffer.data()<< ", "<<parameters.front().distr_buffer->local_buffer()->data()<<std::endl;
+      std::cout << "before solve, buffer addresses for actions: "<<actions.front().buffer.data()<< ", "<<actions.front().distr_buffer->local_buffer()->data()<<std::endl;
       solver->solve(parameters, actions, problem, true);
+      std::cout << "after solve, buffer addresses for parameters: "<<parameters.front().buffer.data()<< ", "<<parameters.front().distr_buffer->local_buffer()->data()<<std::endl;
+      std::cout << "after solve, buffer addresses for actions: "<<actions.front().buffer.data()<< ", "<<actions.front().distr_buffer->local_buffer()->data()<<std::endl;
       energies = solver->eigenvalues();
     } else {
       auto ham = m_hamiltonian;

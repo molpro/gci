@@ -74,6 +74,8 @@ void molpro::gci::Problem::precondition(const VecRef<container_t>& action, const
     auto& a = action[k].get();
     auto alb = a.distr_buffer->local_buffer();
     for (int i = 0; i < alb->size(); i++)
+      std::cout << "precondition "<<i<<" "<<(*alb)[i]<<" "<<(*dlb)[i]<<std::endl;
+    for (int i = 0; i < alb->size(); i++)
       (*alb)[i] /= ((*dlb)[i] - shift[k] + 1e-15);
 #ifdef HAVE_MPI_H
     auto distribution = a.distr_buffer->distribution();

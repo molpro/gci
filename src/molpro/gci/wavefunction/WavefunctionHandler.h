@@ -1,6 +1,7 @@
 #ifndef GCI_SRC_MOLPRO_GCI_WAVEFUNCTION_WAVEFUNCTIONHANDLER_H
 #define GCI_SRC_MOLPRO_GCI_WAVEFUNCTION_WAVEFUNCTIONHANDLER_H
 #include <molpro/linalg/array/ArrayHandler.h>
+#include <molpro/linalg/array/default_handler.h>
 #include <molpro/linalg/array/util/gemm.h>
 
 #include <map>
@@ -75,7 +76,11 @@ public:
 
   void fill(value_type alpha, AL &x) override { x.fill(alpha); }
 
-  void axpy(value_type alpha, const AR &x, AL &y) override { y.axpy(alpha, x); }
+  void axpy(value_type alpha, const AR &x, AL &y) override {
+    std::cout <<"axpy initial y.y="<<y.dot(y)<<std::endl;
+  y.axpy(alpha, x);
+    std::cout <<"axpy final y.y="<<y.dot(y)<<std::endl;
+  }
 
   value_type dot(const AL &x, const AR &y) override { return x.dot(y); }
 
@@ -127,11 +132,23 @@ public:
   void gemm_outer(const Matrix<value_type> alphas, const CVecRef<AR> &xx, const VecRef<AL> &yy) override {
     //    std::vector<double> buffer(102400); // TODO chunked implementation with the segments of x cached
     for (size_t ix=0; ix<xx.size(); ix++) {
-      auto x = xx[ix].get();
+      auto& x = xx[ix].get();
 //      auto distribution = x.distribution();
       for (size_t iy=0; iy<yy.size(); iy++) {
-        const auto y = yy[iy].get();
-        y.distr_buffer->axpy(alphas(ix,iy),x);
+        auto& y = yy[iy].get();
+        auto& buffer = y.distr_buffer;
+        auto lb = buffer->local_buffer();
+        for (int i=0; i<y.buffer.size(); i++) {
+        std::cout << "initial element of target buffer " << &y.buffer[i] <<": "<<y.buffer[i]<<std::endl;
+        std::cout << "initial element of target local buffer " << &(*lb)[i] <<": "<<(*lb)[i]<<std::endl;
+        }
+//        buffer->axpy(alphas(ix,iy),x);
+       axpy(alphas(ix,iy),x,y);
+       std::cout << "alpha "<<alphas(ix,iy)<<std::endl;
+        for (int i=0; i<y.buffer.size(); i++) {
+         std::cout << "final element of target buffer " << &y.buffer[i] << ": " << y.buffer[i] << std::endl;
+         std::cout << "final element of target local buffer " << &(*lb)[i] << ": " << (*lb)[i] << std::endl;
+       }
       }
     }
     //    molpro::linalg::array::util::gemm_outer_default(*this, alphas, xx, y);
@@ -141,10 +158,10 @@ public:
     auto mat = Matrix<double>({xx.size(), yy.size()});
     //    std::vector<double> buffer(102400); // TODO chunked implementation with the segments of x cached
     for (size_t ix=0; ix<xx.size(); ix++) {
-      const auto x = xx[ix].get();
+      const auto& x = xx[ix].get();
 //      auto distribution = x.distribution();
       for (size_t iy=0; iy<yy.size(); iy++) {
-        const auto y = yy[iy].get();
+        const auto& y = yy[iy].get();
         mat(ix,iy) = x.distr_buffer->dot(y);
         mat(ix,iy) = y.dot(*x.distr_buffer);
       }
@@ -201,10 +218,10 @@ public:
     auto mat = Matrix<double>({xx.size(), yy.size()});
     //    std::vector<double> buffer(102400); // TODO chunked implementation with the segments of x cached
     for (size_t ix=0; ix<xx.size(); ix++) {
-      const auto x = xx[ix].get();
+      const auto& x = xx[ix].get();
 //      auto distribution = x.distribution();
       for (size_t iy=0; iy<yy.size(); iy++) {
-        const auto y = yy[iy].get();
+        const auto& y = yy[iy].get();
         mat(ix,iy) = x.dot(*y.distr_buffer);
       }
     }

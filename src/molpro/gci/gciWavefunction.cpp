@@ -66,6 +66,9 @@ Wavefunction::Wavefunction(const Wavefunction &source, int option, MPI_Comm comm
     distr_buffer.reset(new DistrArrayMPI3(std::make_unique<molpro::linalg::array::util::Distribution<DistrArrayMPI3::index_type>>(distribution),
                                           m_communicator,
                                           molpro::linalg::array::span::Span<double>(&buffer[start], end - start)));
+    std::cout << "Wavefunction DistrArrayMPI3 set up with Span"<<std::endl;
+    std::cout << "Buffer addresses "<<buffer.data()<<", "<<distr_buffer->local_buffer()->data()<<std::endl;
+    std::cout << "Buffer sizes "<<buffer.size()<<", "<<distr_buffer->local_buffer()->size()<<std::endl;
   }
   if (m_communicator == MPI_COMM_NULL)
     m_communicator = source.m_communicator;
@@ -118,6 +121,9 @@ void Wavefunction::allocate_buffer() {
                                           molpro::linalg::array::span::Span<double>(&buffer[start], end - start)));
 //    std::tie(start, end) = distr_buffer.distribution().range(m_parallel_rank);
 //    distr_buffer.allocate_buffer({&buffer[start], end - start});
+    std::cout << "Wavefunction DistrArrayMPI3 set up with allocate_buffer"<<std::endl;
+    std::cout << "Buffer addresses "<<buffer.data()<<", "<<distr_buffer->local_buffer()->data()<<std::endl;
+    std::cout << "Buffer sizes "<<buffer.size()<<", "<<distr_buffer->local_buffer()->size()<<std::endl;
   }
 }
 
