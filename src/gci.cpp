@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
   MPI_Comm_rank(molpro::gci::mpi_comm_compute, &molpro::gci::parallel_rank);
   if (molpro::gci::parallel_rank == 0)
     std::cout << "MPI_Comm_size = " << molpro::gci::parallel_size << std::endl;
-  if (molpro::gci::parallel_rank > 0)
+  if ( molpro::gci::parallel_rank > 0)
     freopen("/dev/null", "w", stdout);
   molpro::PluginGuest plugin("MOLPRO", molpro::gci::mpi_comm_compute);
   if (plugin.active()) {

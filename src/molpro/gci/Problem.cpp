@@ -7,12 +7,12 @@ molpro::gci::Problem::Problem(const molpro::Operator& hamiltonian, const State& 
 void molpro::gci::Problem::action(const CVecRef<container_t>& parameters, const VecRef<container_t>& actions) const {
   for (size_t k = 0; k < parameters.size(); k++) {
     const auto& v = parameters[k].get();
-//#ifdef HAVE_MPI_H
-//    auto distribution = v.distr_buffer->distribution();
-//    for (int rank = 0; rank < mpi::size_global(); rank++)
-//      MPI_Bcast((void*)(v.buffer.data() + distribution.range(rank).first),
-//                distribution.range(rank).second - distribution.range(rank).first, MPI_DOUBLE, rank, mpi::comm_global());
-//#endif
+#ifdef HAVE_MPI_H
+    auto distribution = v.distr_buffer->distribution();
+    for (int rank = 0; rank < mpi::size_global(); rank++)
+      MPI_Bcast((void*)(v.buffer.data() + distribution.range(rank).first),
+                distribution.range(rank).second - distribution.range(rank).first, MPI_DOUBLE, rank, mpi::comm_global());
+#endif
 //    std::cout << "Problem::action v="<<v<<std::endl;
     auto& a = actions[k].get();
     a.fill(0);
@@ -31,14 +31,17 @@ void molpro::gci::Problem::p_action(const std::vector<std::vector<value_t>>& p_c
                                     const VecRef<container_t>& actions) const {
   for (size_t k = 0; k < p_coefficients.size(); k++) {
     Wavefunction& g = actions[k];
+//    std::cout <<  molpro::mpi::rank_global() <<"p_action initial action";for(const auto& v : g) std::cout <<" "<<v;std::cout << std::endl;
     Wavefunction w(g);
     w.m_sparse = true;
     for (size_t i = 0; i < pparams.size(); i++) {
       assert(pparams[i].get().size() == 1);
       w.buffer_sparse.insert({pparams[i].get().begin()->first, p_coefficients[k][i]});
     }
+//    std::cout << molpro::mpi::rank_global() << "p_action w";for(const auto& v : w.buffer_sparse) std::cout <<" "<<v.first<<":"<<v.second;std::cout << std::endl;
     auto prof = profiler->push("HcP");
     g.operatorOnWavefunction(m_hamiltonian, w);
+//    std::cout <<  molpro::mpi::rank_global() <<"p_action final action";for(const auto& v : g) std::cout <<" "<<v;std::cout << std::endl;
   }
 }
 

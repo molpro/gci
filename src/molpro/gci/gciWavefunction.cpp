@@ -390,7 +390,17 @@ Wavefunction operator*(const double &value, const Wavefunction &w1) {
 }
 
 double Wavefunction::dot(const Wavefunction &other) const {
-  return (*this) * ((dynamic_cast<const Wavefunction &>(other)));
+//  std::cout << "Wavefunction::dot"<<std::endl;
+//  std::cout << molpro::mpi::rank_global()<<"Wavefunction this: "; for (const auto& v : buffer) std::cout << " "<<v; std::cout << std::endl;
+//  std::cout << molpro::mpi::rank_global()<<"Wavefunction other: "; for (const auto& v : other.buffer) std::cout << " "<<v; std::cout << std::endl;
+//
+//  double d = (*this) * ((dynamic_cast<const Wavefunction &>(other)));
+  auto d = std::inner_product(distr_buffer->local_buffer()->begin(),distr_buffer->local_buffer()->end(),other.distr_buffer->local_buffer()->begin(),double(0));
+//  std::cout << molpro::mpi::rank_global()<<"local dot = " <<d<< std::endl;
+  gsum(&d, 1, m_communicator);
+//  std::cout << molpro::mpi::rank_global()<<"dot = " <<d<< std::endl;
+//  sleep(1);
+  return d;
 }
 
 double Wavefunction::dot(const std::map<size_t, double> &other) const {
@@ -621,9 +631,21 @@ void Wavefunction::operatorOnWavefunction(
     bool parallel_stringset) { // FIXME not really thoroughly checked if the symmetry of h is not zero.
   auto prof = profiler->push("operatorOnWavefunction" + std::string(m_sparse ? "/sparse" : "") +
                              std::string(w.m_sparse ? "/sparse" : ""));
+//  std::cout << "operatorOnWavefunction, w:";
+//  if (w.m_sparse)
+//    for (const auto& e : w.buffer_sparse)
+//      std::cout << " "<<e.first<<":"<<e.second;
+//  else
+//    for (const auto& e : w.buffer)
+//      std::cout << " "<<e;
+//  std::cout << std::endl;
   if (m_sparse)
     buffer_sparse.clear();
   if (m_parallel_rank == 0) {
+    if (not m_sparse)
+//      std::cout << "operatorOnWavefunction, master, zero-filling from "<<distr_buffer->local_buffer()->size()<<" to "<<buffer.end()-buffer.begin()<<std::endl;
+    if (not m_sparse)
+      std::fill(buffer.begin() + distr_buffer->local_buffer()->size(), buffer.end(), 0);
     if (m_sparse) {
       if (!w.m_sparse)
         throw std::runtime_error("Cannot make sparse residual from full vector");
@@ -639,9 +661,14 @@ void Wavefunction::operatorOnWavefunction(
         buffer[i] += h.m_O0 * w.buffer[i];
       }
     }
-  } else if (!m_sparse)
-    for (auto &b : buffer)
-      b = 0;
+  } else if (!m_sparse) {
+    std::fill(buffer.begin(),buffer.begin()+distr_buffer->local_buffer()->start(),0);
+//    std::cout << "operatorOnWavefunction, slave, zero-filling from "<<0<<" to "<<distr_buffer->local_buffer()->start()<<std::endl;
+    std::fill(distr_buffer->local_buffer()->begin()+distr_buffer->local_buffer()->size(),buffer.end(),0);
+//    std::cout << "operatorOnWavefunction, slave, zero-filling from "<<distr_buffer->local_buffer()->size()<<" to "<<buffer.end()-buffer.begin()<<std::endl;
+  }
+//    for (auto &b : buffer)
+//      b = 0;
   //  cout <<"residual after 0-electron:"<<std::endl<<str(2)<<std::endl;
 
   //  cout <<std::endl<<"w in operatorOnWavefunction="<<w.str(2)<<std::endl;
@@ -900,6 +927,7 @@ void Wavefunction::operatorOnWavefunction(
     gsum(buffer_sparse, m_communicator);
   } else {
     gsum(&buffer[0], buffer.size(), m_communicator);
+//    std::cout << "operatorOnWavefunction final summed result"; for (const auto& e:buffer) std::cout <<" "<<e; std::cout<<std::endl;
   }
 }
 

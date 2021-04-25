@@ -33,7 +33,9 @@ public:
 
   void axpy(value_type alpha, const AR &x, AL &y) override { y.axpy(alpha, x); }
 
-  value_type dot(const AL &x, const AR &y) override { return x.dot(y); }
+  value_type dot(const AL &x, const AR &y) override {
+  return x.dot(y);
+  }
 
   void gemm_outer(const Matrix<value_type> alphas, const CVecRef<AR> &xx, const VecRef<AL> &yy) override {
     molpro::linalg::array::util::gemm_outer_default(*this, alphas, xx, yy);
@@ -121,7 +123,18 @@ public:
 
   void fill(value_type alpha, AL &x) override { x.fill(alpha); }
 
-  void axpy(value_type alpha, const AR &x, AL &y) override { y.distr_buffer->axpy(alpha, x); }
+  void axpy(value_type alpha, const AR &x, AL &y) override {
+//    std::cout << "WavefunctionHandlerDistr::axpy"<<std::endl;
+//    std::cout << molpro::mpi::rank_global()<<"initial Wavefunction buffer: "; for (const auto& v : y.buffer) std::cout << " "<<v; std::cout << std::endl;
+    y.distr_buffer->axpy(alpha, x);
+//#ifdef HAVE_MPI_H
+//    auto distribution = y.distr_buffer->distribution();
+//    auto lb = y.distr_buffer->local_buffer();
+//    auto start = lb->start();
+//    auto size = lb->size();
+//#endif
+//    std::cout << molpro::mpi::rank_global()<<"final Wavefunction buffer: "; for (const auto& v : y.buffer) std::cout << " "<<v; std::cout << std::endl;
+    }
 
   value_type dot(const AL &x, const AR &y) override { return x.distr_buffer->dot(y); }
 
@@ -201,7 +214,10 @@ public:
 
   void fill(value_type alpha, AL &x) override { x.fill(alpha); }
 
-  void axpy(value_type alpha, const AR &x, AL &y) override { y.axpy(alpha, *x.distr_buffer); }
+  void axpy(value_type alpha, const AR &x, AL &y) override {
+  y.axpy(alpha, *x.distr_buffer);
+  std::cout << "DistrWavefunctionHandler::axpy"<<std::endl;
+  }
 
   value_type dot(const AL &x, const AR &y) override { return x.dot(*y.distr_buffer); }
 
