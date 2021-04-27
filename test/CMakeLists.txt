@@ -1,4 +1,4 @@
-configure_file(gci.fcidump ${PROJECT_BINARY_DIR}/gci.fcidump COPYONLY)
+file(COPY cr2.fcidump gci.fcidump DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 set(TESTS he2.fcidump he2n.fcidump hedz.fcidump hevdz.fcidump nevdz.fcidump c2_minao.fcidump)
 foreach (fil ${TESTS})
     get_filename_component(nam ${fil} NAME_WE)

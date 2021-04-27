@@ -351,13 +351,12 @@ Run::Run(std::string fcidump) : m_hamiltonian(constructOperator(molpro::FCIdump(
   //  cout << "FUNKY "<< options.parameter("FUNKY",std::vector<int>{999})[0]<<std::endl;
 }
 
-std::unique_ptr<molpro::Profiler> profiler = nullptr;
+std::shared_ptr<molpro::Profiler> profiler = nullptr;
 std::vector<double> Run::run() {
   if (profiler == nullptr)
-    profiler = std::make_unique<molpro::Profiler>("GCI");
+    profiler = molpro::Profiler::single("GCI");
   create_new_counter(mpi_comm_compute);
   _sub_communicator = create_new_comm();
-  profiler->reset("GCI");
   int activeLvl = options.parameter("PROFACTIVE", -1);
   if (activeLvl >= 0)
     profiler->set_max_depth(activeLvl);
@@ -485,6 +484,7 @@ std::vector<double> Run::run() {
       solver->set_max_iter(options.parameter("MAXIT", 1000));
       solver->set_convergence_threshold(options.parameter("CONVERGENCE_THRESHOLD", 1e-5));
       solver->set_hermiticity(true);
+      solver->set_profiler(*profiler);
       std::vector<Wavefunction> parameters, actions;
       for (int work = 0; work < solver->n_roots(); work++) {
         parameters.emplace_back(prototype, mpi_comm_compute);
@@ -527,8 +527,8 @@ std::vector<double> Run::run() {
 
   {
     auto profile = options.parameter("PROFILER", std::vector<int>(1, -1)).at(0);
-    if (profile > 1)
-      cout << profiler->str(false) << std::endl;
+//    if (profile > 1)
+//      cout << profiler->str(false) << std::endl;
     cout << profiler->str(true) << std::endl;
   }
   _nextval_counter[mpi_comm_compute].reset(nullptr);

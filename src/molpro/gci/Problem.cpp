@@ -1,10 +1,12 @@
 #include "Problem.h"
 #include <molpro/mpi.h>
+#include <molpro/profiler/Profiler.h>
 
-molpro::gci::Problem::Problem(const molpro::Operator& hamiltonian, const State& prototype)
+molpro::gci::Problem::Problem(const Operator& hamiltonian, const State& prototype)
     : m_hamiltonian(hamiltonian), m_prototype(prototype) {}
 
 void molpro::gci::Problem::action(const CVecRef<container_t>& parameters, const VecRef<container_t>& actions) const {
+  auto prof = profiler->push("Problem::action");
   for (size_t k = 0; k < parameters.size(); k++) {
     const auto& v = parameters[k].get();
 #ifdef HAVE_MPI_H
@@ -13,15 +15,15 @@ void molpro::gci::Problem::action(const CVecRef<container_t>& parameters, const 
       MPI_Bcast((void*)(v.buffer.data() + distribution.range(rank).first),
                 distribution.range(rank).second - distribution.range(rank).first, MPI_DOUBLE, rank, mpi::comm_global());
 #endif
-//    std::cout << "Problem::action v="<<v<<std::endl;
     auto& a = actions[k].get();
     a.fill(0);
     a.operatorOnWavefunction(m_hamiltonian, v);
-//    std::cout << "Problem::action a="<<a<<std::endl;
+    //    std::cout << "Problem::action a="<<a<<std::endl;
   }
 }
 
 bool molpro::gci::Problem::diagonals(container_t& d) const {
+  auto prof = profiler->push("Problem::diagonals");
   d.diagonalOperator(m_hamiltonian);
   return true;
 }
@@ -29,25 +31,28 @@ bool molpro::gci::Problem::diagonals(container_t& d) const {
 void molpro::gci::Problem::p_action(const std::vector<std::vector<value_t>>& p_coefficients,
                                     const CVecRef<std::map<size_t, container_t::value_type>>& pparams,
                                     const VecRef<container_t>& actions) const {
+  auto prof = profiler->push("Problem::p_action");
   for (size_t k = 0; k < p_coefficients.size(); k++) {
     Wavefunction& g = actions[k];
-//    std::cout <<  molpro::mpi::rank_global() <<"p_action initial action";for(const auto& v : g) std::cout <<" "<<v;std::cout << std::endl;
+    //    std::cout <<  molpro::mpi::rank_global() <<"p_action initial action";for(const auto& v : g) std::cout <<"
+    //    "<<v;std::cout << std::endl;
     Wavefunction w(g);
     w.m_sparse = true;
     for (size_t i = 0; i < pparams.size(); i++) {
       assert(pparams[i].get().size() == 1);
       w.buffer_sparse.insert({pparams[i].get().begin()->first, p_coefficients[k][i]});
     }
-//    std::cout << molpro::mpi::rank_global() << "p_action w";for(const auto& v : w.buffer_sparse) std::cout <<" "<<v.first<<":"<<v.second;std::cout << std::endl;
-    auto prof = profiler->push("HcP");
+    //    std::cout << molpro::mpi::rank_global() << "p_action w";for(const auto& v : w.buffer_sparse) std::cout <<"
+    //    "<<v.first<<":"<<v.second;std::cout << std::endl;
     g.operatorOnWavefunction(m_hamiltonian, w);
-//    std::cout <<  molpro::mpi::rank_global() <<"p_action final action";for(const auto& v : g) std::cout <<" "<<v;std::cout << std::endl;
+    //    std::cout <<  molpro::mpi::rank_global() <<"p_action final action";for(const auto& v : g) std::cout <<"
+    //    "<<v;std::cout << std::endl;
   }
 }
 
 std::vector<double>
 molpro::gci::Problem::pp_action_matrix(const std::vector<std::map<size_t, container_t::value_type>>& pparams) const {
-  auto prof = profiler->push("HPP");
+  auto prof = profiler->push("Problem::pp_action_matrix");
   constexpr size_t NP = 0;
   const auto newNP = pparams.size();
   std::vector<double> addHPP(newNP * (newNP - NP), (double)0);
@@ -71,13 +76,14 @@ molpro::gci::Problem::pp_action_matrix(const std::vector<std::map<size_t, contai
 
 void molpro::gci::Problem::precondition(const VecRef<container_t>& action, const std::vector<double>& shift,
                                         const container_t& diagonals) const {
+  auto prof = profiler->push("Problem::precondition");
   auto dlb = diagonals.distr_buffer->local_buffer();
   auto offset = dlb->start();
   for (int k = 0; k < action.size(); k++) {
     auto& a = action[k].get();
     auto alb = a.distr_buffer->local_buffer();
-//    for (int i = 0; i < alb->size(); i++)
-//      std::cout << "precondition "<<i<<" "<<(*alb)[i]<<" "<<(*dlb)[i]<<std::endl;
+    //    for (int i = 0; i < alb->size(); i++)
+    //      std::cout << "precondition "<<i<<" "<<(*alb)[i]<<" "<<(*dlb)[i]<<std::endl;
     for (int i = 0; i < alb->size(); i++)
       (*alb)[i] /= ((*dlb)[i] - shift[k] + 1e-15);
 #ifdef HAVE_MPI_H

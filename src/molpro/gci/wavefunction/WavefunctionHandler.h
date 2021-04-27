@@ -33,9 +33,7 @@ public:
 
   void axpy(value_type alpha, const AR &x, AL &y) override { y.axpy(alpha, x); }
 
-  value_type dot(const AL &x, const AR &y) override {
-  return x.dot(y);
-  }
+  value_type dot(const AL &x, const AR &y) override { return x.dot(y); }
 
   void gemm_outer(const Matrix<value_type> alphas, const CVecRef<AR> &xx, const VecRef<AL> &yy) override {
     molpro::linalg::array::util::gemm_outer_default(*this, alphas, xx, yy);
@@ -124,21 +122,32 @@ public:
   void fill(value_type alpha, AL &x) override { x.fill(alpha); }
 
   void axpy(value_type alpha, const AR &x, AL &y) override {
-//    std::cout << "WavefunctionHandlerDistr::axpy"<<std::endl;
-//    std::cout << molpro::mpi::rank_global()<<"initial Wavefunction buffer: "; for (const auto& v : y.buffer) std::cout << " "<<v; std::cout << std::endl;
+    auto prof = profiler->push("WavefunctionHandlerDistr::axpy");
+    //    std::cout << "WavefunctionHandlerDistr::axpy"<<std::endl;
+    //    std::cout << molpro::mpi::rank_global()<<"initial Wavefunction buffer: "; for (const auto& v : y.buffer)
+    //    std::cout << " "<<v; std::cout << std::endl;
+    prof += y.distr_buffer->local_buffer()->size();
     y.distr_buffer->axpy(alpha, x);
-//#ifdef HAVE_MPI_H
-//    auto distribution = y.distr_buffer->distribution();
-//    auto lb = y.distr_buffer->local_buffer();
-//    auto start = lb->start();
-//    auto size = lb->size();
-//#endif
-//    std::cout << molpro::mpi::rank_global()<<"final Wavefunction buffer: "; for (const auto& v : y.buffer) std::cout << " "<<v; std::cout << std::endl;
-    }
+    //#ifdef HAVE_MPI_H
+    //    auto distribution = y.distr_buffer->distribution();
+    //    auto lb = y.distr_buffer->local_buffer();
+    //    auto start = lb->start();
+    //    auto size = lb->size();
+    //#endif
+    //    std::cout << molpro::mpi::rank_global()<<"final Wavefunction buffer: "; for (const auto& v : y.buffer)
+    //    std::cout << " "<<v; std::cout << std::endl;
+  }
 
-  value_type dot(const AL &x, const AR &y) override { return x.distr_buffer->dot(y); }
+  value_type dot(const AL &x, const AR &y) override {
+    auto prof = profiler->push("WavefunctionHandlerDistr::dot");
+    prof += x.distr_buffer->local_buffer()->size();
+//    std::cout << "dot "<<x.distr_buffer->local_buffer()->size()<<std::endl;
+//    return x.distr_buffer->dot(y);
+    return y.dot(*x.distr_buffer);
+  }
 
   void gemm_outer(const Matrix<value_type> alphas, const CVecRef<AR> &xx, const VecRef<AL> &yy) override {
+    auto prof = profiler->push("WavefunctionHandlerDistr::gemm_outer");
     //    std::vector<double> buffer(102400); // TODO chunked implementation with the segments of x cached
     for (size_t ix = 0; ix < xx.size(); ix++) {
       auto &x = xx[ix].get();
@@ -146,12 +155,7 @@ public:
       for (size_t iy = 0; iy < yy.size(); iy++) {
         auto &y = yy[iy].get();
         auto &buffer = y.distr_buffer;
-        auto lb = buffer->local_buffer();
-        //        for (int i=0; i<y.buffer.size(); i++) {
-        //        std::cout << "initial element of target buffer " << &y.buffer[i] <<": "<<y.buffer[i]<<std::endl;
-        //        std::cout << "initial element of target local buffer " << &(*lb)[i] <<": "<<(*lb)[i]<<std::endl;
-        //        }
-        //        buffer->axpy(alphas(ix,iy),x);
+//        prof += buffer->local_buffer()->size();
         axpy(alphas(ix, iy), x, y);
         //       std::cout << "alpha "<<alphas(ix,iy)<<std::endl;
         //        for (int i=0; i<y.buffer.size(); i++) {
@@ -164,15 +168,21 @@ public:
   }
 
   Matrix<value_type> gemm_inner(const CVecRef<AL> &xx, const CVecRef<AR> &yy) override {
+    auto prof = profiler->push("WavefunctionHandlerDistr::gemm_inner");
     auto mat = Matrix<double>({xx.size(), yy.size()});
     //    std::vector<double> buffer(102400); // TODO chunked implementation with the segments of x cached
     for (size_t ix = 0; ix < xx.size(); ix++) {
       const auto &x = xx[ix].get();
       //      auto distribution = x.distribution();
       for (size_t iy = 0; iy < yy.size(); iy++) {
+        profiler->start("get()");
         const auto &y = yy[iy].get();
-        mat(ix, iy) = x.distr_buffer->dot(y);
-        mat(ix, iy) = y.dot(*x.distr_buffer);
+        profiler->stop();
+//        prof += x.distr_buffer->local_buffer()->size();
+//        std::cout << "gemm_inner "<<x.distr_buffer->local_buffer()->size()<<std::endl;
+//        mat(ix, iy) = x.distr_buffer->dot(y);
+//        mat(ix, iy) = y.dot(*x.distr_buffer);
+        mat(ix, iy) = dot(x,y);
       }
     }
     //    std::cout <<
@@ -215,8 +225,8 @@ public:
   void fill(value_type alpha, AL &x) override { x.fill(alpha); }
 
   void axpy(value_type alpha, const AR &x, AL &y) override {
-  y.axpy(alpha, *x.distr_buffer);
-  std::cout << "DistrWavefunctionHandler::axpy"<<std::endl;
+    y.axpy(alpha, *x.distr_buffer);
+    std::cout << "DistrWavefunctionHandler::axpy" << std::endl;
   }
 
   value_type dot(const AL &x, const AR &y) override { return x.dot(*y.distr_buffer); }

@@ -44,7 +44,7 @@ using molpro::cout;
 namespace molpro {
 namespace gci {
 
-extern std::unique_ptr<molpro::Profiler> profiler; // global profiler
+extern std::shared_ptr<molpro::Profiler> profiler; // global profiler
 
 extern int parallel_rank, parallel_size;
 
