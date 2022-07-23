@@ -40,6 +40,8 @@ DependencyManagerDocs_Add(${PROJECT_NAME}
         # FILES README.md
         DOC_URL "https://molpro.gitlab.io/gci/${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
         # projects whose documentation has to be built before the current project.
-        DEPENDS FCIdump LinearAlgebra memory molpro-plugin Profiler symmetry_matrix utilities
+        DEPENDS FCIdump LinearAlgebra molpro-plugin Profiler
+#        symmetry_matrix
+        utilities
         )
 

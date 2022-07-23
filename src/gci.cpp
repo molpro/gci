@@ -47,7 +47,8 @@ int main(int argc, char *argv[])
     if (equals != std::string::npos && s.substr(0, equals) == "GAMEMORY")
       ga_memory = static_cast<size_t>(std::stol(s.substr(equals + 1)));
   }
-  memory_initialize(memory);
+  std::vector<double> stack(memory);
+  memory_initialize((char*)stack.data(),memory);
   MA_init(C_CHAR, 10000000, ga_memory);
   if (molpro::gci::parallel_rank == 0)
     std::cout << "memory initialised to " << memory_remaining() << std::endl;

@@ -1,6 +1,6 @@
 #include <algorithm>
 #include <iomanip>
-#include <molpro/Operator.h>
+#include <molpro/symmetry_matrix/Operator.h>
 #include "molpro/gci/gciWavefunction.h"
 #include <molpro/FCIdump.h>
 #include <molpro/gci/wavefunction/WavefunctionHandler.h>
