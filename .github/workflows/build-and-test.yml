@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      packages: write
+      packages: read
     container:
       # relies on repository name being all lower case
       image: ghcr.io/${{ github.repository }}
