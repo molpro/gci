@@ -4,8 +4,8 @@ project(gci CXX)
 include(FetchContent)
 FetchContent_Declare(
         LibraryManager
-        GIT_REPOSITORY https://gitlab+deploy-token-178345:RQZa2rmdwnV7Hdwg8XEq@gitlab.com/molpro/LibraryManager.git
-        GIT_TAG 0.7.0
+        GIT_REPOSITORY https://github.com/molpro/library-manager
+        GIT_TAG 0.11.3
 )
 FetchContent_MakeAvailable(LibraryManager)
 set(MPI ON CACHE BOOL "Whether to build with MPI" FORCE)
