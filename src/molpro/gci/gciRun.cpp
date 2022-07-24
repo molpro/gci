@@ -318,7 +318,7 @@ public:
   }
 };
 
-Run::Run(std::string fcidump) : m_hamiltonian(constructOperator(molpro::FCIdump(fcidump))) {
+Run::Run(std::string fcidump) : m_hamiltonian(constructOperator(molpro::FCIdump(fcidump,true))) {
 #ifdef HAVE_MPI_H
   mpi_comm_compute = molpro::mpi::comm_global();
   MPI_Comm_rank(mpi_comm_compute, &parallel_rank);
