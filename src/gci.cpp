@@ -8,6 +8,7 @@
 #include <macdecls.h>
 #include <molpro/memory.h>
 #include <unistd.h>
+#include <molpro/mpi.h>
 #include <ga.h>
 
 //#ifndef MOLPRO
@@ -19,8 +20,9 @@ int main(int argc, char *argv[])
 {
   char fcidumpname[1024] = "gci.fcidump";
   molpro::gci::molpro_plugin = false;
-  MPI_Init(&argc, &argv);
-  GA_Initialize();
+//  MPI_Init(&argc, &argv);
+//  GA_Initialize();
+  molpro::mpi::init();
   molpro::gci::mpi_comm_compute = molpro::mpi::comm_global();
   MPI_Comm_size(molpro::gci::mpi_comm_compute, &molpro::gci::parallel_size);
   MPI_Comm_rank(molpro::gci::mpi_comm_compute, &molpro::gci::parallel_rank);
