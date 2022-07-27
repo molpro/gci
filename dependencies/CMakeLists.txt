@@ -9,7 +9,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" PARENT_SCOPE)
 
 DependencyManager_Declare(FCIdump https://gitlab.com/molpro/fcidump.git)
 DependencyManager_Declare(LinearAlgebra https://gitlab+deploy-token-186248:BVoGyrUG_o7zpBfCcsLD@gitlab.com/molpro/linearalgebra.git)
-DependencyManager_Declare(memory git@github.com:molpro/memory)
+DependencyManager_Declare(memory git@gitlab.com:molpro/memory)
 DependencyManager_Declare(molpro-plugin https://gitlab.com/molpro/molpro-plugin.git)
 DependencyManager_Declare(Profiler https://gitlab+deploy-token-74792:Bj6FL_cWqz_8y2PNDycx@gitlab.com/molpro/profiler.git)
 DependencyManager_Declare(symmetry_matrix https://gitlab+deploy-token-74793:dLXMspxsDJozbVw7VBRF@gitlab.com/molpro/symmetry_matrix.git)
