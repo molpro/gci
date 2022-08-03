@@ -38,10 +38,8 @@ endif ()
 include(DependencyManagerDocs)
 DependencyManagerDocs_Add(${PROJECT_NAME}
         # FILES README.md
-        DOC_URL "https://molpro.gitlab.io/gci/${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
+        DOC_URL "https://molpro.github.io/gci"
         # projects whose documentation has to be built before the current project.
-        DEPENDS FCIdump iterative-solver molpro-plugin profiler
-#        symmetry_matrix
-        utilities
+        DEPENDS FCIdump iterative-solver molpro-plugin profiler utilities
         )
 
