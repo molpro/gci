@@ -1,0 +1,8 @@
+<map id="molpro::gci::MixedWavefunction" name="molpro::gci::MixedWavefunction">
+<area shape="rect" id="node1" title="Mixed bosonic and fermionic wavefunction represented as configuration expansion in the direct product..." alt="" coords="839,62,1069,89"/>
+<area shape="rect" id="node2" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="5,10,167,37"/>
+<area shape="rect" id="node4" href="$classmolpro_1_1gci_1_1State.html" title="Class represents a quantum&#45;mechanical state with or without reference to a particular representation." alt="" coords="229,36,366,62"/>
+<area shape="rect" id="node3" href="$classmolpro_1_1gci_1_1Wavefunction.html" title="The Wavefunction class, which holds a configuration expansion in the tensor space defined by a hamilt..." alt="" coords="511,36,703,62"/>
+<area shape="rect" id="node5" href="$classmolpro_1_1gci_1_1HProductSet.html" title="Collection of Hartree products." alt="" coords="515,149,698,176"/>
+<area shape="rect" id="node6" href="$structmolpro_1_1gci_1_1VibSpace.html" title="Parameters defining the vibrational space." alt="" coords="216,112,379,138"/>
+</map>

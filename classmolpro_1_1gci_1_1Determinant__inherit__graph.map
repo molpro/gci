@@ -1,0 +1,5 @@
+<map id="molpro::gci::Determinant" name="molpro::gci::Determinant">
+<area shape="rect" id="node1" title="A Slater determinant." alt="" coords="5,155,191,181"/>
+<area shape="rect" id="node2" href="$classmolpro_1_1gci_1_1State.html" title="Class represents a quantum&#45;mechanical state with or without reference to a particular representation." alt="" coords="29,80,167,107"/>
+<area shape="rect" id="node3" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="17,5,179,32"/>
+</map>

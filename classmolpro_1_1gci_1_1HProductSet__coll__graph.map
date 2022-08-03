@@ -1,0 +1,4 @@
+<map id="molpro::gci::HProductSet" name="molpro::gci::HProductSet">
+<area shape="rect" id="node1" title="Collection of Hartree products." alt="" coords="5,95,188,121"/>
+<area shape="rect" id="node2" href="$structmolpro_1_1gci_1_1VibSpace.html" title="Parameters defining the vibrational space." alt="" coords="15,5,178,32"/>
+</map>

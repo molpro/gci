@@ -1,0 +1,6 @@
+<map id="molpro::gci::OrbitalSpace" name="molpro::gci::OrbitalSpace">
+<area shape="rect" id="node1" title="The OrbitalSpace class: a container for an orbital space as specified via symmetries (1...." alt="" coords="83,155,270,181"/>
+<area shape="rect" id="node2" href="$classmolpro_1_1gci_1_1SymmetrySpace.html" title="General class to hold dimensions of symmetry blocks in a matrix or more general tensor...." alt="" coords="71,80,282,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node4" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="188,5,349,32"/>
+</map>

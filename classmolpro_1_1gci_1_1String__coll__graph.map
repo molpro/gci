@@ -1,0 +1,5 @@
+<map id="molpro::gci::String" name="molpro::gci::String">
+<area shape="rect" id="node1" title="A string, which is an ordered set of orbitals." alt="" coords="15,157,157,184"/>
+<area shape="rect" id="node2" href="$classmolpro_1_1gci_1_1State.html" title="Class represents a quantum&#45;mechanical state with or without reference to a particular representation." alt="" coords="17,81,155,108"/>
+<area shape="rect" id="node3" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="5,5,167,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="molpro::gci::MixedOpTerm" name="molpro::gci::MixedOpTerm">
+<area shape="rect" id="node1" title="One term in the mixed operator." alt="" coords="66,109,258,136"/>
+<area shape="rect" id="node2" href="$classmolpro_1_1gci_1_1VibOp.html" title="Specifies one of the hardcoded vibrational operators." alt="" coords="5,13,148,39"/>
+<area shape="rect" id="node3" href="$classmolpro_1_1Operator__.html" title=" " alt="" coords="172,5,323,47"/>
+</map>

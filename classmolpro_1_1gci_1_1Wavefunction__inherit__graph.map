@@ -1,0 +1,5 @@
+<map id="molpro::gci::Wavefunction" name="molpro::gci::Wavefunction">
+<area shape="rect" id="node1" title="The Wavefunction class, which holds a configuration expansion in the tensor space defined by a hamilt..." alt="" coords="5,155,197,181"/>
+<area shape="rect" id="node2" href="$classmolpro_1_1gci_1_1State.html" title="Class represents a quantum&#45;mechanical state with or without reference to a particular representation." alt="" coords="33,80,170,107"/>
+<area shape="rect" id="node3" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="21,5,182,32"/>
+</map>
