@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<tagfile>
+<tagfile doxygen_version="1.9.1">
   <compound kind="file">
     <name>LICENCE.md</name>
-    <path>/builds/molpro/fcidump/</path>
+    <path>/__w/fcidump/fcidump/</path>
     <filename>LICENCE_8md.html</filename>
   </compound>
   <compound kind="file">
     <name>README.md</name>
-    <path>/builds/molpro/fcidump/</path>
+    <path>/__w/fcidump/fcidump/</path>
     <filename>README_8md.html</filename>
   </compound>
   <compound kind="file">
     <name>FCIdump.cpp</name>
-    <path>/builds/molpro/fcidump/src/molpro/</path>
+    <path>/__w/fcidump/fcidump/src/molpro/</path>
     <filename>FCIdump_8cpp.html</filename>
     <includes id="FCIdump_8h" name="FCIdump.h" local="yes" imported="no">molpro/FCIdump.h</includes>
     <member kind="define">
@@ -24,38 +24,38 @@
     </member>
     <member kind="define">
       <type>#define</type>
-      <name>xout</name>
+      <name>XOUT</name>
       <anchorfile>FCIdump_8cpp.html</anchorfile>
-      <anchor>afa21db794ef1985db184c68712e54e27</anchor>
+      <anchor>ad18bcd00eb1d496676237adc16f32ae2</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FCIdumpInitialise</name>
       <anchorfile>FCIdump_8cpp.html</anchorfile>
-      <anchor>af3825b9eeb8a3715a38fc5bd42ebfae8</anchor>
-      <arglist>(char *filename)</arglist>
+      <anchor>a6eb8580913673e73477f0f75ff090db4</anchor>
+      <arglist>(const char *filename)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FCIdumpParameterS</name>
       <anchorfile>FCIdump_8cpp.html</anchorfile>
-      <anchor>a98b242f9deceb010bfa1826c8c9d85b8</anchor>
-      <arglist>(char *key, char *value)</arglist>
+      <anchor>a2a9df052eb095f1891554601ef33e42c</anchor>
+      <arglist>(const char *key, char *value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FCIdumpParameterI</name>
       <anchorfile>FCIdump_8cpp.html</anchorfile>
-      <anchor>a26701287d7bdf168f49b21ed0b3f0ce7</anchor>
-      <arglist>(char *key, int *values, int n)</arglist>
+      <anchor>a26d9db28bdd8dca84feac2a13b1a2c15</anchor>
+      <arglist>(const char *key, int *values, int n)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FCIdumpParameterF</name>
       <anchorfile>FCIdump_8cpp.html</anchorfile>
-      <anchor>a0e7578d0783e04a4cddebc4d9d2589bd</anchor>
-      <arglist>(char *key, double *values, int n)</arglist>
+      <anchor>a226ef4c6bf40067f1cedfded50eccdb1</anchor>
+      <arglist>(const char *key, double *values, int n)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -75,29 +75,29 @@
       <type>void</type>
       <name>FCIdumpAddParameterS</name>
       <anchorfile>FCIdump_8cpp.html</anchorfile>
-      <anchor>a33928317862a29fa4763e8fe52d58bd6</anchor>
-      <arglist>(char *key, char *value)</arglist>
+      <anchor>a8a4f56a6a646111215983bd9a401bd2f</anchor>
+      <arglist>(const char *key, const char *value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FCIdumpAddParameterI</name>
       <anchorfile>FCIdump_8cpp.html</anchorfile>
-      <anchor>aa293199b47797868c99d175f11541dfa</anchor>
-      <arglist>(char *key, int values[], int n)</arglist>
+      <anchor>a567600f8d70c9f78437efa73db200156</anchor>
+      <arglist>(const char *key, const int values[], int n)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FCIdumpAddParameterF</name>
       <anchorfile>FCIdump_8cpp.html</anchorfile>
-      <anchor>ae24d0b70bc5da3d6144200727efe164f</anchor>
-      <arglist>(char *key, double values[], int n)</arglist>
+      <anchor>aed7e77fc694bdcb998afcef9d4dc9dd7</anchor>
+      <arglist>(const char *key, const double values[], int n)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>FCIdumpWrite</name>
       <anchorfile>FCIdump_8cpp.html</anchorfile>
-      <anchor>a1dc2541aead93ef4a2aefc15e2458c5f</anchor>
-      <arglist>(char *filename, int type)</arglist>
+      <anchor>a557060ecee3cf551660ceb1d143f4b23</anchor>
+      <arglist>(const char *filename, int type)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -116,7 +116,7 @@
   </compound>
   <compound kind="file">
     <name>FCIdump.h</name>
-    <path>/builds/molpro/fcidump/src/molpro/</path>
+    <path>/__w/fcidump/fcidump/src/molpro/</path>
     <filename>FCIdump_8h.html</filename>
     <class kind="class">molpro::FCIdump</class>
     <namespace>molpro</namespace>
@@ -124,29 +124,29 @@
       <type>void</type>
       <name>FCIdumpInitialise</name>
       <anchorfile>FCIdump_8h.html</anchorfile>
-      <anchor>af3825b9eeb8a3715a38fc5bd42ebfae8</anchor>
-      <arglist>(char *filename)</arglist>
+      <anchor>a6eb8580913673e73477f0f75ff090db4</anchor>
+      <arglist>(const char *filename)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FCIdumpParameterS</name>
       <anchorfile>FCIdump_8h.html</anchorfile>
-      <anchor>a98b242f9deceb010bfa1826c8c9d85b8</anchor>
-      <arglist>(char *key, char *value)</arglist>
+      <anchor>a2a9df052eb095f1891554601ef33e42c</anchor>
+      <arglist>(const char *key, char *value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FCIdumpParameterI</name>
       <anchorfile>FCIdump_8h.html</anchorfile>
-      <anchor>a26701287d7bdf168f49b21ed0b3f0ce7</anchor>
-      <arglist>(char *key, int *values, int n)</arglist>
+      <anchor>a26d9db28bdd8dca84feac2a13b1a2c15</anchor>
+      <arglist>(const char *key, int *values, int n)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FCIdumpParameterF</name>
       <anchorfile>FCIdump_8h.html</anchorfile>
-      <anchor>a0e7578d0783e04a4cddebc4d9d2589bd</anchor>
-      <arglist>(char *key, double *values, int n)</arglist>
+      <anchor>a226ef4c6bf40067f1cedfded50eccdb1</anchor>
+      <arglist>(const char *key, double *values, int n)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -166,29 +166,29 @@
       <type>void</type>
       <name>FCIdumpAddParameterS</name>
       <anchorfile>FCIdump_8h.html</anchorfile>
-      <anchor>a33928317862a29fa4763e8fe52d58bd6</anchor>
-      <arglist>(char *key, char *value)</arglist>
+      <anchor>a8a4f56a6a646111215983bd9a401bd2f</anchor>
+      <arglist>(const char *key, const char *value)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FCIdumpAddParameterI</name>
       <anchorfile>FCIdump_8h.html</anchorfile>
-      <anchor>aa293199b47797868c99d175f11541dfa</anchor>
-      <arglist>(char *key, int values[], int n)</arglist>
+      <anchor>a567600f8d70c9f78437efa73db200156</anchor>
+      <arglist>(const char *key, const int values[], int n)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>FCIdumpAddParameterF</name>
       <anchorfile>FCIdump_8h.html</anchorfile>
-      <anchor>ae24d0b70bc5da3d6144200727efe164f</anchor>
-      <arglist>(char *key, double values[], int n)</arglist>
+      <anchor>aed7e77fc694bdcb998afcef9d4dc9dd7</anchor>
+      <arglist>(const char *key, const double values[], int n)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
       <name>FCIdumpWrite</name>
       <anchorfile>FCIdump_8h.html</anchorfile>
-      <anchor>a1dc2541aead93ef4a2aefc15e2458c5f</anchor>
-      <arglist>(char *filename, int type)</arglist>
+      <anchor>a557060ecee3cf551660ceb1d143f4b23</anchor>
+      <arglist>(const char *filename, int type)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -200,7 +200,7 @@
   </compound>
   <compound kind="file">
     <name>FCIdumpF.F90</name>
-    <path>/builds/molpro/fcidump/src/molpro/</path>
+    <path>/__w/fcidump/fcidump/src/molpro/</path>
     <filename>FCIdumpF_8F90.html</filename>
     <class kind="interface">fcidumpf::FCIdumpInitialiseC</class>
     <class kind="interface">fcidumpf::FCIdumpParameterS</class>
@@ -710,15 +710,15 @@
   <compound kind="namespace">
     <name>fcidumpf</name>
     <filename>namespacefcidumpf.html</filename>
-    <class kind="interface">fcidumpf::FCIdumpAddParameterF</class>
-    <class kind="interface">fcidumpf::FCIdumpAddParameterI</class>
-    <class kind="interface">fcidumpf::FCIdumpAddParameterS</class>
-    <class kind="interface">fcidumpf::FCIdumpFNextIntegralC</class>
     <class kind="interface">fcidumpf::FCIdumpInitialiseC</class>
-    <class kind="interface">fcidumpf::FCIdumpParameterF</class>
-    <class kind="interface">fcidumpf::FCIdumpParameterI</class>
     <class kind="interface">fcidumpf::FCIdumpParameterS</class>
+    <class kind="interface">fcidumpf::FCIdumpParameterI</class>
+    <class kind="interface">fcidumpf::FCIdumpParameterF</class>
+    <class kind="interface">fcidumpf::FCIdumpAddParameterS</class>
+    <class kind="interface">fcidumpf::FCIdumpAddParameterI</class>
+    <class kind="interface">fcidumpf::FCIdumpAddParameterF</class>
     <class kind="interface">fcidumpf::FCIdumpRewindC</class>
+    <class kind="interface">fcidumpf::FCIdumpFNextIntegralC</class>
     <class kind="interface">fcidumpf::FCIdumpWrite</class>
     <class kind="interface">fcidumpf::FCIdumpWriteIntegralC</class>
     <member kind="function">
@@ -806,13 +806,14 @@
     <docanchor file="namespacemolpro.html">Introduction</docanchor>
   </compound>
   <compound kind="page">
-    <name>md__builds_molpro_fcidump_LICENCE</name>
+    <name>md____w_fcidump_fcidump_LICENCE</name>
     <title>LICENCE</title>
-    <filename>md__builds_molpro_fcidump_LICENCE</filename>
+    <filename>md____w_fcidump_fcidump_LICENCE.html</filename>
   </compound>
   <compound kind="page">
     <name>index</name>
     <title>FCIdump</title>
-    <filename>index</filename>
+    <filename>index.html</filename>
+    <docanchor file="index.html">md____w_fcidump_fcidump_README</docanchor>
   </compound>
 </tagfile>
