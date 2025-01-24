@@ -663,10 +663,9 @@ void Wavefunction::operatorOnWavefunction(
       for (unsigned int symb = 0; symb < 8; symb++) { // symmetry of N-1 electron state
         unsigned int symexc = w.symmetry ^ syma ^ symb;
         //        cout << "syma="<<syma<<" symb="<<symb<<" symexc="<<symexc<<std::endl;
-        if (m_tilesize > 0) {
-          nsaaMax = size_t(m_tilesize) / std::max(size_t(1),betaStrings[symb].size()) + 1;
-          nsbbMax = size_t(m_tilesize) / std::max(size_t(1),alphaStrings[symb].size()) + 1;
-        }
+        auto tilesize = m_tilesize > 0 ? m_tilesize : 1000;
+        nsaaMax = size_t(tilesize) / std::max(size_t(1),betaStrings[symb].size()) + 1;
+        nsbbMax = size_t(tilesize) / std::max(size_t(1),alphaStrings[symb].size()) + 1;
         if (m_alphatilesize > 0 && m_betatilesize > 0) {
           nsaaMax = m_alphatilesize;
           nsbbMax = m_betatilesize;
