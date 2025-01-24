@@ -7797,6 +7797,13 @@
       <anchor>af4fc19800b03d96ce7185daafe8c84a1</anchor>
       <arglist></arglist>
     </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>m_quasinewton_maximum_step</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1OptimizeBFGS.html</anchorfile>
+      <anchor>a4ea11459f591fea9ce30b9ac3d3dab66</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>molpro::linalg::itsolv::OptimizeBFGSOptions</name>
@@ -7870,6 +7877,13 @@
       <name>linesearch_grow_factor</name>
       <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1OptimizeBFGSOptions.html</anchorfile>
       <anchor>af0caac94a3d9e2dbc7080de6a2d69053</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::optional&lt; double &gt;</type>
+      <name>quasinewton_maximum_step</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1OptimizeBFGSOptions.html</anchorfile>
+      <anchor>a10077924e329f444e1e18b30441734ef</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -10594,6 +10608,13 @@
       <name>mpicomm_kind</name>
       <anchorfile>namespaceiterative__solver.html</anchorfile>
       <anchor>a8e7b0afa0169579bd571c1aac764d4e8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>integer, public</type>
+      <name>iterative_solver_iterations</name>
+      <anchorfile>namespaceiterative__solver.html</anchorfile>
+      <anchor>a260bebdd67c530e7e08bf211bc44760b</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
