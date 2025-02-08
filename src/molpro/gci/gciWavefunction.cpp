@@ -647,7 +647,6 @@ void Wavefunction::operatorOnWavefunction(
   //  for (const auto& s : betaActiveStrings) for (const auto& ss : s) cout <<ss<<std::endl;
 
   if (true) {
-    cout << "about to push 1-electron RI on rank "<<m_parallel_rank<<std::endl;
     auto p = profiler->push("1-electron RI");
     size_t nsaaMax = 1000000000;
     size_t nsbbMax = 1000000000;
