@@ -4,6 +4,7 @@
 
 #include <molpro/linalg/array/util/Distribution.h>
 #include <mpi.h>
+#include <limits>
 
 namespace molpro {
 namespace gci {
@@ -97,7 +98,7 @@ void MixedWavefunction::accumulate(int iVib, Wavefunction &wfn) {
 void MixedWavefunction::operatorOnWavefunction(const MixedOperatorSecondQuant &ham, const MixedWavefunction &w,
                                                bool parallel_stringset, bool with_sync) {
   if (with_sync)
-    DivideTasks(1000000000, 1, 1, distr_buffer->communicator());
+    DivideTasks(std::numeric_limits<size_t>::max(), 1, 1, distr_buffer->communicator());
   auto prof = profiler->push("MixedWavefunction::operatorOnWavefunction");
   auto res = Wavefunction{m_prototype, 0, m_child_communicator};
   std::unique_ptr<Wavefunction> res2;
@@ -195,7 +196,7 @@ void MixedWavefunction::operatorOnWavefunction(const MixedOperatorSecondQuant &h
 void MixedWavefunction::diagonalOperator(const MixedOperatorSecondQuant &ham, bool parallel_stringset) {
   auto p = profiler->push("MixedWavefunction::diagonalOperator");
   distr_buffer->zero();
-  DivideTasks(1000000000, 1, 1, distr_buffer->communicator());
+  DivideTasks(std::numeric_limits<size_t>::max(), 1, 1, distr_buffer->communicator());
   auto res = Wavefunction{m_prototype, 0, m_child_communicator};
   auto wfn = Wavefunction{m_prototype, 0, m_child_communicator};
   res.allocate_buffer();

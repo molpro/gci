@@ -5,6 +5,7 @@
 #include "wavefunction/WavefunctionHandler.h"
 #include <molpro/linalg/itsolv/LinearEigensystemDavidsonOptions.h>
 
+#include <limits>
 #include <fstream>
 #ifdef HAVE_HDF5
 #include <hdf5.h>
@@ -476,7 +477,7 @@ void Davidson<MixedWavefunction, MixedOperatorSecondQuant>::action(const std::ve
   for (size_t k = 0; k < working_set.size(); ++k)
     gg[k].zero();
   gg[0].sync();
-  DivideTasks(10000000000, 1, 1, gg[0].distr_buffer->communicator());
+  DivideTasks(std::numeric_limits<size_t>::max(), 1, 1, gg[0].distr_buffer->communicator());
   for (size_t k = 0; k < working_set.size(); ++k) {
     auto &x = ww[k];
     auto &g = gg[k];

@@ -18,6 +18,7 @@
 #include <molpro/linalg/array/util/Distribution.h>
 #include <set>
 #include <vector>
+#include <limits>
 
 namespace molpro {
 namespace gci {
@@ -639,13 +640,14 @@ void Wavefunction::operatorOnWavefunction(
   //  cout <<"residual after 0-electron:"<<std::endl<<str(2)<<std::endl;
 
   //  cout <<std::endl<<"w in operatorOnWavefunction="<<w.str(2)<<std::endl;
-  DivideTasks(99999999, 1, 1, m_communicator);
+  DivideTasks(std::numeric_limits<size_t>::max(), 1, 1, m_communicator);
   const auto alphaActiveStrings = w.activeStrings(true);
   const auto betaActiveStrings = w.activeStrings(false);
   //  cout << "betaActiveStrings"<<std::endl;
   //  for (const auto& s : betaActiveStrings) for (const auto& ss : s) cout <<ss<<std::endl;
 
   if (true) {
+    cout << "about to push 1-electron RI on rank "<<m_parallel_rank<<std::endl;
     auto p = profiler->push("1-electron RI");
     size_t nsaaMax = 1000000000;
     size_t nsbbMax = 1000000000;
@@ -913,7 +915,7 @@ molpro::Operator Wavefunction::density(int rank, bool uhf, bool hermitian, const
   result.m_O0 = (*this) * (*bra);
   //  std::cout << "@@@ density after zero before construct\n"<<result.str("result",3)<<std::endl;
 
-  DivideTasks(99999999, 1, 1, m_communicator);
+  DivideTasks(std::numeric_limits<size_t>::max(), 1, 1, m_communicator);
 
   {
     auto p = profiler->push("1-electron");
