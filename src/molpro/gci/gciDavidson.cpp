@@ -206,7 +206,7 @@ void Davidson<MixedWavefunction, MixedOperatorSecondQuant>::prepareGuess() {
   // Currently assumes only 1 mode
   if (options.parameter("NOGUESS", int(0)))
     return;
-  auto prof = profiler->push("prepareGuess");
+  // auto prof = profiler->push("prepareGuess");
   auto nMode = options.parameter("NMODE", int(0));
   if (nMode != 1)
     return;
@@ -386,7 +386,7 @@ void Davidson<MixedWavefunction, MixedOperatorSecondQuant>::analysis() {
 
 template <class t_Wavefunction, class t_Operator>
 void Davidson<t_Wavefunction, t_Operator>::run() {
-  auto prof = profiler->push("Davidson");
+  // auto prof = profiler->push("Davidson");
   message();
   initialize();
   prepareGuess();
@@ -467,7 +467,7 @@ void Davidson<t_Wavefunction, t_Operator>::action(const std::vector<int> &workin
   for (size_t k = 0; k < working_set.size(); ++k) {
     const auto &x = ww[k];
     auto &g = gg[k];
-    auto prof = profiler->push("Hc");
+    // auto prof = profiler->push("Hc");
     g.operatorOnWavefunction(ham, x, false);
   }
 }
@@ -481,7 +481,7 @@ void Davidson<MixedWavefunction, MixedOperatorSecondQuant>::action(const std::ve
   for (size_t k = 0; k < working_set.size(); ++k) {
     auto &x = ww[k];
     auto &g = gg[k];
-    auto prof = profiler->push("Hc");
+    // auto prof = profiler->push("Hc");
     g.operatorOnWavefunction(ham, x, false, false);
   }
   for (const auto &g : gg)

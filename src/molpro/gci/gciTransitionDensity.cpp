@@ -48,10 +48,10 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
   assert(molpro::array<double>::size() == m_nsa * m_nsb * m_excitations);
   if (empty())
     return;
-  auto prof = profiler->push("TransitionDensity");
+  // auto prof = profiler->push("TransitionDensity");
   {
-    auto prof = profiler->push("initialise");
-    prof += size();
+    // auto prof = profiler->push("initialise");
+    // prof += size();
     assign(0); // TODO needed?
   }
 
@@ -59,7 +59,7 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
     m_hasAlpha = doAlpha;
     m_hasBeta = doBeta;
     if (doAlpha) {
-      auto prof2 = profiler->push("TransitionDensity_alpha");
+      // auto prof2 = profiler->push("TransitionDensity_alpha");
       // alpha excitations
       const unsigned int wsymb = m_symb;
       const unsigned int wsyma = w.symmetry ^ wsymb;
@@ -85,7 +85,7 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
           }
 
         } else {
-          prof2 += ee.size() * m_nsb * 2;
+          // prof2 += ee.size() * m_nsb * 2;
           for (const auto &e : ee) {
             if (e.phase < 0)
               for (size_t ib = 0; ib < m_nsb; ib++)
@@ -100,7 +100,7 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
     }
 
     if (doBeta) {
-      auto prof2 = profiler->push("TransitionDensity_beta");
+      // auto prof2 = profiler->push("TransitionDensity_beta");
       // beta excitations
       const unsigned int wsyma = m_syma;
       const unsigned int wsymb = w.symmetry ^ wsyma;
@@ -127,7 +127,7 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
             }
           }
         } else {
-          prof2 += ee.size() * m_nsa * 2;
+          // prof2 += ee.size() * m_nsa * 2;
           auto v = &((*this)[offb]);
           for (const auto &e : ee) {
             if (e.phase < 0)
@@ -150,7 +150,7 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
 
   } else if (m_deltaBeta == 0 &&
              m_deltaAlpha > 0) { // wavefunction has deltaAlpha more alpha electrons than interacting states
-    auto prof2 = profiler->push("TransitionDensity_alpha_alpha");
+    // auto prof2 = profiler->push("TransitionDensity_alpha_alpha");
     m_hasAlpha = true;
     m_hasBeta = false;
     const unsigned int wsymb = m_symb;
@@ -178,7 +178,7 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
           }
         }
       } else {
-        prof2 += ee.size() * m_nsb * 2;
+        // prof2 += ee.size() * m_nsb * 2;
         for (const auto &e : ee) {
           if (e.phase < 0) {
             for (size_t ib = 0; ib < m_nsb; ib++)
@@ -193,7 +193,7 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
     }
   } else if (m_deltaAlpha == 0 &&
              m_deltaBeta > 0) { // wavefunction has deltaBeta more beta electrons than interacting states
-    auto prof2 = profiler->push("TransitionDensity_beta_beta");
+    // auto prof2 = profiler->push("TransitionDensity_beta_beta");
     m_hasAlpha = false;
     m_hasBeta = true;
     const unsigned int wsyma = m_syma;
@@ -219,7 +219,7 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
           }
         }
       } else {
-        prof2 += ee.size() * m_nsa * 2;
+        // prof2 += ee.size() * m_nsa * 2;
         for (const auto &e : ee) {
           if (e.phase < 0) {
             for (size_t ia = 0; ia < m_nsa; ia++)
@@ -236,7 +236,7 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
     }
   } else if (m_deltaAlpha == 1 &&
              m_deltaBeta == 1) { // wavefunction has 1 more alpha and beta electrons than interacting states
-    auto prof2 = profiler->push("TransitionDensity_alpha_beta");
+    // auto prof2 = profiler->push("TransitionDensity_alpha_beta");
     if (m_parity != molpro::parityNone)
       throw std::logic_error("wrong parity in alpha-beta");
     m_hasAlpha = true;
@@ -280,7 +280,7 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
           }
         } else {
           for (const auto &eeb : eebs) {
-            prof2 += eea.size() * eeb.size() * 2;
+            // prof2 += eea.size() * eeb.size() * 2;
             for (const auto &eb : eeb) {
               if (eb.phase > 0) {
                 for (const auto &ea : eea)
@@ -310,7 +310,7 @@ TransitionDensity::TransitionDensity(const Wavefunction &w, const StringSet::con
 void TransitionDensity::action(Wavefunction &w) const {
   if (m_nsa * m_nsb * m_excitations == 0)
     return;
-  auto prof = profiler->push("TransitionDensity::action");
+  // auto prof = profiler->push("TransitionDensity::action");
 
   if (m_deltaAlpha == 0 && m_deltaBeta == 0) { // number of electrons preserved, so one-electron excitation
 
@@ -339,7 +339,7 @@ void TransitionDensity::action(Wavefunction &w) const {
             }
           }
         } else {
-          prof += ee.size() * m_nsb * 2;
+          // prof += ee.size() * m_nsb * 2;
           for (const auto &e : ee) {
             if (e.phase < 0) {
               for (size_t ib = 0; ib < m_nsb; ib++)
@@ -379,7 +379,7 @@ void TransitionDensity::action(Wavefunction &w) const {
             }
           }
         } else {
-          prof += ee.size() * m_nsa * 2;
+          // prof += ee.size() * m_nsa * 2;
           for (const auto &e : ee) {
             if (e.phase < 0) {
               for (size_t ia = 0; ia < m_nsa; ia++)
@@ -496,7 +496,7 @@ void TransitionDensity::action(Wavefunction &w) const {
         }
         if (w.m_sparse) {
           for (const auto &eeb : eebs) {
-            prof += eea.size() * eeb.size() * 2;
+            // prof += eea.size() * eeb.size() * 2;
             for (const auto &eb : eeb) {
               if (eb.phase > 0)
                 for (const auto &ea : eea) {
@@ -515,7 +515,7 @@ void TransitionDensity::action(Wavefunction &w) const {
           }
         } else {
           for (const auto &eeb : eebs) {
-            prof += eea.size() * eeb.size() * 2;
+            // prof += eea.size() * eeb.size() * 2;
             for (const auto &eb : eeb) {
               if (eb.phase > 0)
                 for (const auto &ea : eea) {

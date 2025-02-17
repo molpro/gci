@@ -45,7 +45,7 @@ StringSet::StringSet(const std::vector<StringSet> &referenceSpaces, int annihila
 void StringSet::addByOperators(const std::vector<StringSet> &referenceSpaces, int annihilations, int creations, int sym,
                                bool parallel) {
   parallel = false;
-  auto p = profiler->push("StringSet::addByOperators[]");
+  // auto p = profiler->push("StringSet::addByOperators[]");
   // std::cout <<"referenceSpaces="<<&referenceSpaces<<std::endl;std::cout.flush();
   //  std::cout << "addByOperators: referenceSpaces.size()=" << referenceSpaces.size() << std::endl;
   //  std::cout.flush();
@@ -66,7 +66,7 @@ void StringSet::addByOperators(const std::vector<StringSet> &referenceSpaces, in
 #ifdef HAVE_MPI_H
   if (parallel) {
     //        EndTasks();
-    auto pp = profiler->push("StringSet::addByOperators:distribute");
+    // auto pp = profiler->push("StringSet::addByOperators:distribute");
     std::vector<char> serialised;
     for (const auto &s : *this) {
       std::vector<char> serialised1 = s.serialise();
@@ -311,7 +311,7 @@ long StringSet::binomial_coefficient(unsigned long n, unsigned long k) {
 }
 
 void StringSet::complete(int sym) {
-  auto p = profiler->push("StringSet::complete");
+  // auto p = profiler->push("StringSet::complete");
   //      cout <<"StringSet::complete prototype"<<proto.str(1)<<std::endl;
   String string(&proto);
   this->erase(this->begin(), this->end());

@@ -127,7 +127,7 @@ public:
       //        cout << "g "<<g->str(2)<<std::endl;
       //        g->zero();
       {
-        auto prof = profiler->push("Hc");
+        // auto prof = profiler->push("Hc");
         g.operatorOnWavefunction(m_hamiltonian, x, parallel_stringset);
         //        cout << "g "<<g->str(2)<<std::endl;
         //        cout << "g=Hc "<<g->str(2)<<std::endl;
@@ -180,7 +180,7 @@ public:
       w.m_sparse = true;
       for (size_t i = 0; i < m_P.size(); i++)
         w.buffer_sparse.insert({m_P[i].begin()->first, Pcoeff[k][i]});
-      auto prof = profiler->push("HcP");
+      // auto prof = profiler->push("HcP");
       g.operatorOnWavefunction(m_hamiltonian, w);
     }
   }
@@ -201,7 +201,7 @@ public:
     for (size_t k = 0; k < psx.size(); k++) {
       const Wavefunction& x = psx[k];
       Wavefunction& g = outputs[k];
-      auto p = profiler->push("Mean field residual");
+      // auto p = profiler->push("Mean field residual");
       //        cout << "_meanfield_residual: append"<<append<<std::endl;
       //        cout << "_meanfield_residual: b0m"<<_IPT_b0m->values()<<std::endl;
       //        cout <<&g->buffer[0]<<" "<<&_IPT_b0m->buffer[0]<<std::endl;
@@ -350,16 +350,16 @@ Run::Run(std::string fcidump) : m_hamiltonian(constructOperator(molpro::FCIdump(
   //  cout << "FUNKY "<< options.parameter("FUNKY",std::vector<int>{999})[0]<<std::endl;
 }
 
-std::unique_ptr<molpro::Profiler> profiler = nullptr;
+// std::unique_ptr<molpro::Profiler> profiler = nullptr;
 std::vector<double> Run::run() {
-  if (profiler == nullptr)
-    profiler = std::make_unique<molpro::Profiler>("GCI");
+  // if (profiler == nullptr)
+    // profiler = std::make_unique<molpro::Profiler>("GCI");
   create_new_counter(mpi_comm_compute);
   _sub_communicator = create_new_comm();
-  profiler->reset("GCI");
+  // profiler->reset("GCI");
   int activeLvl = options.parameter("PROFACTIVE", -1);
-  if (activeLvl >= 0)
-    profiler->set_max_depth(activeLvl);
+  // if (activeLvl >= 0)
+    // profiler->set_max_depth(activeLvl);
   cout << "PROGRAM * GCI (General Configuration Interaction)     Author: Peter Knowles, 2014" << std::endl;
   std::vector<double> energies;
   std::string method = options.parameter("METHOD", std::vector<std::string>(1, "DAVIDSON")).at(0);
@@ -373,7 +373,7 @@ std::vector<double> Run::run() {
   Determinant referenceDeterminant;
   State prototype;
   { // so that w goes out of scope
-    auto p = profiler->push("find reference");
+    // auto p = profiler->push("find reference");
     Wavefunction w(
         State(m_hamiltonian, options.parameter("NELEC"), options.parameter("ISYM") - 1, options.parameter("MS2")));
     w.diagonalOperator(m_hamiltonian);
@@ -524,9 +524,9 @@ std::vector<double> Run::run() {
 
   {
     auto profile = options.parameter("PROFILER", std::vector<int>(1, -1)).at(0);
-    if (profile > 1)
-      cout << profiler->str(false) << std::endl;
-    cout << profiler->str(true) << std::endl;
+    // if (profile > 1)
+      // cout << profiler->str(false) << std::endl;
+    // cout << profiler->str(true) << std::endl;
   }
   _nextval_counter[mpi_comm_compute].reset(nullptr);
 
@@ -590,8 +590,8 @@ std::vector<double> Run::run() {
 }
 
 Run::~Run() {
-  cout << *profiler << std::endl;
-  profiler.reset();
+  // cout << *profiler << std::endl;
+  // profiler.reset();
   _nextval_counter.clear();
 }
 
@@ -607,8 +607,8 @@ static molpro::Operator* projector(const molpro::Operator& source, std::string s
 std::vector<double> Run::DIIS(const molpro::Operator& ham, const State& prototype, double energyThreshold,
                               int maxIterations) {
   std::unique_ptr<molpro::Operator> residual_Q;
-  profiler->start("DIIS");
-  profiler->start("DIIS preamble");
+  // profiler->start("DIIS");
+  // profiler->start("DIIS preamble");
   //  cout << "on entry to Run::DIIS energyThreshold="<<energyThreshold<<std::endl;
   if (maxIterations < 0)
     maxIterations = options.parameter("MAXIT", 1000);
@@ -667,7 +667,7 @@ std::vector<double> Run::DIIS(const molpro::Operator& ham, const State& prototyp
 
 std::vector<double> Run::Davidson(const molpro::Operator& ham, const State& prototype, double energyThreshold,
                                   int nState, int maxIterations) {
-  auto p = profiler->push("Davidson");
+  // auto p = profiler->push("Davidson");
   //  profiler->start("Davidson preamble");
   //  cout << "on entry to Run::Davidson energyThreshold="<<energyThreshold<<std::endl;
   if (maxIterations < 0)
@@ -789,8 +789,8 @@ std::vector<double> Run::Davidson(const molpro::Operator& ham, const State& prot
 
 std::vector<double> Run::CSDavidson(const molpro::Operator& ham, const State& prototype, double energyThreshold,
                                     int nState, int maxIterations) {
-  profiler->start("Davidson");
-  profiler->start("Davidson preamble");
+  // profiler->start("Davidson");
+  // profiler->start("Davidson preamble");
   // cout << "on entry to Run::Davidson energyThreshold="<<energyThreshold<<std::endl;
   if (nState < 0)
     nState = options.parameter("NSTATE", 1);
@@ -826,16 +826,16 @@ std::vector<double> Run::CSDavidson(const molpro::Operator& ham, const State& pr
   w.set(reference, (double)1);
   std::vector<double> reducedHamiltonian;
   std::vector<double> elast(static_cast<unsigned long>(nState), e0 + 1);
-  profiler->stop("Davidson preamble");
+  // profiler->stop("Davidson preamble");
   for (int n = 0; n < maxIterations; n++) {
     w.putw(wfile, n);
     g.set((double)0);
-    profiler->start("Davidson Hc");
+    // profiler->start("Davidson Hc");
     g.operatorOnWavefunction(ham, w);
-    profiler->stop("Davidson Hc");
+    // profiler->stop("Davidson Hc");
     g.putw(gfile, n);
     reducedHamiltonian.resize((size_t)(n + 1) * (n + 1));
-    profiler->start("Davidson build rH");
+    // profiler->start("Davidson build rH");
     {
       for (int i = n - 1; i > -1; i--)
         for (int j = n - 1; j > -1; j--)
@@ -848,7 +848,7 @@ std::vector<double> Run::CSDavidson(const molpro::Operator& ham, const State& pr
       for (int i = 0; i < n + 1; i++)
         reducedHamiltonian[n + i * (n + 1)] = reducedHamiltonian[i + n * (n + 1)];
     }
-    profiler->stop("Davidson build rH");
+    // profiler->stop("Davidson build rH");
     // { cout << "Reduced hamiltonian:"<<std::endl; for (int i=0; i < n+1; i++) { for (int j=0; j < n+1; j++) cout <<"
     // "<<reducedHamiltonian[j+(n+1)*i]; cout << std::endl; } }
     std::vector<double> eigenvectors(reducedHamiltonian);
@@ -936,7 +936,7 @@ std::vector<double> Run::CSDavidson(const molpro::Operator& ham, const State& pr
 
     // penalised equation solver here
 
-    profiler->start("Davidson residual");
+    // profiler->start("Davidson residual");
     if (compressive) {
       g.set((double)0);
       for (int i = 0; i <= n; i++) {
@@ -982,7 +982,7 @@ std::vector<double> Run::CSDavidson(const molpro::Operator& ham, const State& pr
       //      w += factor*g;
       w.axpy(factor, g);
     }
-    profiler->stop("Davidson residual");
+    // profiler->stop("Davidson residual");
     double norm2 = w * w;
     gsum(&norm2, 1, mpi_comm_compute);
 
@@ -1004,7 +1004,7 @@ std::vector<double> Run::CSDavidson(const molpro::Operator& ham, const State& pr
       continue;
 
     {
-      profiler->start("Histogram");
+      // profiler->start("Histogram");
       w.set((double)0);
       for (int i = 0; i <= n; i++) {
         g.getw(wfile, i);
@@ -1033,11 +1033,11 @@ std::vector<double> Run::CSDavidson(const molpro::Operator& ham, const State& pr
       // put the histogram to Molpro variable space
       set_molpro_variable("HISTOGRAM_X", edges);
       set_molpro_variable("HISTOGRAM_Y", cumulative);
-      profiler->stop("Histogram");
+      // profiler->stop("Histogram");
     }
     break;
   }
-  profiler->stop("Davidson");
+  // profiler->stop("Davidson");
   return e;
 }
 

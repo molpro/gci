@@ -35,14 +35,14 @@ void molpro::gci::Problem::p_action(const std::vector<std::vector<value_t>>& p_c
       assert(pparams[i].get().size() == 1);
       w.buffer_sparse.insert({pparams[i].get().begin()->first, p_coefficients[k][i]});
     }
-    auto prof = profiler->push("HcP");
+    // auto prof = profiler->push("HcP");
     g.operatorOnWavefunction(m_hamiltonian, w);
   }
 }
 
 std::vector<double>
 molpro::gci::Problem::pp_action_matrix(const std::vector<std::map<size_t, container_t::value_type>>& pparams) const {
-  auto prof = profiler->push("HPP");
+  // auto prof = profiler->push("HPP");
   constexpr size_t NP = 0;
   const auto newNP = pparams.size();
   std::vector<double> addHPP(newNP * (newNP - NP), (double)0);

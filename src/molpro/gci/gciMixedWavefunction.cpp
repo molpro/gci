@@ -68,7 +68,7 @@ void MixedWavefunction::ga_wfn_block_bound(int iVib, int *lo, int *hi, int dimen
 }
 
 void MixedWavefunction::copy_to_local(const MixedWavefunction &w, int iVib, Wavefunction &wfn) {
-  auto p = profiler->push("copy_to_local");
+  // auto p = profiler->push("copy_to_local");
   double *buffer = wfn.buffer.data();
   auto dimension = wfn.dimension;
   int lo, hi, ld = dimension;
@@ -78,7 +78,7 @@ void MixedWavefunction::copy_to_local(const MixedWavefunction &w, int iVib, Wave
 }
 
 void MixedWavefunction::put(int iVib, Wavefunction &wfn) {
-  auto p = profiler->push("put");
+  // auto p = profiler->push("put");
   double *buffer = wfn.buffer.data();
   auto dimension = wfn.dimension;
   int lo, hi, ld = dimension;
@@ -87,7 +87,7 @@ void MixedWavefunction::put(int iVib, Wavefunction &wfn) {
 }
 
 void MixedWavefunction::accumulate(int iVib, Wavefunction &wfn) {
-  auto p = profiler->push("accumulate");
+  // auto p = profiler->push("accumulate");
   double *buffer = wfn.buffer.data();
   auto dimension = wfn.dimension;
   int lo, hi, ld = dimension;
@@ -99,7 +99,7 @@ void MixedWavefunction::operatorOnWavefunction(const MixedOperatorSecondQuant &h
                                                bool parallel_stringset, bool with_sync) {
   if (with_sync)
     DivideTasks(std::numeric_limits<size_t>::max(), 1, 1, distr_buffer->communicator());
-  auto prof = profiler->push("MixedWavefunction::operatorOnWavefunction");
+  // auto prof = profiler->push("MixedWavefunction::operatorOnWavefunction");
   auto res = Wavefunction{m_prototype, 0, m_child_communicator};
   std::unique_ptr<Wavefunction> res2;
   auto ketWfn = Wavefunction{m_prototype, 0, m_child_communicator};
@@ -114,28 +114,28 @@ void MixedWavefunction::operatorOnWavefunction(const MixedOperatorSecondQuant &h
     auto iBra = m_vibBasis.index(bra);
     // Purely electronic operators
     if (NextTask(distr_buffer->communicator()) && !ham.elHam.empty()) {
-      auto p = profiler->push("Hel");
+      // auto p = profiler->push("Hel");
       copy_to_local(w, iBra, ketWfn);
       if (!zeroed) {
         res.zero();
         zeroed = true;
       }
       for (const auto &hel : ham.elHam) {
-        auto p = profiler->push(hel.first);
+        // auto p = profiler->push(hel.first);
         auto op = hel.second.get();
         res.operatorOnWavefunction(*op, ketWfn, parallel_stringset);
       }
     }
     // Purely electronic operators applied twice
     if (NextTask(distr_buffer->communicator()) && !ham.elHam2.empty()) {
-      auto p = profiler->push("Hel2");
+      // auto p = profiler->push("Hel2");
       copy_to_local(w, iBra, ketWfn);
       if (!zeroed) {
         res.zero();
         zeroed = true;
       }
       for (const auto &hel : ham.elHam2) {
-        auto p = profiler->push(hel.first);
+        // auto p = profiler->push(hel.first);
         auto op = hel.second.get();
         res2->zero();
         res2->operatorOnWavefunction(*op, ketWfn, parallel_stringset);
@@ -144,7 +144,7 @@ void MixedWavefunction::operatorOnWavefunction(const MixedOperatorSecondQuant &h
     }
     // Purely vibrational operators
     if (NextTask(distr_buffer->communicator())) {
-      auto p = profiler->push("Hvib");
+      // auto p = profiler->push("Hvib");
       if (!zeroed) {
         res.zero();
         zeroed = true;
@@ -161,7 +161,7 @@ void MixedWavefunction::operatorOnWavefunction(const MixedOperatorSecondQuant &h
     }
     // Mixed operators
     for (const auto &ket : m_vibBasis) {
-      auto p = profiler->push("Hmixed");
+      // auto p = profiler->push("Hmixed");
       auto iKet = m_vibBasis.index(ket);
       if (!ham.connected(bra, ket))
         continue;
@@ -194,7 +194,7 @@ void MixedWavefunction::operatorOnWavefunction(const MixedOperatorSecondQuant &h
 }
 
 void MixedWavefunction::diagonalOperator(const MixedOperatorSecondQuant &ham, bool parallel_stringset) {
-  auto p = profiler->push("MixedWavefunction::diagonalOperator");
+  // auto p = profiler->push("MixedWavefunction::diagonalOperator");
   distr_buffer->zero();
   DivideTasks(std::numeric_limits<size_t>::max(), 1, 1, distr_buffer->communicator());
   auto res = Wavefunction{m_prototype, 0, m_child_communicator};

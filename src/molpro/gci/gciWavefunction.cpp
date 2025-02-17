@@ -81,7 +81,7 @@ Wavefunction::Wavefunction(const Wavefunction &source, int option, MPI_Comm comm
 Wavefunction::Wavefunction(const Wavefunction &source) : Wavefunction(source, 0, source.m_communicator) {}
 
 void Wavefunction::buildStrings() {
-  profiler->start("buildStrings");
+  // profiler->start("buildStrings");
   alphaStrings.resize(8);
   betaStrings.resize(8);
   dimension = 0;
@@ -97,7 +97,7 @@ void Wavefunction::buildStrings() {
     _blockOffset[syma] = dimension;
     dimension += alphaStrings[syma].size() * betaStrings[symb].size();
   }
-  profiler->stop("buildStrings");
+  // profiler->stop("buildStrings");
 }
 
 Wavefunction &Wavefunction::operator=(const std::map<size_t, double> &source) {
@@ -140,7 +140,7 @@ void Wavefunction::set(const double value) {
 }
 
 void Wavefunction::diagonalOperator(const molpro::Operator &op) {
-  auto p = profiler->push("diagonalOperator");
+  // auto p = profiler->push("diagonalOperator");
   auto ha = int1(op, true);
   auto hbb = int1(op, false);
   Eigen::MatrixXd Jaa;
@@ -589,8 +589,8 @@ using uint = unsigned int;
 void MXM(double *Out, const double *A, const double *B, uint nRows, uint nLink, uint nCols, bool AddToDest,
          int nStrideLink = -1) {
   const bool debug = false;
-  auto prof = profiler->push("MXM");
-  prof += 2 * nLink * size_t(nCols) * nRows;
+  // auto prof = profiler->push("MXM");
+  // prof += 2 * nLink * size_t(nCols) * nRows;
   if (nStrideLink < 0) {
     if (debug && AddToDest)
       cout << "MXM initial Out\n" << Eigen::Map<Eigen::MatrixXd>(Out, nRows, nCols) << std::endl;
@@ -614,8 +614,8 @@ void MXM(double *Out, const double *A, const double *B, uint nRows, uint nLink, 
 void Wavefunction::operatorOnWavefunction(
     const molpro::Operator &h, const Wavefunction &w,
     bool parallel_stringset) { // FIXME not really thoroughly checked if the symmetry of h is not zero.
-  auto prof = profiler->push("operatorOnWavefunction" + std::string(m_sparse ? "/sparse" : "") +
-                             std::string(w.m_sparse ? "/sparse" : ""));
+  // auto prof = profiler->push("operatorOnWavefunction" + std::string(m_sparse ? "/sparse" : "") +
+                             // std::string(w.m_sparse ? "/sparse" : ""));
   if (m_sparse)
     buffer_sparse.clear();
   if (m_parallel_rank == 0) {
@@ -647,7 +647,7 @@ void Wavefunction::operatorOnWavefunction(
   //  for (const auto& s : betaActiveStrings) for (const auto& ss : s) cout <<ss<<std::endl;
 
   if (true) {
-    auto p = profiler->push("1-electron RI");
+    // auto p = profiler->push("1-electron RI");
     size_t nsaaMax = 1000000000;
     size_t nsbbMax = 1000000000;
     std::vector<StringSet> bbs;
@@ -780,19 +780,19 @@ void Wavefunction::operatorOnWavefunction(
   //  cout <<"residual after 1-electron:"<<std::endl<<str(2)<<std::endl;
 
   if (h.m_rank > 1) { // two-electron contribution, alpha-alpha
-    auto p = profiler->push("aa integrals");
+    // auto p = profiler->push("aa integrals");
     size_t nsbbMax = 64; // temporary static
     for (unsigned int syma = 0; syma < 8; syma++) {
-      profiler->start("StringSet aa");
+      // profiler->start("StringSet aa");
       StringSet aa(alphaActiveStrings, 2, 0, syma, parallel_stringset);
-      profiler->stop("StringSet aa");
+      // profiler->stop("StringSet aa");
       //      cout << "number of alpha-alpha-excited strings=" << aa.size() << std::endl;
       if (aa.empty())
         continue;
       for (unsigned int symb = 0; symb < 8; symb++) {
         if (!NextTask(m_communicator))
           continue;
-        auto praa = profiler->push("aa1 loop");
+        // auto praa = profiler->push("aa1 loop");
         unsigned int symexc = syma ^ symb ^ w.symmetry;
         // size_t nexc = h.pairSpace.find(-1)->second[symexc];
         size_t nexc = h.O2(true, true, false).block_size(symexc);
@@ -816,7 +816,7 @@ void Wavefunction::operatorOnWavefunction(
 
   if (h.m_rank > 1)
     if (true || h.m_uhf) { // two-electron contribution, beta-beta
-      auto p = profiler->push("bb integrals");
+      // auto p = profiler->push("bb integrals");
       size_t nsbbMax = 64; // temporary static
       for (unsigned int symb = 0; symb < 8; symb++) {
         StringSet bb(betaActiveStrings, 2, 0, symb, parallel_stringset);
@@ -847,7 +847,7 @@ void Wavefunction::operatorOnWavefunction(
     }
 
   if (h.m_rank > 1) { // two-electron contribution, alpha-beta
-    auto p = profiler->push("ab integrals");
+    // auto p = profiler->push("ab integrals");
     for (unsigned int symb = 0; symb < 8; symb++) {
       StringSet bb(betaActiveStrings, 1, 0, symb, parallel_stringset);
       if (bb.empty())
@@ -864,7 +864,7 @@ void Wavefunction::operatorOnWavefunction(
         size_t nexc = h.O2(true, false, false).block_size(symexc);
         {
           //                        cout << "syma="<<syma<<", symb="<<symb<<", symexc="<<symexc<<std::endl;
-          auto pro = profiler->push("StringSet iterator loops");
+          // auto pro = profiler->push("StringSet iterator loops");
           for (StringSet::iterator aa1, aa0 = aa.begin();
                aa1 = aa0 + nsaaMax > aa.end() ? aa.end() : aa0 + nsaaMax, aa0 < aa.end();
                aa0 = aa1) { // loop over alpha batches
@@ -901,7 +901,7 @@ molpro::Operator Wavefunction::density(int rank, bool uhf, bool hermitian, const
                                        std::string description, bool parallel_stringset) const {
   if (bra == nullptr)
     bra = this;
-  auto prof = profiler->push("density");
+  // auto prof = profiler->push("density");
 
   molpro::dim_t dim;
   for (const auto s : *orbitalSpace)
@@ -917,7 +917,7 @@ molpro::Operator Wavefunction::density(int rank, bool uhf, bool hermitian, const
   DivideTasks(std::numeric_limits<size_t>::max(), 1, 1, m_communicator);
 
   {
-    auto p = profiler->push("1-electron");
+    // auto p = profiler->push("1-electron");
     size_t offset = 0, nsa = 0, nsb = 0;
     for (unsigned int syma = 0; syma < 8; syma++) {
       offset += nsa * nsb;
@@ -964,18 +964,18 @@ molpro::Operator Wavefunction::density(int rank, bool uhf, bool hermitian, const
 
   if (rank > 1) { // two-electron contribution, alpha-alpha
     //  std::cout << "@@@ density before construct 2 elec\n"<<result.str("result before construct 2e",3)<<std::endl;
-    auto p = profiler->push("aa density");
+    // auto p = profiler->push("aa density");
     size_t nsbbMax = 64; // temporary static
     for (unsigned int syma = 0; syma < 8; syma++) {
-      profiler->start("StringSet aa");
+      // profiler->start("StringSet aa");
       StringSet aa(alphaStrings, 2, 0, syma, parallel_stringset);
-      profiler->stop("StringSet aa");
+      // profiler->stop("StringSet aa");
       if (aa.empty())
         continue;
       for (unsigned int symb = 0; symb < 8; symb++) {
         if (!NextTask(m_communicator))
           continue;
-        auto praa = profiler->push("aa1 loop");
+        // auto praa = profiler->push("aa1 loop");
         unsigned int symexc = syma ^ symb ^ symmetry;
         // size_t nexc = h.pairSpace.find(-1)->second[symexc];
         size_t nexc = result.O2(true, true, false).block_size(symexc);
@@ -1005,7 +1005,7 @@ molpro::Operator Wavefunction::density(int rank, bool uhf, bool hermitian, const
   }
 
   if (rank > 1 && result.m_uhf) { // two-electron contribution, beta-beta
-    auto p = profiler->push("bb density");
+    // auto p = profiler->push("bb density");
     size_t nsbbMax = 64; // temporary static
     for (unsigned int symb = 0; symb < 8; symb++) {
       StringSet bb(betaStrings, 2, 0, symb, parallel_stringset);
@@ -1035,7 +1035,7 @@ molpro::Operator Wavefunction::density(int rank, bool uhf, bool hermitian, const
   }
 
   if (rank > 1) { // two-electron contribution, alpha-beta
-    auto p = profiler->push("ab density");
+    // auto p = profiler->push("ab density");
     size_t nsaaMax = 128; // temporary static
     size_t nsbbMax = 128; // temporary static
     for (unsigned int symb = 0; symb < 8; symb++) {
@@ -1049,7 +1049,7 @@ molpro::Operator Wavefunction::density(int rank, bool uhf, bool hermitian, const
         unsigned int symexc = symb ^ syma ^ symmetry;
         size_t nexc = result.O2(true, false, false).block_size(symexc);
         {
-          auto pro = profiler->push("StringSet iterator loops");
+          // auto pro = profiler->push("StringSet iterator loops");
           for (StringSet::iterator aa1, aa0 = aa.begin();
                aa1 = aa0 + nsaaMax > aa.end() ? aa.end() : aa0 + nsaaMax, aa0 < aa.end();
                aa0 = aa1) { // loop over alpha batches
@@ -1103,33 +1103,33 @@ Orbitals Wavefunction::naturalOrbitals() {
 }
 
 void Wavefunction::putw(File &f, int index) {
-  auto p = profiler->push("Wavefunction::putw");
+  // auto p = profiler->push("Wavefunction::putw");
   size_t chunk = (buffer.size() - 1) / m_parallel_size + 1;
   size_t offset = chunk * m_parallel_rank;
   if (chunk + offset > buffer.size())
     chunk = buffer.size() - offset;
   if (offset < buffer.size())
     f.write(&buffer[offset], chunk, index * chunk);
-  p += chunk;
+  // p += chunk;
 }
 
 void Wavefunction::getw(File &f, int index) {
-  auto p = profiler->push("Wavefunction::getw");
+  // auto p = profiler->push("Wavefunction::getw");
   size_t chunk = (buffer.size() - 1) / m_parallel_size + 1;
   size_t offset = chunk * m_parallel_rank;
   if (chunk + offset > buffer.size())
     chunk = buffer.size() - offset;
   if (offset < buffer.size())
     f.read(&buffer[offset], chunk, index * chunk);
-  p += chunk;
+  // p += chunk;
 }
 
 void Wavefunction::getAll(File &f, int index) {
-  auto p = profiler->push("Wavefunction::getAll");
+  // auto p = profiler->push("Wavefunction::getAll");
   getw(f, index);
   size_t chunk = (buffer.size() - 1) / m_parallel_size + 1;
   gather_chunks(&buffer[0], buffer.size(), chunk, m_communicator);
-  p += buffer.size();
+  // p += buffer.size();
 }
 
 void Wavefunction::replicate() {
@@ -1206,7 +1206,7 @@ molpro::vector<double>::const_iterator Wavefunction::cbegin() const { return buf
 molpro::vector<double>::const_iterator Wavefunction::cend() const { return buffer.cend(); }
 
 std::vector<StringSet> Wavefunction::activeStrings(bool spinUp) const {
-  auto p = profiler->push("activeStrings");
+  // auto p = profiler->push("activeStrings");
   const std::vector<StringSet> &sources = spinUp ? alphaStrings : betaStrings;
   //  return sources;
   const std::vector<StringSet> &complements = spinUp ? betaStrings : alphaStrings;
