@@ -257,7 +257,8 @@ template <> molpro::bytestream SMat_<double>::bytestream(bool data) {
   if (rank() > 1)
     bs.append(&m_dimensions[1][0], m_dimensions[1].size());
   molpro::vector<char> dd(m_description.size());
-  std::copy(m_description.begin(), m_description.end(), dd.begin());
+  if (!dd.empty())
+    std::copy(m_description.begin(), m_description.end(), dd.begin());
   bs.append(&dd[0], dd.size());
   //  xout << "SMat::dump before data append size()="<<bs.size()<<std::endl;
   if (data)
@@ -290,7 +291,8 @@ template <> SMat_<double>::SMat_(const char* dump, double* buffer) : m_diagonal(
   auto dd = bs.chars();
   //  xout <<"back from bs.chars()"<<dd<<std::endl;
   m_description.resize(dd.size());
-  std::copy(dd.begin(), dd.end(), m_description.begin());
+  if (!dd.empty())
+    std::copy(dd.begin(), dd.end(), m_description.begin());
   //  xout << "m_description="<<m_description<<std::endl;
   m_managed_buffer = true;
   size_t n; // For dumb pgc++ - bug 5086
