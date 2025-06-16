@@ -3,6 +3,13 @@
 #include "SMat.h"
 
 namespace molpro {
+template <class T>
+class SMat_template : public SMat_<T> {
+public:
+  SMat_template(dims_t dimensions, parity_t parity, int symmetry=0, bool diagonal=false,
+                  std::string description="")   :
+  SMat_<T>(dimensions,nullptr,parity,symmetry,diagonal,description) {}
+};
 
 /*!
  * \brief Class that contains a matrix of matrices.
@@ -227,8 +234,7 @@ private:
   bool m_managed_buffer;
   molpro::array<value_type>* m_buffer;
   std::shared_ptr<molpro::array<value_type>> m_bufferp;
-  std::vector<std::shared_ptr<T>> m_templates;
-  std::vector<value_type> m_zero_buffer;
+  std::vector<std::shared_ptr<SMat_template<typename T::value_type>>> m_templates;
 };
 
 /*!

@@ -14,7 +14,7 @@ SMatMat_<T>::SMatMat_(const T& matrix, dims_t dimensions, typename T::value_type
     : m_dimensions(std::move(dimensions)), m_parity(parity), m_symmetry(symmetry),
       m_description(std::move(description)) {
   for (size_t sym = 0; sym < 8; sym++) {
-    m_templates.push_back(std::make_shared<T>(matrix.dimensions(), &m_zero_buffer[0], matrix.parity(), sym));
+    m_templates.push_back(std::make_shared<SMat_template<typename T::value_type>>(matrix.dimensions(), matrix.parity(), sym));
     //      std::cout << "template parity="<<m_templates.back()->parity()<<",
     //      size="<<m_templates.back()->size()<<std::endl;
   }
@@ -54,7 +54,7 @@ template <class T> SMatMat_<T>::SMatMat_(const char* dump, typename T::value_typ
     //      std::cout <<"template bytestream" <<std::endl; bss.dump();
     SMat matrix(bss);
     //      std::cout << matrix << std::endl;
-    m_templates.push_back(std::make_shared<T>(matrix.dimensions(), &m_zero_buffer[0], matrix.parity(), sym));
+    m_templates.push_back(std::make_shared<SMat_template<typename T::value_type>>(matrix.dimensions(), matrix.parity(), sym));
   }
   size_t n; // For dumb pgc++ - bug 5086
   if (buffer == nullptr)
