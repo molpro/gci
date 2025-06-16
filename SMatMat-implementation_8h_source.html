@@ -86,7 +86,7 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    : m_dimensions(std::move(dimensions)), m_parity(<a class="code" href="Operator-implementation_8h.html#a16b1d5bff65e7d8d50aca34740df0dd9">parity</a>), m_symmetry(symmetry),</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      m_description(std::move(description)) {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> sym = 0; sym &lt; 8; sym++) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    m_templates.push_back(std::make_shared&lt;T&gt;(matrix.dimensions(), &amp;m_zero_buffer[0], matrix.parity(), sym));</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    m_templates.push_back(std::make_shared&lt;T&gt;(matrix.dimensions(), m_zero_buffer.data(), matrix.parity(), sym));</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">//      std::cout &lt;&lt; &quot;template parity=&quot;&lt;&lt;m_templates.back()-&gt;parity()&lt;&lt;&quot;,</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">//      size=&quot;&lt;&lt;m_templates.back()-&gt;size()&lt;&lt;std::endl;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  }</div>
@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//      std::cout &lt;&lt;&quot;template bytestream&quot; &lt;&lt;std::endl; bss.dump();</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="namespacemolpro.html#ad80f79742f183b105c60b295863d6718">SMat</a> matrix(bss);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//      std::cout &lt;&lt; matrix &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    m_templates.push_back(std::make_shared&lt;T&gt;(matrix.dimensions(), &amp;m_zero_buffer[0], matrix.parity(), sym));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    m_templates.push_back(std::make_shared&lt;T&gt;(matrix.dimensions(), m_zero_buffer.data(), matrix.parity(), sym));</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">size_t</span> n; <span class="comment">// For dumb pgc++ - bug 5086</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span> (buffer == <span class="keyword">nullptr</span>)</div>
