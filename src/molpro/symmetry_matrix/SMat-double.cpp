@@ -256,10 +256,10 @@ template <> molpro::bytestream SMat_<double>::bytestream(bool data) {
   bs.append(&m_dimensions[0][0], m_dimensions[0].size());
   if (rank() > 1)
     bs.append(&m_dimensions[1][0], m_dimensions[1].size());
-  molpro::vector<char> dd(m_description.size());
-  if (!dd.empty())
-    std::copy(m_description.begin(), m_description.end(), dd.begin());
-  bs.append(&dd[0], dd.size());
+  if (!m_description.empty()) {
+    molpro::vector<char> dd(m_description.begin(), m_description.end());
+    bs.append(dd.data(), dd.size());
+  }
   //  xout << "SMat::dump before data append size()="<<bs.size()<<std::endl;
   if (data)
     bs.append(&(*m_buffer)[0], m_buffer->size());
