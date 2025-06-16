@@ -47,6 +47,7 @@ template <class T> SMatMat_<T>::SMatMat_(const char* dump, typename T::value_typ
     //      for (size_t k=0; k<ii.size();k++) std::cout << "dimension "<<m_dimensions.back()[k]<<std::endl;
   }
   auto dd = bs.chars();
+  m_description.resize(dd.size());
   std::copy(dd.begin(), dd.end(), m_description.begin());
   m_managed_buffer = true;
   for (unsigned int sym = 0; sym < 8; sym++) {
@@ -337,7 +338,8 @@ template <class T> molpro::bytestream SMatMat_<T>::bytestream(bool data) {
   for (int i = 0; i < 2; i++)
     bs.append(&m_dimensions[i][0], m_dimensions[i].size());
   molpro::vector<char> dd(m_description.size());
-  std::copy(m_description.begin(), m_description.end(), dd.begin());
+  if (!m_description.empty())
+    std::copy(m_description.begin(), m_description.end(), dd.begin());
   bs.append(&dd[0], dd.size());
   for (unsigned int sym = 0; sym < 8; sym++) {
     class molpro::bytestream::bytestream bss(&bs_templates[sym][0]);
