@@ -314,7 +314,8 @@ void StringSet::complete(int sym) {
   auto p = profiler->push("StringSet::complete");
   //      cout <<"StringSet::complete prototype"<<proto.str(1)<<std::endl;
   String string(&proto);
-  this->erase(this->begin(), this->end());
+  if (! this->empty())
+    this->erase(this->begin(), this->end());
   if (string.first(proto.nelec, sym)) {
     //        cout <<"StringSet::complete symmetry="<<sym<<" first String: "<<string<<std::endl;
     do {

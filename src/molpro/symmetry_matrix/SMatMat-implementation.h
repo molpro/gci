@@ -15,8 +15,7 @@ SMatMat_<T>::SMatMat_(const T& matrix, dims_t dimensions, typename T::value_type
       m_description(std::move(description)) {
   for (size_t sym = 0; sym < 8; sym++) {
     m_templates.push_back(std::make_shared<T>(matrix.dimensions(), m_zero_buffer.data(), matrix.parity(), sym));
-    //      std::cout << "template parity="<<m_templates.back()->parity()<<",
-    //      size="<<m_templates.back()->size()<<std::endl;
+    std::cout << "template parity="<<m_templates.back()->parity()<<", size="<<m_templates.back()->size()<<std::endl;
   }
   for (size_t axis = 0; axis < rank(); axis++)
     while (this->m_dimensions[axis].size() < 8)
@@ -47,7 +46,6 @@ template <class T> SMatMat_<T>::SMatMat_(const char* dump, typename T::value_typ
     //      for (size_t k=0; k<ii.size();k++) std::cout << "dimension "<<m_dimensions.back()[k]<<std::endl;
   }
   auto dd = bs.chars();
-  m_description.resize(dd.size());
   std::copy(dd.begin(), dd.end(), m_description.begin());
   m_managed_buffer = true;
   for (unsigned int sym = 0; sym < 8; sym++) {
@@ -330,6 +328,7 @@ template <class T> molpro::bytestream SMatMat_<T>::bytestream(bool data) {
   //  std::cout << "before template dump push"<<std::endl;
   for (unsigned int sym = 0; sym < 8; sym++) {
     auto bst = m_templates[sym]->bytestream(false);
+    std::cout << "bst.size() = " << bst.size() << std::endl;
     bs_templates.emplace_back(std::vector<char>(bst.data().begin(), bst.data().end()));
   }
   class molpro::bytestream bs;
@@ -338,8 +337,7 @@ template <class T> molpro::bytestream SMatMat_<T>::bytestream(bool data) {
   for (int i = 0; i < 2; i++)
     bs.append(&m_dimensions[i][0], m_dimensions[i].size());
   molpro::vector<char> dd(m_description.size());
-  if (!m_description.empty())
-    std::copy(m_description.begin(), m_description.end(), dd.begin());
+  std::copy(m_description.begin(), m_description.end(), dd.begin());
   bs.append(&dd[0], dd.size());
   for (unsigned int sym = 0; sym < 8; sym++) {
     class molpro::bytestream::bytestream bss(&bs_templates[sym][0]);
