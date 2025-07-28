@@ -15,7 +15,7 @@ SMatMat_<T>::SMatMat_(const T& matrix, dims_t dimensions, typename T::value_type
       m_description(std::move(description)) {
   for (size_t sym = 0; sym < 8; sym++) {
     m_templates.push_back(std::make_shared<T>(matrix.dimensions(), m_zero_buffer.data(), matrix.parity(), sym));
-    std::cout << "template parity="<<m_templates.back()->parity()<<", size="<<m_templates.back()->size()<<std::endl;
+    // std::cout << "template parity="<<m_templates.back()->parity()<<", size="<<m_templates.back()->size()<<std::endl;
   }
   for (size_t axis = 0; axis < rank(); axis++)
     while (this->m_dimensions[axis].size() < 8)
@@ -328,7 +328,6 @@ template <class T> molpro::bytestream SMatMat_<T>::bytestream(bool data) {
   //  std::cout << "before template dump push"<<std::endl;
   for (unsigned int sym = 0; sym < 8; sym++) {
     auto bst = m_templates[sym]->bytestream(false);
-    std::cout << "bst.size() = " << bst.size() << std::endl;
     bs_templates.emplace_back(std::vector<char>(bst.data().begin(), bst.data().end()));
   }
   class molpro::bytestream bs;
