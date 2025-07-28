@@ -278,6 +278,7 @@ template <> SMat_<double>::SMat_(const char* dump, double* buffer) : m_diagonal(
   using T = double;
   molpro::cout << "construct smat from bytestream T*"<<std::endl;
   class molpro::bytestream bs(dump);
+  molpro::cout << "bs constructed, size="<<bs.size()<<", pointer="<<bs.pointer<<std::endl;
   molpro::cout << "input bytestream hash="<<bs.hash() <<std::endl;
   m_symmetry = bs.ints()[0];
   molpro::cout << "recovered symmetry="<<m_symmetry<<std::endl;
@@ -295,6 +296,8 @@ template <> SMat_<double>::SMat_(const char* dump, double* buffer) : m_diagonal(
       m_dimensions.back()[k] = ii[k];
     for (size_t k=0; k<ii.size();k++) molpro::cout << "dimension "<<k<<" "<<m_dimensions.back()[k]<<std::endl;
   }
+  if (bs.position() == bs.size()) return;
+  molpro::cout << "before calling bs.chars "<<bs.size()<<" "<<bs.pointer<<std::endl;
   auto dd = bs.chars();
   molpro::cout <<"back from bs.chars()"<<dd<<std::endl;
   m_description.resize(dd.size());
