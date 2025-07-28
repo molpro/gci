@@ -245,65 +245,65 @@ template <class T> SMat_<T> SMat_<T>::solve(const SMat_<T>& rhs, std::string alg
 }
 
 template <> molpro::bytestream SMat_<double>::bytestream(bool data) {
-  molpro::cout << "enter SMat_<double>::bytestream()" <<std::endl;
+  // molpro::cout << "enter SMat_<double>::bytestream()" <<std::endl;
   class molpro::bytestream bs;
-  molpro::cout << "bs constructed, size="<<bs.size()<<std::endl;
+  // molpro::cout << "bs constructed, size="<<bs.size()<<std::endl;
   bs.append(m_symmetry);
-  molpro::cout << "appended symmetry_, size="<<bs.size()<<std::endl;
+  // molpro::cout << "appended symmetry_, size="<<bs.size()<<std::endl;
   //  memory_print_status();
   bs.append(m_parity);
-  molpro::cout << "appended m_parity, size="<<bs.size()<<std::endl;
+  // molpro::cout << "appended m_parity, size="<<bs.size()<<std::endl;
   bs.append((m_transposed ? 1 : 0));
-  molpro::cout << "appended m_transposed, size="<<bs.size()<<std::endl;
+  // molpro::cout << "appended m_transposed, size="<<bs.size()<<std::endl;
   bs.append(rank());
-  molpro::cout << "appended rank(), size="<<bs.size()<<std::endl;
+  // molpro::cout << "appended rank(), size="<<bs.size()<<std::endl;
   bs.append(&m_dimensions[0][0], m_dimensions[0].size());
-  molpro::cout << "appended m_dimensions, size="<<bs.size()<<std::endl;
+  // molpro::cout << "appended m_dimensions, size="<<bs.size()<<std::endl;
   if (rank() > 1)
     bs.append(&m_dimensions[1][0], m_dimensions[1].size());
-  molpro::cout << "appended m_dimensions, size="<<bs.size()<<std::endl;
+  // molpro::cout << "appended m_dimensions, size="<<bs.size()<<std::endl;
   if (!m_description.empty()) {
     molpro::vector<char> dd(m_description.begin(), m_description.end());
     bs.append(dd.data(), dd.size());
-  molpro::cout << "appended m_description, size="<<bs.size()<<std::endl;
+  // molpro::cout << "appended m_description, size="<<bs.size()<<std::endl;
   }
-  molpro::cout << "SMat::dump before data append size()="<<bs.size()<<std::endl;
+  // molpro::cout << "SMat::dump before data append size()="<<bs.size()<<std::endl;
   if (data)
     bs.append(&(*m_buffer)[0], m_buffer->size());
-  molpro::cout << "SMat::dump after data append size()="<<bs.size()<<std::endl;
+  // molpro::cout << "SMat::dump after data append size()="<<bs.size()<<std::endl;
   return bs;
 }
 
 template <> SMat_<double>::SMat_(const char* dump, double* buffer) : m_diagonal(false) {
   using T = double;
-  molpro::cout << "construct smat from bytestream T*"<<std::endl;
+  // molpro::cout << "construct smat from bytestream T*"<<std::endl;
   class molpro::bytestream bs(dump);
-  molpro::cout << "bs constructed, size="<<bs.size()<<", pointer="<<bs.pointer<<std::endl;
-  molpro::cout << "input bytestream hash="<<bs.hash() <<std::endl;
+  // molpro::cout << "bs constructed, size="<<bs.size()<<", pointer="<<bs.position()<<std::endl;
+  // molpro::cout << "input bytestream hash="<<bs.hash() <<std::endl;
   m_symmetry = bs.ints()[0];
-  molpro::cout << "recovered symmetry="<<m_symmetry<<std::endl;
+  // molpro::cout << "recovered symmetry="<<m_symmetry<<std::endl;
   m_parity = static_cast<parity_t>(bs.ints()[0]);
-  molpro::cout << "m_parity="<<m_parity<<std::endl;
+  // molpro::cout << "m_parity="<<m_parity<<std::endl;
   m_transposed = bs.ints()[0] != 0;
-  molpro::cout << "m_transposed="<<m_transposed<<std::endl;
+  // molpro::cout << "m_transposed="<<m_transposed<<std::endl;
   int rank = bs.ints()[0];
-  molpro::cout << "rank="<<rank<<std::endl;
+  // molpro::cout << "rank="<<rank<<std::endl;
   for (int axis = 0; axis < rank; axis++) {
-    molpro::cout << "axis="<<axis<<std::endl;
+    // molpro::cout << "axis="<<axis<<std::endl;
     auto ii = bs.ints();
     m_dimensions.push_back(dim_t(ii.size()));
     for (size_t k = 0; k < ii.size(); k++)
       m_dimensions.back()[k] = ii[k];
-    for (size_t k=0; k<ii.size();k++) molpro::cout << "dimension "<<k<<" "<<m_dimensions.back()[k]<<std::endl;
+    // for (size_t k=0; k<ii.size();k++) molpro::cout << "dimension "<<k<<" "<<m_dimensions.back()[k]<<std::endl;
   }
   if (bs.position() == bs.size()) return;
-  molpro::cout << "before calling bs.chars "<<bs.size()<<" "<<bs.pointer<<std::endl;
+  // molpro::cout << "before calling bs.chars "<<bs.size()<<" "<<bs.position()<<std::endl;
   auto dd = bs.chars();
-  molpro::cout <<"back from bs.chars()"<<dd<<std::endl;
+  // molpro::cout <<"back from bs.chars()"<<dd<<std::endl;
   m_description.resize(dd.size());
   if (!dd.empty())
     std::copy(dd.begin(), dd.end(), m_description.begin());
-  molpro::cout << "m_description="<<m_description<<std::endl;
+  // molpro::cout << "m_description="<<m_description<<std::endl;
   m_managed_buffer = true;
   size_t n; // For dumb pgc++ - bug 5086
   if (buffer == nullptr)
@@ -312,11 +312,11 @@ template <> SMat_<double>::SMat_(const char* dump, double* buffer) : m_diagonal(
     this->m_bufferp = std::make_shared<molpro::array<T>>(buffer, n = size()); // no checks on size of buffer!
   this->m_buffer = &this->m_bufferp.get()[0];
   if (bs.size() > bs.position()) {
-    molpro::cout << "bs.size()="<<bs.size()<<", bs.position()="<<bs.position()<<std::endl;
+    // molpro::cout << "bs.size()="<<bs.size()<<", bs.position()="<<bs.position()<<std::endl;
     auto data = bs.doubles(); // FIXME for non-double
-                              molpro::cout << "importing data of size "<<data.size()<<std::endl;
+                              // molpro::cout << "importing data of size "<<data.size()<<std::endl;
     std::copy(data.begin(), data.end(), this->m_buffer->begin());
-    molpro::cout << "bs.size()="<<bs.size()<<", bs.position()="<<bs.position()<<std::endl;
+    // molpro::cout << "bs.size()="<<bs.size()<<", bs.position()="<<bs.position()<<std::endl;
   }
 }
 } // namespace molpro
