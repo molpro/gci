@@ -2,7 +2,7 @@ include(FetchContent)
 FetchContent_Declare(
         dependency_manager
         GIT_REPOSITORY https://github.com/molpro/dependency-manager.git
-        GIT_TAG 0.4.0
+        GIT_TAG 0.4.1
 )
 FetchContent_MakeAvailable(dependency_manager)
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" PARENT_SCOPE)
@@ -66,5 +66,5 @@ set(INSTALL_GTEST OFF CACHE BOOL "" FORCE)
 FetchContent_Declare(
         googletest
         GIT_REPOSITORY https://github.com/google/googletest.git
-        GIT_TAG "release-1.12.1"
+        GIT_TAG "v1.17.0"
 )

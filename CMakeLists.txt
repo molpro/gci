@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.5...4.0)
 project(gci CXX)
 
 include(FetchContent)
 FetchContent_Declare(
         LibraryManager
         GIT_REPOSITORY https://github.com/molpro/library-manager
-        GIT_TAG 0.11.3
+        GIT_TAG 0.13.3
 )
 FetchContent_MakeAvailable(LibraryManager)
 set(MPI ON CACHE BOOL "Whether to build with MPI" FORCE)
