@@ -6997,8 +6997,8 @@
       <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0a61719e7779d976d0ec7051bc5f04ada6</anchor>
       <arglist></arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>msg</name>
       <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
       <anchor>a0a60cec13fb45bf89fc236ee3a541641</anchor>
@@ -8276,6 +8276,13 @@
       <name>container_t</name>
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Problem.html</anchorfile>
       <anchor>a10aafe6ea77b7b593ae4803b65adbe63</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>P</type>
+      <name>p_container_t</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Problem.html</anchorfile>
+      <anchor>a3d767bd0b2ff918e6b7778d9c96fc610</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
