@@ -455,7 +455,7 @@ public:
    */
   molpro::array<value_type> block(unsigned int block_symmetry) const;
 
-#ifdef EIGEN_CORE_H
+#if defined(EIGEN_CORE_H) || defined(EIGEN_CORE_MODULE_H)
   /*!
    * \brief Get an Eigen Matrix mapping to a symmetry block.
    * All aspects of transposition are handled,
