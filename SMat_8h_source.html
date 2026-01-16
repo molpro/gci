@@ -215,7 +215,7 @@ $(function() {
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;  molpro::array&lt;value_type&gt; block(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> block_symmetry) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="preprocessor">#ifdef EIGEN_CORE_H</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="preprocessor">#if defined(EIGEN_CORE_H) || defined(EIGEN_CORE_MODULE_H)</span></div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;  <a class="code" href="classmolpro_1_1SMat__.html#ace72697d7f93c836aa30a2adcdac5f81">Mconst</a> blockMap(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> block_symmetry) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;  <a class="code" href="classmolpro_1_1SMat__.html#a0327b4b21be7f823b70447284ececf11">M</a> blockMap(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> block_symmetry);</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;  <span class="keywordtype">bool</span> blockNotEmpty(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> block_symmetry) <span class="keyword">const</span>;</div>
