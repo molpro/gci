@@ -266,7 +266,7 @@ $(function() {
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">return</span> molpro::array&lt;T&gt;(&amp;((*m_buffer)[block_offset(block_symmetry)]), block_size(block_symmetry));</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#ifdef EIGEN_CORE_H</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#if defined(EIGEN_CORE_H) || defined(EIGEN_CORE_MODULE_H)</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keyword">using namespace </span>Eigen;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">// the result will unconditionally be an Eigen Matrix where the row index is from block_symmetry</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">// if the matrix is represented internally as transpose, then number of rows is m_dimensions[1][block_symmetry],</span></div>

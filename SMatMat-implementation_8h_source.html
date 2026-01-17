@@ -381,7 +381,7 @@ $(function() {
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                                               block_size(block_symmetry) * rows);</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">#ifdef EIGEN_CORE_H</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">#if defined(EIGEN_CORE_H) || defined(EIGEN_CORE_MODULE_H)</span></div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="keyword">using namespace </span>Eigen;</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">typename</span> <a class="code" href="classmolpro_1_1SMatMat__.html#ae8c0e08b711d56715705ccb090b8e30d">SMatMat_&lt;T&gt;::M</a> <a class="code" href="classmolpro_1_1SMatMat__.html">SMatMat_&lt;T&gt;::blockM</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> block_symmetry)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keywordflow">if</span> (rank() == 1)</div>
