@@ -191,7 +191,7 @@ public:
    */
   molpro::array<value_type> block(unsigned int block_symmetry) const;
 
-#ifdef EIGEN_CORE_H
+#if defined(EIGEN_CORE_H) || defined(EIGEN_CORE_MODULE_H)
   /*!
    * \brief Get an Eigen Matrix mapping to all the data in a symmetry block
    * \param block_symmetry The symmetry of the row (first) index of the desired block
