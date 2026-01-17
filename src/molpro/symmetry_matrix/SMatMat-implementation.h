@@ -309,7 +309,7 @@ template <class T> molpro::array<typename T::value_type> SMatMat_<T>::block(unsi
                                                block_size(block_symmetry) * rows);
 }
 
-#ifdef EIGEN_CORE_H
+#if defined(EIGEN_CORE_H) || defined(EIGEN_CORE_MODULE_H)
 using namespace Eigen;
 template <class T> typename SMatMat_<T>::M SMatMat_<T>::blockM(unsigned int block_symmetry) const {
   if (rank() == 1)

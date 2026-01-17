@@ -194,7 +194,7 @@ template <class T> molpro::array<T> SMat_<T>::block(unsigned int block_symmetry)
   return molpro::array<T>(&((*m_buffer)[block_offset(block_symmetry)]), block_size(block_symmetry));
 }
 
-#ifdef EIGEN_CORE_H
+#if defined(EIGEN_CORE_H) || defined(EIGEN_CORE_MODULE_H)
 using namespace Eigen;
 // the result will unconditionally be an Eigen Matrix where the row index is from block_symmetry
 // if the matrix is represented internally as transpose, then number of rows is m_dimensions[1][block_symmetry],
