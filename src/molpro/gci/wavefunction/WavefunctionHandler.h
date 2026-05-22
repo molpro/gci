@@ -1,6 +1,8 @@
 #ifndef GCI_SRC_MOLPRO_GCI_WAVEFUNCTION_WAVEFUNCTIONHANDLER_H
 #define GCI_SRC_MOLPRO_GCI_WAVEFUNCTION_WAVEFUNCTIONHANDLER_H
 #include <molpro/linalg/array/ArrayHandler.h>
+#include <molpro/linalg/itsolv/subspace/Matrix.h>
+#include <molpro/linalg/itsolv/wrap.h>
 #include <molpro/linalg/array/util/gemm.h>
 
 #include <map>
@@ -34,11 +36,11 @@ public:
 
   value_type dot(const AL &x, const AR &y) override { return x.dot(y); }
 
-  void gemm_outer(const Matrix<value_type> alphas, const CVecRef<AR> &xx, const VecRef<AL> &yy) override {
+  void gemm_outer(const molpro::linalg::itsolv::subspace::Matrix<value_type> alphas, const molpro::linalg::itsolv::CVecRef<AR> &xx, const molpro::linalg::itsolv::VecRef<AL> &yy) override {
     molpro::linalg::array::util::gemm_outer_default(*this, alphas, xx, yy);
   }
 
-  Matrix<value_type> gemm_inner(const CVecRef<AL> &xx, const CVecRef<AR> &yy) override {
+  molpro::linalg::itsolv::subspace::Matrix<value_type> gemm_inner(const molpro::linalg::itsolv::CVecRef<AL> &xx, const molpro::linalg::itsolv::CVecRef<AR> &yy) override {
     return molpro::linalg::array::util::gemm_inner_default(*this, xx, yy);
   }
 
@@ -79,11 +81,11 @@ public:
 
   value_type dot(const AL &x, const AR &y) override { return x.dot(y); }
   
-  void gemm_outer(const Matrix<value_type> alphas, const CVecRef<AR> &xx, const VecRef<AL> &yy) override {
+  void gemm_outer(const molpro::linalg::itsolv::subspace::Matrix<value_type> alphas, const molpro::linalg::itsolv::CVecRef<AR> &xx, const molpro::linalg::itsolv::VecRef<AL> &yy) override {
     molpro::linalg::array::util::gemm_outer_default(*this, alphas, xx, yy);
   }
   
-  Matrix<value_type> gemm_inner(const CVecRef<AL> &xx, const CVecRef<AR> &yy) override {
+  molpro::linalg::itsolv::subspace::Matrix<value_type> gemm_inner(const molpro::linalg::itsolv::CVecRef<AL> &xx, const molpro::linalg::itsolv::CVecRef<AR> &yy) override {
     return molpro::linalg::array::util::gemm_inner_default(*this, xx, yy);
   }
 

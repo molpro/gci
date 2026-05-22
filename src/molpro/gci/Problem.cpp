@@ -4,7 +4,7 @@
 molpro::gci::Problem::Problem(const molpro::Operator& hamiltonian, const State& prototype)
     : m_hamiltonian(hamiltonian), m_prototype(prototype) {}
 
-void molpro::gci::Problem::action(const CVecRef<container_t>& parameters, const VecRef<container_t>& actions) const {
+void molpro::gci::Problem::action(const molpro::linalg::itsolv::CVecRef<container_t>& parameters, const molpro::linalg::itsolv::VecRef<container_t>& actions) const {
   for (size_t k = 0; k < parameters.size(); k++) {
     const auto& v = parameters[k].get();
 //#ifdef HAVE_MPI_H
@@ -25,8 +25,8 @@ bool molpro::gci::Problem::diagonals(container_t& d) const {
 }
 
 void molpro::gci::Problem::p_action(const std::vector<std::vector<value_t>>& p_coefficients,
-                                    const CVecRef<std::map<size_t, container_t::value_type>>& pparams,
-                                    const VecRef<container_t>& actions) const {
+                                    const molpro::linalg::itsolv::CVecRef<std::map<size_t, container_t::value_type>>& pparams,
+                                    const molpro::linalg::itsolv::VecRef<container_t>& actions) const {
   for (size_t k = 0; k < p_coefficients.size(); k++) {
     Wavefunction& g = actions[k];
     Wavefunction w(g);
@@ -64,7 +64,7 @@ molpro::gci::Problem::pp_action_matrix(const std::vector<std::map<size_t, contai
   return addHPP;
 }
 
-void molpro::gci::Problem::precondition(const VecRef<container_t>& action, const std::vector<double>& shift,
+void molpro::gci::Problem::precondition(const molpro::linalg::itsolv::VecRef<container_t>& action, const std::vector<double>& shift,
                                         const container_t& diagonals) const {
   auto dlb = diagonals.distr_buffer->local_buffer();
   auto offset = dlb->start();
