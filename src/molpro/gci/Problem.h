@@ -3,6 +3,7 @@
 #include "gciWavefunction.h"
 #include <molpro/symmetry_matrix/Operator.h>
 #include <molpro/linalg/itsolv/IterativeSolver.h>
+#include <molpro/linalg/itsolv/wrap.h>
 
 namespace molpro::gci {
 
@@ -17,12 +18,12 @@ public:
   Problem(const Operator& hamiltonian, const State& prototype);
   Problem() = delete;
   //  value_t residual(const R& parameters, R& residual) const override;
-  void action(const CVecRef<container_t>& parameters, const VecRef<container_t>& actions) const override;
+  void action(const molpro::linalg::itsolv::CVecRef<container_t>& parameters, const molpro::linalg::itsolv::VecRef<container_t>& actions) const override;
   bool diagonals(container_t& d) const override;
   std::vector<double> pp_action_matrix(const std::vector<P>& pparams) const override;
-  void p_action(const std::vector<std::vector<value_t>>& p_coefficients, const CVecRef<P>& pparams,
-                const VecRef<container_t>& actions) const override;
-  void precondition(const VecRef<container_t>& action, const std::vector<double>& shift,
+  void p_action(const std::vector<std::vector<value_t>>& p_coefficients, const molpro::linalg::itsolv::CVecRef<P>& pparams,
+                const molpro::linalg::itsolv::VecRef<container_t>& actions) const override;
+  void precondition(const molpro::linalg::itsolv::VecRef<container_t>& action, const std::vector<double>& shift,
                     const container_t& diagonals) const override;
 };
 } // namespace molpro::gci
