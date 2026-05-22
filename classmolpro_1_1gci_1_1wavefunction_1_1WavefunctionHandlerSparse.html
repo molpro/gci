@@ -110,10 +110,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac7527475ec17691166694ef3c0ccff05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a646d4322b5ddd0aeb01cd91d4aec1afe"><td class="memItemLeft" align="right" valign="top">value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html#a646d4322b5ddd0aeb01cd91d4aec1afe">dot</a> (const AL &amp;x, const AR &amp;y) override</td></tr>
 <tr class="separator:a646d4322b5ddd0aeb01cd91d4aec1afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67e480661a9807c77ba4610896d5cbaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html#a67e480661a9807c77ba4610896d5cbaf">gemm_outer</a> (const Matrix&lt; value_type &gt; alphas, const CVecRef&lt; AR &gt; &amp;xx, const VecRef&lt; AL &gt; &amp;yy) override</td></tr>
-<tr class="separator:a67e480661a9807c77ba4610896d5cbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac52a2b8c20649029b8c02ffa101cf494"><td class="memItemLeft" align="right" valign="top">Matrix&lt; value_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html#ac52a2b8c20649029b8c02ffa101cf494">gemm_inner</a> (const CVecRef&lt; AL &gt; &amp;xx, const CVecRef&lt; AR &gt; &amp;yy) override</td></tr>
-<tr class="separator:ac52a2b8c20649029b8c02ffa101cf494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd2b3319f143dde9d288e769ea8ffe2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html#a1bd2b3319f143dde9d288e769ea8ffe2">gemm_outer</a> (const molpro::linalg::itsolv::subspace::Matrix&lt; value_type &gt; alphas, const molpro::linalg::itsolv::CVecRef&lt; AR &gt; &amp;xx, const molpro::linalg::itsolv::VecRef&lt; AL &gt; &amp;yy) override</td></tr>
+<tr class="separator:a1bd2b3319f143dde9d288e769ea8ffe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a421820f3c4912f6a54809cc26f91bf1c"><td class="memItemLeft" align="right" valign="top">molpro::linalg::itsolv::subspace::Matrix&lt; value_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html#a421820f3c4912f6a54809cc26f91bf1c">gemm_inner</a> (const molpro::linalg::itsolv::CVecRef&lt; AL &gt; &amp;xx, const molpro::linalg::itsolv::CVecRef&lt; AR &gt; &amp;yy) override</td></tr>
+<tr class="separator:a421820f3c4912f6a54809cc26f91bf1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab99549c430a98fb1472446cb487ae67f"><td class="memItemLeft" align="right" valign="top">std::map&lt; size_t, value_type_abs &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html#ab99549c430a98fb1472446cb487ae67f">select_max_dot</a> (size_t n, const AL &amp;x, const AR &amp;y) override</td></tr>
 <tr class="separator:ab99549c430a98fb1472446cb487ae67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac52286cd3e09cf05821ac5f38b91ae8b"><td class="memItemLeft" align="right" valign="top">std::map&lt; size_t, value_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html#ac52286cd3e09cf05821ac5f38b91ae8b">select</a> (size_t n, const AL &amp;x, bool max=false, bool ignore_sign=false) override</td></tr>
@@ -306,8 +306,8 @@ template&lt;class AL , class AR &gt; </div>
 
 </div>
 </div>
-<a id="ac52a2b8c20649029b8c02ffa101cf494"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac52a2b8c20649029b8c02ffa101cf494">&#9670;&nbsp;</a></span>gemm_inner()</h2>
+<a id="a421820f3c4912f6a54809cc26f91bf1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a421820f3c4912f6a54809cc26f91bf1c">&#9670;&nbsp;</a></span>gemm_inner()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -318,15 +318,15 @@ template&lt;class AL , class AR &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Matrix&lt;value_type&gt; <a class="el" href="classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html">molpro::gci::wavefunction::WavefunctionHandlerSparse</a>&lt; AL, AR &gt;::gemm_inner </td>
+          <td class="memname">molpro::linalg::itsolv::subspace::Matrix&lt;value_type&gt; <a class="el" href="classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html">molpro::gci::wavefunction::WavefunctionHandlerSparse</a>&lt; AL, AR &gt;::gemm_inner </td>
           <td>(</td>
-          <td class="paramtype">const CVecRef&lt; AL &gt; &amp;&#160;</td>
+          <td class="paramtype">const molpro::linalg::itsolv::CVecRef&lt; AL &gt; &amp;&#160;</td>
           <td class="paramname"><em>xx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const CVecRef&lt; AR &gt; &amp;&#160;</td>
+          <td class="paramtype">const molpro::linalg::itsolv::CVecRef&lt; AR &gt; &amp;&#160;</td>
           <td class="paramname"><em>yy</em>&#160;</td>
         </tr>
         <tr>
@@ -344,8 +344,8 @@ template&lt;class AL , class AR &gt; </div>
 
 </div>
 </div>
-<a id="a67e480661a9807c77ba4610896d5cbaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67e480661a9807c77ba4610896d5cbaf">&#9670;&nbsp;</a></span>gemm_outer()</h2>
+<a id="a1bd2b3319f143dde9d288e769ea8ffe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bd2b3319f143dde9d288e769ea8ffe2">&#9670;&nbsp;</a></span>gemm_outer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,19 +358,19 @@ template&lt;class AL , class AR &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html">molpro::gci::wavefunction::WavefunctionHandlerSparse</a>&lt; AL, AR &gt;::gemm_outer </td>
           <td>(</td>
-          <td class="paramtype">const Matrix&lt; value_type &gt;&#160;</td>
+          <td class="paramtype">const molpro::linalg::itsolv::subspace::Matrix&lt; value_type &gt;&#160;</td>
           <td class="paramname"><em>alphas</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const CVecRef&lt; AR &gt; &amp;&#160;</td>
+          <td class="paramtype">const molpro::linalg::itsolv::CVecRef&lt; AR &gt; &amp;&#160;</td>
           <td class="paramname"><em>xx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const VecRef&lt; AL &gt; &amp;&#160;</td>
+          <td class="paramtype">const molpro::linalg::itsolv::VecRef&lt; AL &gt; &amp;&#160;</td>
           <td class="paramname"><em>yy</em>&#160;</td>
         </tr>
         <tr>

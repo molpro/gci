@@ -1,7 +1,7 @@
 var searchData=
 [
   ['p_402',['P',['../classmolpro_1_1gci_1_1Problem.html#a563074b9d15de6e321a5566bbc6e138e',1,'molpro::gci::Problem']]],
-  ['p_5faction_403',['p_action',['../classmolpro_1_1gci_1_1Problem.html#a38ff5f21b93baffaefd305e52328fc0a',1,'molpro::gci::Problem']]],
+  ['p_5faction_403',['p_action',['../classmolpro_1_1gci_1_1Problem.html#a515b9118c7ba0421fb55a841870d2bf8',1,'molpro::gci::Problem']]],
   ['pairindex_404',['pairIndex',['../classmolpro_1_1gci_1_1OrbitalSpace.html#a235aa2bb39fb194ff0127e9939c22799',1,'molpro::gci::OrbitalSpace']]],
   ['pairspace_405',['pairSpace',['../classmolpro_1_1gci_1_1OrbitalSpace.html#ada0ec75b525bddad375d268474e9d3af',1,'molpro::gci::OrbitalSpace']]],
   ['parallel_5frank_406',['parallel_rank',['../namespacemolpro_1_1gci.html#a69609a4424d1e27aae322f69a8d6194e',1,'molpro::gci']]],
@@ -30,7 +30,7 @@ var searchData=
   ['pluginguestf_5fsend_429',['pluginguestf_send',['https://molpro.github.io/molpro-plugin/namespacepluginguestf.html#a46beddee5cc050d8b3e46a9e3d311109',1,'pluginguestf']]],
   ['pow_430',['pow',['../classmolpro_1_1SMat__.html#ac352224d7a7d8b5643b51c497cef187b',1,'molpro::SMat_']]],
   ['pp_5faction_5fmatrix_431',['pp_action_matrix',['../classmolpro_1_1gci_1_1Problem.html#a0f68c3afa55bb7104c4fb9445bae7d2f',1,'molpro::gci::Problem']]],
-  ['precondition_432',['precondition',['../classmolpro_1_1gci_1_1Problem.html#af96b79290dde3a4b13678f893c5b0b02',1,'molpro::gci::Problem']]],
+  ['precondition_432',['precondition',['../classmolpro_1_1gci_1_1Problem.html#a2650fc842b19dd8d3386e30c05fc5465',1,'molpro::gci::Problem']]],
   ['prepareguess_433',['prepareGuess',['../classmolpro_1_1gci_1_1run_1_1Davidson.html#a10424974d89c94a19e5a7b539396f1ab',1,'molpro::gci::run::Davidson::prepareGuess()'],['../classmolpro_1_1gci_1_1run_1_1Davidson.html#a8a5d74a8eb28bd03860b72a7db134d2a',1,'molpro::gci::run::Davidson::prepareGuess()']]],
   ['presidual_434',['Presidual',['../structmolpro_1_1gci_1_1Presidual.html',1,'molpro::gci::Presidual'],['../structmolpro_1_1gci_1_1Presidual.html#a5dd53db18c7483697a7f4edf8081a8c0',1,'molpro::gci::Presidual::Presidual()']]],
   ['printable_435',['Printable',['../classmolpro_1_1gci_1_1Printable.html',1,'molpro::gci::Printable'],['../classmolpro_1_1gci_1_1Printable.html#a62439ef0e74a10b88e9806cd2d96a795',1,'molpro::gci::Printable::Printable()']]],

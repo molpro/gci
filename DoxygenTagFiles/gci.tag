@@ -4320,8 +4320,8 @@
       <type>void</type>
       <name>action</name>
       <anchorfile>classmolpro_1_1gci_1_1Problem.html</anchorfile>
-      <anchor>aa6e6ca5421bb343576585e34bfb22e71</anchor>
-      <arglist>(const CVecRef&lt; container_t &gt; &amp;parameters, const VecRef&lt; container_t &gt; &amp;actions) const override</arglist>
+      <anchor>aa8f7a88f5b075aff432d3acaa54ca413</anchor>
+      <arglist>(const molpro::linalg::itsolv::CVecRef&lt; container_t &gt; &amp;parameters, const molpro::linalg::itsolv::VecRef&lt; container_t &gt; &amp;actions) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -4341,15 +4341,15 @@
       <type>void</type>
       <name>p_action</name>
       <anchorfile>classmolpro_1_1gci_1_1Problem.html</anchorfile>
-      <anchor>a38ff5f21b93baffaefd305e52328fc0a</anchor>
-      <arglist>(const std::vector&lt; std::vector&lt; value_t &gt;&gt; &amp;p_coefficients, const CVecRef&lt; P &gt; &amp;pparams, const VecRef&lt; container_t &gt; &amp;actions) const override</arglist>
+      <anchor>a515b9118c7ba0421fb55a841870d2bf8</anchor>
+      <arglist>(const std::vector&lt; std::vector&lt; value_t &gt;&gt; &amp;p_coefficients, const molpro::linalg::itsolv::CVecRef&lt; P &gt; &amp;pparams, const molpro::linalg::itsolv::VecRef&lt; container_t &gt; &amp;actions) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>precondition</name>
       <anchorfile>classmolpro_1_1gci_1_1Problem.html</anchorfile>
-      <anchor>af96b79290dde3a4b13678f893c5b0b02</anchor>
-      <arglist>(const VecRef&lt; container_t &gt; &amp;action, const std::vector&lt; double &gt; &amp;shift, const container_t &amp;diagonals) const override</arglist>
+      <anchor>a2650fc842b19dd8d3386e30c05fc5465</anchor>
+      <arglist>(const molpro::linalg::itsolv::VecRef&lt; container_t &gt; &amp;action, const std::vector&lt; double &gt; &amp;shift, const container_t &amp;diagonals) const override</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -7591,15 +7591,15 @@
       <type>void</type>
       <name>gemm_outer</name>
       <anchorfile>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandler.html</anchorfile>
-      <anchor>a3edd034ba09fac0d44b6187c7d3d1e86</anchor>
-      <arglist>(const Matrix&lt; value_type &gt; alphas, const CVecRef&lt; AR &gt; &amp;xx, const VecRef&lt; AL &gt; &amp;yy) override</arglist>
+      <anchor>ad709368698fbc64f004dd152294eb555</anchor>
+      <arglist>(const molpro::linalg::itsolv::subspace::Matrix&lt; value_type &gt; alphas, const molpro::linalg::itsolv::CVecRef&lt; AR &gt; &amp;xx, const molpro::linalg::itsolv::VecRef&lt; AL &gt; &amp;yy) override</arglist>
     </member>
     <member kind="function">
-      <type>Matrix&lt; value_type &gt;</type>
+      <type>molpro::linalg::itsolv::subspace::Matrix&lt; value_type &gt;</type>
       <name>gemm_inner</name>
       <anchorfile>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandler.html</anchorfile>
-      <anchor>af7d40e6ca3a9b1657a83a2836e9c6b80</anchor>
-      <arglist>(const CVecRef&lt; AL &gt; &amp;xx, const CVecRef&lt; AR &gt; &amp;yy) override</arglist>
+      <anchor>aaf44474938db6e70f9f890a6b3832f90</anchor>
+      <arglist>(const molpro::linalg::itsolv::CVecRef&lt; AL &gt; &amp;xx, const molpro::linalg::itsolv::CVecRef&lt; AR &gt; &amp;yy) override</arglist>
     </member>
     <member kind="function">
       <type>std::map&lt; size_t, value_type_abs &gt;</type>
@@ -7674,15 +7674,15 @@
       <type>void</type>
       <name>gemm_outer</name>
       <anchorfile>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html</anchorfile>
-      <anchor>a67e480661a9807c77ba4610896d5cbaf</anchor>
-      <arglist>(const Matrix&lt; value_type &gt; alphas, const CVecRef&lt; AR &gt; &amp;xx, const VecRef&lt; AL &gt; &amp;yy) override</arglist>
+      <anchor>a1bd2b3319f143dde9d288e769ea8ffe2</anchor>
+      <arglist>(const molpro::linalg::itsolv::subspace::Matrix&lt; value_type &gt; alphas, const molpro::linalg::itsolv::CVecRef&lt; AR &gt; &amp;xx, const molpro::linalg::itsolv::VecRef&lt; AL &gt; &amp;yy) override</arglist>
     </member>
     <member kind="function">
-      <type>Matrix&lt; value_type &gt;</type>
+      <type>molpro::linalg::itsolv::subspace::Matrix&lt; value_type &gt;</type>
       <name>gemm_inner</name>
       <anchorfile>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html</anchorfile>
-      <anchor>ac52a2b8c20649029b8c02ffa101cf494</anchor>
-      <arglist>(const CVecRef&lt; AL &gt; &amp;xx, const CVecRef&lt; AR &gt; &amp;yy) override</arglist>
+      <anchor>a421820f3c4912f6a54809cc26f91bf1c</anchor>
+      <arglist>(const molpro::linalg::itsolv::CVecRef&lt; AL &gt; &amp;xx, const molpro::linalg::itsolv::CVecRef&lt; AR &gt; &amp;yy) override</arglist>
     </member>
     <member kind="function">
       <type>std::map&lt; size_t, value_type_abs &gt;</type>

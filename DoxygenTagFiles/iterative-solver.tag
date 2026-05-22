@@ -1030,6 +1030,13 @@
       <anchor>a16b328328cac8d8cbfccf744fa7baa4f</anchor>
       <arglist>(const S &amp;source)</arglist>
     </member>
+    <member kind="function" protection="protected">
+      <type>T</type>
+      <name>copyAny</name>
+      <anchorfile>classmolpro_1_1linalg_1_1array_1_1ArrayHandlerIterable.html</anchorfile>
+      <anchor>a16b328328cac8d8cbfccf744fa7baa4f</anchor>
+      <arglist>(const S &amp;source)</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>molpro::linalg::array::ArrayHandlerIterableSparse</name>
@@ -1414,10 +1421,10 @@
       <arglist>(bool initial=false)</arglist>
     </member>
     <member kind="variable" protection="protected">
-      <type>const CVecRef &amp;</type>
+      <type>const CVecRef</type>
       <name>m_arrays</name>
       <anchorfile>classmolpro_1_1linalg_1_1array_1_1util_1_1BufferManager.html</anchorfile>
-      <anchor>a2b25503f73cc1c73697ef0b91d520861</anchor>
+      <anchor>a1255932b2f5459c3964824244671c9c8</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -1667,6 +1674,123 @@
       <arglist>(const T &amp;lhs, const T &amp;rhs) const</arglist>
     </member>
   </compound>
+  <compound kind="class">
+    <name>molpro::linalg::itsolv::log::ConstexprString</name>
+    <filename>classmolpro_1_1linalg_1_1itsolv_1_1log_1_1ConstexprString.html</filename>
+    <templarg>std::size_t MaxSize</templarg>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>ConstexprString</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1log_1_1ConstexprString.html</anchorfile>
+      <anchor>a777fa2d09fb2ae3b7261c6e54a4f7104</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>ConstexprString</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1log_1_1ConstexprString.html</anchorfile>
+      <anchor>a797015db6399a7ef116378808d08b2e4</anchor>
+      <arglist>(const char(&amp;literal)[N])</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>~ConstexprString</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1log_1_1ConstexprString.html</anchorfile>
+      <anchor>a5625092b4f5e885ea0e6f9968029c586</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr void</type>
+      <name>push_back</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1log_1_1ConstexprString.html</anchorfile>
+      <anchor>a9ed183b0e7b5427d3579dffa5f806a2d</anchor>
+      <arglist>(char c)</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr std::size_t</type>
+      <name>size</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1log_1_1ConstexprString.html</anchorfile>
+      <anchor>aca9cdf34ced9daabbc9c8a9c3e3ec7af</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr char &amp;</type>
+      <name>operator[]</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1log_1_1ConstexprString.html</anchorfile>
+      <anchor>aa8150d9ddcd01801e6114ad943185561</anchor>
+      <arglist>(std::size_t idx)</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr std::string_view</type>
+      <name>as_view</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1log_1_1ConstexprString.html</anchorfile>
+      <anchor>ae9cb1bf8947dd96fafc1062b7aa48046</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator std::string_view</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1log_1_1ConstexprString.html</anchorfile>
+      <anchor>a5bdb81c9aea8ce48adb3b63bf3f107b4</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>molpro::linalg::itsolv::log::ContextBase</name>
+    <filename>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1ContextBase.html</filename>
+    <templarg>typename CRTP</templarg>
+    <templarg>bool fixed_args</templarg>
+    <templarg>typename ... Args</templarg>
+    <member kind="typedef">
+      <type>std::tuple&lt; std::remove_cvref_t&lt; Args &gt;... &gt;</type>
+      <name>arg_types_tuple</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1ContextBase.html</anchorfile>
+      <anchor>a8598d57ca57079ba514fa9f66b1c7ee5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>decltype(to_arg(std::declval&lt; std::tuple_element_t&lt; Idx, arg_types_tuple &gt; &gt;()))</type>
+      <name>arg_t</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1ContextBase.html</anchorfile>
+      <anchor>aba65551e6047f1aebcce0204b72da9d4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr decltype(auto)</type>
+      <name>to_arg</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1ContextBase.html</anchorfile>
+      <anchor>ade3ca055bd401ff87cfacd1606d28930</anchor>
+      <arglist>(T &amp;&amp;arg)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static arg_t&lt; Idx &gt;</type>
+      <name>get_arg</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1ContextBase.html</anchorfile>
+      <anchor>a37c2b7580bd50be8f49b242b2b91eba9</anchor>
+      <arglist>(Ts &amp;&amp;...args)</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr const char *</type>
+      <name>name</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1ContextBase.html</anchorfile>
+      <anchor>a3413b9862cd9a7a6d57724e7434683af</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr bool</type>
+      <name>uses_fixed_arguments</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1ContextBase.html</anchorfile>
+      <anchor>ac342a2a8ab55f014afe878af52e9f34c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr std::size_t</type>
+      <name>num_args</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1ContextBase.html</anchorfile>
+      <anchor>af8e6a9e8c3c20e6572f5c6b52d2f339a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
   <compound kind="struct">
     <name>molpro::linalg::array::ArrayHandler::Counter</name>
     <filename>structmolpro_1_1linalg_1_1array_1_1ArrayHandler_1_1Counter.html</filename>
@@ -1784,6 +1908,18 @@
       <name>m_slice</name>
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1Matrix_1_1CSlice.html</anchorfile>
       <anchor>a266d4c925653909a69fb71ced5b3cdcf</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>molpro::linalg::itsolv::log::DataDump</name>
+    <filename>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1DataDump.html</filename>
+    <base>ContextBase&lt; DataDump, false &gt;</base>
+    <member kind="variable" static="yes">
+      <type>static constexpr const char *</type>
+      <name>name</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1DataDump.html</anchorfile>
+      <anchor>a16473466c7ea852523e4169fc6b5b915</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -2855,15 +2991,15 @@
       <type></type>
       <name>DistrArrayFile</name>
       <anchorfile>classmolpro_1_1linalg_1_1array_1_1DistrArrayFile.html</anchorfile>
-      <anchor>a09d809f27869d6bf9bace2efdaabd415</anchor>
-      <arglist>(size_t dimension, MPI_Comm comm=comm_global(), const std::string &amp;directory=&quot;.&quot;)</arglist>
+      <anchor>a95aa4474e00a58cc60cb6cc37b6fd989</anchor>
+      <arglist>(size_t dimension, MPI_Comm comm=molpro::mpi::comm_global(), const std::string &amp;directory=&quot;.&quot;)</arglist>
     </member>
     <member kind="function">
       <type></type>
       <name>DistrArrayFile</name>
       <anchorfile>classmolpro_1_1linalg_1_1array_1_1DistrArrayFile.html</anchorfile>
-      <anchor>a26300675242f1aa928b662603ec1a4b0</anchor>
-      <arglist>(std::unique_ptr&lt; Distribution &gt; distribution, MPI_Comm comm=comm_global(), const std::string &amp;directory=&quot;.&quot;)</arglist>
+      <anchor>a3737da18d7f45def5dae112380ed599c</anchor>
+      <arglist>(std::unique_ptr&lt; Distribution &gt; distribution, MPI_Comm comm=molpro::mpi::comm_global(), const std::string &amp;directory=&quot;.&quot;)</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -3502,15 +3638,15 @@
       <type></type>
       <name>DistrArraySpan</name>
       <anchorfile>classmolpro_1_1linalg_1_1array_1_1DistrArraySpan.html</anchorfile>
-      <anchor>a38f6789633cb1565a3d01c8ebba422a0</anchor>
-      <arglist>(size_t dimension, Span&lt; value_type &gt; buffer, MPI_Comm commun=comm_global())</arglist>
+      <anchor>aaeb83781219123e8e016eee8e6b189d0</anchor>
+      <arglist>(size_t dimension, Span&lt; value_type &gt; buffer, MPI_Comm commun=molpro::mpi::comm_global())</arglist>
     </member>
     <member kind="function">
       <type></type>
       <name>DistrArraySpan</name>
       <anchorfile>classmolpro_1_1linalg_1_1array_1_1DistrArraySpan.html</anchorfile>
-      <anchor>ac715284f205f30461651fe08eb8dd525</anchor>
-      <arglist>(std::unique_ptr&lt; Distribution &gt; distribution, Span&lt; value_type &gt; buffer, MPI_Comm commun=comm_global())</arglist>
+      <anchor>ac148cd2e34c3b5fa207a54a9babd2fdd</anchor>
+      <arglist>(std::unique_ptr&lt; Distribution &gt; distribution, Span&lt; value_type &gt; buffer, MPI_Comm commun=molpro::mpi::comm_global())</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -4115,6 +4251,93 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>molpro::linalg::itsolv::log::FormatOption</name>
+    <filename>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1FormatOption.html</filename>
+    <templarg>context Context</templarg>
+    <templarg>typename T</templarg>
+    <templarg>std::size_t precision</templarg>
+    <member kind="function" static="yes">
+      <type>static constexpr auto</type>
+      <name>format_string</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1FormatOption.html</anchorfile>
+      <anchor>a626974d8c1dc394b91204aa5ab606909</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr std::string_view</type>
+      <name>range_begin_mark</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1FormatOption.html</anchorfile>
+      <anchor>ab19f2d1f00759854be0235e5ffd7ada4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr std::string_view</type>
+      <name>range_end_mark</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1FormatOption.html</anchorfile>
+      <anchor>abb5fbf1fefbc6a522941c766a4f78bc6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr std::string_view</type>
+      <name>range_separator</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1FormatOption.html</anchorfile>
+      <anchor>a3de3145e6f6c54ba800a5b9d77aab8cc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static constexpr void</type>
+      <name>prepare_stream</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1FormatOption.html</anchorfile>
+      <anchor>a14e866d33fe60bfe7fe84a480d4d0606</anchor>
+      <arglist>(std::ostream &amp;stream)</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>std::formatter&lt; molpro::linalg::itsolv::subspace::Matrix&lt; T &gt; &gt;</name>
+    <filename>structstd_1_1formatter_3_01molpro_1_1linalg_1_1itsolv_1_1subspace_1_1Matrix_3_01T_01_4_01_4.html</filename>
+    <templarg>typename T</templarg>
+    <member kind="typedef">
+      <type>std::formatter&lt; std::string_view &gt;</type>
+      <name>Base</name>
+      <anchorfile>structstd_1_1formatter_3_01molpro_1_1linalg_1_1itsolv_1_1subspace_1_1Matrix_3_01T_01_4_01_4.html</anchorfile>
+      <anchor>a86829c18e6b8b9b9b57ebb0d474a1f37</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr auto</type>
+      <name>parse</name>
+      <anchorfile>structstd_1_1formatter_3_01molpro_1_1linalg_1_1itsolv_1_1subspace_1_1Matrix_3_01T_01_4_01_4.html</anchorfile>
+      <anchor>aa2ee059b21f6fdb8ee5f771313a578dd</anchor>
+      <arglist>(std::format_parse_context &amp;ctx)</arglist>
+    </member>
+    <member kind="function">
+      <type>auto</type>
+      <name>format</name>
+      <anchorfile>structstd_1_1formatter_3_01molpro_1_1linalg_1_1itsolv_1_1subspace_1_1Matrix_3_01T_01_4_01_4.html</anchorfile>
+      <anchor>a2c78b024a98370de26339a10b28ac09b</anchor>
+      <arglist>(const molpro::linalg::itsolv::subspace::Matrix&lt; T &gt; &amp;mat, std::format_context &amp;ctx) const</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::size_t</type>
+      <name>precision</name>
+      <anchorfile>structstd_1_1formatter_3_01molpro_1_1linalg_1_1itsolv_1_1subspace_1_1Matrix_3_01T_01_4_01_4.html</anchorfile>
+      <anchor>ac7b8b0f0ae64a455509dfbd3a8ea6755</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>molpro::linalg::itsolv::log::Generic</name>
+    <filename>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1Generic.html</filename>
+    <base>ContextBase&lt; Generic, false &gt;</base>
+    <member kind="variable" static="yes">
+      <type>static constexpr const char *</type>
+      <name>name</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1Generic.html</anchorfile>
+      <anchor>aeb8a150dd79618b2151ac04dcba2e112</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>molpro::linalg::itsolv::has_iterator</name>
     <filename>structmolpro_1_1linalg_1_1itsolv_1_1has__iterator.html</filename>
     <templarg>typename T</templarg>
@@ -4204,6 +4427,17 @@
       <anchor>a99e796dd3705718bb375477d04e4fa28</anchor>
       <arglist>(std::ostream &amp;os, const Interpolate &amp;interpolant)</arglist>
     </member>
+  </compound>
+  <compound kind="struct">
+    <name>molpro::linalg::array::util::is_allocatable</name>
+    <filename>structmolpro_1_1linalg_1_1array_1_1util_1_1is__allocatable.html</filename>
+    <templarg>typename T</templarg>
+    <templarg>typename</templarg>
+  </compound>
+  <compound kind="struct">
+    <name>molpro::linalg::array::util::is_allocatable&lt; T, std::enable_if_t&lt; std::is_constructible_v&lt; T, std::size_t &gt; &gt; &gt;</name>
+    <filename>structmolpro_1_1linalg_1_1array_1_1util_1_1is__allocatable_3_01T_00_01std_1_1enable__if__t_3_01s4c121521a6d4db1772cdee40d8878c6b.html</filename>
+    <templarg>typename T</templarg>
   </compound>
   <compound kind="struct">
     <name>molpro::linalg::itsolv::is_complex</name>
@@ -4382,6 +4616,25 @@
       <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1ISubspaceSolver.html</anchorfile>
       <anchor>aac76eee68ef881c8f3e5da00321a9ce2</anchor>
       <arglist>() const =0</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual void</type>
+      <name>set_logger</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1ISubspaceSolver.html</anchorfile>
+      <anchor>a7dac83911e1152462e1bfffe6f0a432a</anchor>
+      <arglist>(std::shared_ptr&lt; Logger &gt; logger)=0</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>molpro::linalg::itsolv::log::IterationReport</name>
+    <filename>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1IterationReport.html</filename>
+    <base>ContextBase&lt; IterationReport, true &gt;</base>
+    <member kind="variable" static="yes">
+      <type>static constexpr const char *</type>
+      <name>name</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1IterationReport.html</anchorfile>
+      <anchor>ae60e453be6879c07329b3f9058070fb8</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -4797,6 +5050,20 @@
       <arglist>() const =0</arglist>
     </member>
     <member kind="function" virtualness="pure">
+      <type>virtual void</type>
+      <name>set_logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1IterativeSolver.html</anchorfile>
+      <anchor>ad377686a6187321705f1c0dd9a3b037c</anchor>
+      <arglist>(std::shared_ptr&lt; Logger &gt; logger)=0</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual Logger &amp;</type>
+      <name>logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1IterativeSolver.html</anchorfile>
+      <anchor>ad0285158bc706cf7f5efdb6290eb0a88</anchor>
+      <arglist>()=0</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
       <type>virtual bool</type>
       <name>test_problem</name>
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1IterativeSolver.html</anchorfile>
@@ -4845,6 +5112,20 @@
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1IterativeSolverTemplate.html</anchorfile>
       <anchor>a143dac00773f825e5f5221873a2ef351</anchor>
       <arglist>(IterativeSolverTemplate&lt; Solver, R, Q, P &gt; &amp;&amp;) noexcept=default</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1IterativeSolverTemplate.html</anchorfile>
+      <anchor>ac2ef3b700175dc65c738e598fb7552cb</anchor>
+      <arglist>(std::shared_ptr&lt; Logger &gt; logger) override</arglist>
+    </member>
+    <member kind="function">
+      <type>Logger &amp;</type>
+      <name>logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1IterativeSolverTemplate.html</anchorfile>
+      <anchor>aed21354d1be1e79e8982e9b3e2036c9a</anchor>
+      <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -4985,6 +5266,20 @@
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1IterativeSolverTemplate.html</anchorfile>
       <anchor>a2586061786c83f40ee932189f6a59353</anchor>
       <arglist>(std::ostream &amp;cout, bool endl=true) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>iteration_report</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1IterativeSolverTemplate.html</anchorfile>
+      <anchor>a13d873368ab4f4a1862f9fa92a4c0b2c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>summary_report</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1IterativeSolverTemplate.html</anchorfile>
+      <anchor>a29bf98a5481f1c462b4533c70c12dd91</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -5288,10 +5583,10 @@
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
-      <type>Verbosity</type>
+      <type>std::optional&lt; Verbosity &gt;</type>
       <name>m_verbosity</name>
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1IterativeSolverTemplate.html</anchorfile>
-      <anchor>ac3e460814c7e8040c9a6fed3de9e3026</anchor>
+      <anchor>a1b20b38ad0f0597f4d34ebd8b40ec609</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -5633,6 +5928,13 @@
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1IXSpace.html</anchorfile>
       <anchor>add51951e8630f1389adc79e56bb7a633</anchor>
       <arglist>() const =0</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual void</type>
+      <name>set_logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1IXSpace.html</anchorfile>
+      <anchor>a2c418e0c5749074700b06101f478ec04</anchor>
+      <arglist>(std::shared_ptr&lt; Logger &gt; logger)=0</arglist>
     </member>
     <member kind="variable">
       <type>SubspaceData</type>
@@ -6903,141 +7205,146 @@
       <arglist></arglist>
     </member>
   </compound>
-  <compound kind="struct">
+  <compound kind="class">
     <name>molpro::linalg::itsolv::Logger</name>
-    <filename>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</filename>
-    <member kind="enumeration">
+    <filename>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</filename>
+    <member kind="function">
       <type></type>
-      <name>Level</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>None</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0a6e7a2261b6bfd1bc59dce5fe62c87d56</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Trace</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0a4e0b021e4cf1dcd826c76bd7205072c6</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Debug</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0ad25d9df532ac44ba5d3d9cd40eaa4d06</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Info</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0a3e71de103718f2811cea3f370e922dcd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Warn</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0add79474a75277ef778e506b77c7fdd2f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Error</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0a819ab687a481cba7929cefb525913a10</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Fatal</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0a61719e7779d976d0ec7051bc5f04ada6</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>None</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0a6e7a2261b6bfd1bc59dce5fe62c87d56</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Trace</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0a4e0b021e4cf1dcd826c76bd7205072c6</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Debug</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0ad25d9df532ac44ba5d3d9cd40eaa4d06</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Info</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0a3e71de103718f2811cea3f370e922dcd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Warn</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0add79474a75277ef778e506b77c7fdd2f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Error</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0a819ab687a481cba7929cefb525913a10</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>Fatal</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a8adb6b8c05cd17ed24547b35ed5cf4b0a61719e7779d976d0ec7051bc5f04ada6</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>msg</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a0a60cec13fb45bf89fc236ee3a541641</anchor>
-      <arglist>(const std::string &amp;message, Level log_lvl)</arglist>
+      <name>Logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>a1ccfe737d8b2164d098562cc90faabd8</anchor>
+      <arglist>(log::Severity min_severity=log::Severity::Normal, log::Verbosity verbosity=log::Verbosity::Info, bool enable_data_dumps=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>msg</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a548d9fd08f153e05e91053ddd97d11e9</anchor>
-      <arglist>(const std::string &amp;message, ForwardIt begin, ForwardIt end, Level log_lvl, int precision=3)</arglist>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>a53781ee8e06705d089207ada15c3fa57</anchor>
+      <arglist>(log::Severity severity, log::Verbosity verbosity, std::string_view message, Ts &amp;&amp;...args) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>trace</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>ae8eff4a439b5d86e7fe9ebd299ece821</anchor>
+      <arglist>(std::string_view message, Ts &amp;&amp;...args) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>debug</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>a31c65c1f5ba802102ec8a132a99d8ad8</anchor>
+      <arglist>(std::string_view message, Ts &amp;&amp;...args) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>info</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>a165cbf0829ddd542abd540b276598095</anchor>
+      <arglist>(std::string_view message, Ts &amp;&amp;...args) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>warn</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>a21558b50ca669f738657d62ea9253863</anchor>
+      <arglist>(std::string_view message, Ts &amp;&amp;...args) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>error</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>a5fe4e96d8c075f3ac16f2cb44eec05d2</anchor>
+      <arglist>(std::string_view message, Ts &amp;&amp;...args) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>fatal</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>a96ab51ac8c39856501ca3a085372a404</anchor>
+      <arglist>(std::string_view message, Ts &amp;&amp;...args) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>data_dump</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>a716e08cb3b362c2d6a9fcabd9263fc9d</anchor>
+      <arglist>(std::string_view what, Ts...data) const</arglist>
+    </member>
+    <member kind="function">
+      <type>log::Severity</type>
+      <name>min_severity</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>abd38e80ae9e78fdb0879590b5d8be3bc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_min_severity</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>a012ce4039a1651dcdfb9d602bc131733</anchor>
+      <arglist>(log::Severity severity)</arglist>
+    </member>
+    <member kind="function">
+      <type>log::Verbosity</type>
+      <name>verbosity</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>a40f771e181e6fa67a1c92318f2af584e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_verbosity</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>afea6b441a692d8c925c04f6834a7c232</anchor>
+      <arglist>(log::Verbosity verbosity)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>data_dumps_enabled</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>aa4123a65af4d3eee009e9f58860f1022</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>enable_data_dumps</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>ae9ac1481a4dac8e59741d4526c1dfe8f</anchor>
+      <arglist>(bool enable)</arglist>
+    </member>
+    <member kind="function" protection="protected" virtualness="virtual">
+      <type>virtual void</type>
+      <name>default_message_handler</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>a8b679520aaf2b0747021d2d416d36962</anchor>
+      <arglist>(std::string_view ctx, log::Severity severity, log::Verbosity verbosity, std::string_view msg) const</arglist>
+    </member>
+    <member kind="function" protection="protected" virtualness="virtual">
+      <type>virtual void</type>
+      <name>log_ctx</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
+      <anchor>af9a15cea50f9f74da872f54393f6afc0</anchor>
+      <arglist>(std::string_view ctx, std::size_t num_args) const</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>molpro::linalg::itsolv::log::LogHandler</name>
+    <filename>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1LogHandler.html</filename>
+    <templarg>context Context</templarg>
+    <member kind="function">
+      <type>void</type>
+      <name>handle</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1LogHandler.html</anchorfile>
+      <anchor>a81e3ea5cdfe2c1fb17b21b9ae74c049b</anchor>
+      <arglist>(Severity severity, Verbosity verbosity, std::string_view message, Ts...args)=delete</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static std::string</type>
-      <name>scientific</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a2189cc66128accb5946097d3da89a956</anchor>
-      <arglist>(double val)</arglist>
-    </member>
-    <member kind="variable">
-      <type>Level</type>
-      <name>max_trace_level</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>aae4f8d1afd45ee27292b55b11fef3b0e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>Level</type>
-      <name>max_warn_level</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>ab9d0869c7eaa4dbedadfb39518f95308</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>bool</type>
-      <name>data_dump</name>
-      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Logger.html</anchorfile>
-      <anchor>a144df2151d6f7909f9f0c3c89488c6bf</anchor>
-      <arglist></arglist>
+      <type>static void</type>
+      <name>handle</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1LogHandler.html</anchorfile>
+      <anchor>ae85e4139a2e2212cb2eefe6a0d978919</anchor>
+      <arglist>(const Logger &amp;logger, Severity severity, Verbosity verbosity, std::string_view message, Ts...args)=delete</arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -7465,6 +7772,32 @@
       <arglist></arglist>
     </member>
   </compound>
+  <compound kind="struct">
+    <name>molpro::linalg::itsolv::log::NewIteration</name>
+    <filename>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1NewIteration.html</filename>
+    <base>ContextBase&lt; NewIteration, true, int, std::vector&lt; double &gt; &gt;</base>
+    <member kind="variable" static="yes">
+      <type>static constexpr const char *</type>
+      <name>name</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1NewIteration.html</anchorfile>
+      <anchor>aecb3ebba15b108e88384a175878c5cf1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr std::size_t</type>
+      <name>iter</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1NewIteration.html</anchorfile>
+      <anchor>a02a74137f6f2ad199b694b666d8d3e38</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static constexpr std::size_t</type>
+      <name>errors</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1NewIteration.html</anchorfile>
+      <anchor>a29e2739560e3b3ebdb4b80823ee0b5e7</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
   <compound kind="class">
     <name>molpro::linalg::itsolv::NonLinearEquations</name>
     <filename>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquations.html</filename>
@@ -7472,6 +7805,175 @@
     <templarg>class Q</templarg>
     <templarg>class P</templarg>
     <base>molpro::linalg::itsolv::IterativeSolver</base>
+  </compound>
+  <compound kind="class">
+    <name>molpro::linalg::itsolv::NonLinearEquationsDIIS</name>
+    <filename>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</filename>
+    <templarg>class R</templarg>
+    <templarg>class Q</templarg>
+    <templarg>class P</templarg>
+    <base>IterativeSolverTemplate&lt; NonLinearEquations, R, R, std::map&lt; size_t, typename R::value_type &gt; &gt;</base>
+    <member kind="typedef">
+      <type>IterativeSolverTemplate&lt; NonLinearEquations, R, Q, P &gt;</type>
+      <name>SolverTemplate</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a8cdd367139fb2d1049cb999cb7ebb3d7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>NonLinearEquationsDIIS</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a22b46b180e6f1fef2c1253dda53537c2</anchor>
+      <arglist>(const std::shared_ptr&lt; ArrayHandlers&lt; R, Q, P &gt; &gt; &amp;handlers, const std::shared_ptr&lt; Logger &gt; &amp;logger_=std::make_shared&lt; Logger &gt;())</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>nonlinear</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a9645368dbd7d4fe0f618951302232891</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>add_vector</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>aa8edc564a0368a4f004267f0178a98aa</anchor>
+      <arglist>(R &amp;parameters, R &amp;residual, value_type value) override</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>end_iteration</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a8a43efdb4eb6089132538c4a1862bb95</anchor>
+      <arglist>(const VecRef&lt; R &gt; &amp;parameters, const VecRef&lt; R &gt; &amp;action) override</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>end_iteration</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a8a03eddf241a017a0c987282d8916c1a</anchor>
+      <arglist>(std::vector&lt; R &gt; &amp;parameters, std::vector&lt; R &gt; &amp;action) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_norm_thresh</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a1c933107106d7a92bdf2cdea0ef8fc43</anchor>
+      <arglist>(double thresh)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>get_norm_thresh</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>afab0054fac243503999e6c3d634c5f36</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_svd_thresh</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>aa1fd6cca7b816e4ef8763b321357a16c</anchor>
+      <arglist>(double thresh)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>get_svd_thresh</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a57a307bb2d036098e1b400deb3669b56</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_max_size_qspace</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>ad9316b8cbf68a32e7a3649952dfbfaa5</anchor>
+      <arglist>(int n)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>get_max_size_qspace</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a8e82ae51bf0c801198fcdaec73375a77</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_options</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>af82daf87496a92fc451955e46862ee72</anchor>
+      <arglist>(const Options &amp;options) override</arglist>
+    </member>
+    <member kind="function">
+      <type>std::shared_ptr&lt; Options &gt;</type>
+      <name>get_options</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>abae2b5ab15d6343c4ab432565ce51882</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>report</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>ab81114cc93a0724802cbb61ff464f6fe</anchor>
+      <arglist>(std::ostream &amp;cout, bool endl=true) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>end_iteration</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a0ccbb4f204c39eb91b6b3266b585a2a0</anchor>
+      <arglist>(R &amp;parameters, R &amp;actions) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>report</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a2586061786c83f40ee932189f6a59353</anchor>
+      <arglist>(std::ostream &amp;cout, bool endl=true) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>report</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>ab4748964a82d882be6cfebd7c158511e</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="variable">
+      <type>std::shared_ptr&lt; Logger &gt;</type>
+      <name>logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>acaaf45cdf09db7a3645931e5dc9466f3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>construct_residual</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>ab1da049238c39327fa45fb6a266d2f79</anchor>
+      <arglist>(const std::vector&lt; int &gt; &amp;roots, const CVecRef&lt; R &gt; &amp;params, const VecRef&lt; R &gt; &amp;actions) override</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>m_norm_thresh</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a7573b12084903d8c20be149c7b178779</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>m_svd_thresh</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>a152f10b0a4c038df6a9fa74b0aceb387</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>int</type>
+      <name>m_max_size_qspace</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1NonLinearEquationsDIIS.html</anchorfile>
+      <anchor>abe54cdd1558eb286be62b0eede38ef4c</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="struct">
     <name>molpro::linalg::itsolv::NonLinearEquationsDIISOptions</name>
@@ -7633,15 +8135,15 @@
       <type>void</type>
       <name>BFGS_update_1</name>
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1OptimizeBFGS.html</anchorfile>
-      <anchor>a27e9a19a8c2a15222c173d48bfdbcee7</anchor>
-      <arglist>(R &amp;residual, std::shared_ptr&lt; const subspace::IXSpace&lt; R, Q, P &gt; &gt; xspace, const Matrix&lt; double &gt; &amp;H)</arglist>
+      <anchor>a6b488ffdcaafee0fb390c198cd58fa34</anchor>
+      <arglist>(R &amp;residual, std::shared_ptr&lt; const subspace::IXSpace&lt; R, Q, P &gt; &gt; xspace, const subspace::Matrix&lt; double &gt; &amp;H)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>BFGS_update_2</name>
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1OptimizeBFGS.html</anchorfile>
-      <anchor>a6ec030db3fc6b6055169c4f7f21dfa41</anchor>
-      <arglist>(R &amp;z, std::shared_ptr&lt; const subspace::IXSpace&lt; R, Q, P &gt; &gt; xspace, const Matrix&lt; double &gt; &amp;H)</arglist>
+      <anchor>acc3dff99c4ced8568fb55d69481571da</anchor>
+      <arglist>(R &amp;z, std::shared_ptr&lt; const subspace::IXSpace&lt; R, Q, P &gt; &gt; xspace, const subspace::Matrix&lt; double &gt; &amp;H)</arglist>
     </member>
     <member kind="function">
       <type>size_t</type>
@@ -8105,10 +8607,10 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>std::optional&lt; double &gt;</type>
+      <type>std::optional&lt; int &gt;</type>
       <name>max_p</name>
       <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1Options.html</anchorfile>
-      <anchor>abdcdb4d71ce0a3b9e2ab82e84420059e</anchor>
+      <anchor>afefb3302ebe4c1a16c43fb4168d47246</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -8256,6 +8758,13 @@
       <name>pp_action_matrix</name>
       <anchorfile>structiterative__solver__problem_1_1problem.html</anchorfile>
       <anchor>a92f51ae6a758597adc86539eb92e10f9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>procedure, pass</type>
+      <name>test_parameters</name>
+      <anchorfile>structiterative__solver__problem_1_1problem.html</anchorfile>
+      <anchor>a1d5d433d1e6f732f1ee2126bbaf71732</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -9177,10 +9686,10 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>T &amp;</type>
+      <type>const T &amp;</type>
       <name>const_reference</name>
       <anchorfile>classmolpro_1_1linalg_1_1array_1_1span_1_1Span.html</anchorfile>
-      <anchor>a823c7414acdf43ed7bcfd15867f3233c</anchor>
+      <anchor>a78ef507281d967bfe6c9d7821256ea09</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -9522,6 +10031,140 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>molpro::linalg::itsolv::subspace::SubspaceSolverDIIS</name>
+    <filename>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</filename>
+    <templarg>class RT</templarg>
+    <templarg>class QT</templarg>
+    <templarg>class PT</templarg>
+    <base>molpro::linalg::itsolv::subspace::ISubspaceSolver</base>
+    <member kind="typedef">
+      <type>typename ISubspaceSolver&lt; RT, QT, PT &gt;::value_type</type>
+      <name>value_type</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>a53a284cad70f77135bec50f189b9d4be</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename ISubspaceSolver&lt; RT, QT, PT &gt;::value_type_abs</type>
+      <name>value_type_abs</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>ac3b68b21ee7b3d44ff2a56b5c83518d3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename ISubspaceSolver&lt; RT, QT, PT &gt;::R</type>
+      <name>R</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>a3a7aed4da36ef9207ce254a41385b306</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename ISubspaceSolver&lt; RT, QT, PT &gt;::Q</type>
+      <name>Q</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>ae6d091a4782952c6e7c82aca7fc23c08</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>typename ISubspaceSolver&lt; RT, QT, PT &gt;::P</type>
+      <name>P</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>a7771eafc0d4c3b246f986f1ee053c9e6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SubspaceSolverDIIS</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>acc28f194d0423795c1681f344d461474</anchor>
+      <arglist>(std::shared_ptr&lt; Logger &gt; logger, const bool &amp;converged)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>solve</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>ad31e5db2c2212d78312be8e7d473d3c7</anchor>
+      <arglist>(IXSpace&lt; R, Q, P &gt; &amp;xspace, const size_t nroots_max) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_error</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>aad046791abc9a149aee485d2e3c9f1bf</anchor>
+      <arglist>(int root, value_type_abs error) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_error</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>abce7a2aef273fca624995b1bf695800d</anchor>
+      <arglist>(const std::vector&lt; int &gt; &amp;roots, const std::vector&lt; value_type_abs &gt; &amp;errors) override</arglist>
+    </member>
+    <member kind="function">
+      <type>const Matrix&lt; value_type &gt; &amp;</type>
+      <name>solutions</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>a07a2f7f0370f13dfa00fafd5dd8f578f</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>const std::vector&lt; value_type &gt; &amp;</type>
+      <name>eigenvalues</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>a066760bc8169151f1c48c9a889a4a4cd</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>const std::vector&lt; value_type_abs &gt; &amp;</type>
+      <name>errors</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>a315e0f133942e01145f9bfb1978dfc17</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>size</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>aef5512aecc5060caf3bd3f64cbc94dd9</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>a6a293f9109a557f8a10d03021f5e2cd7</anchor>
+      <arglist>(std::shared_ptr&lt; Logger &gt; logger) override</arglist>
+    </member>
+    <member kind="variable">
+      <type>value_type_abs</type>
+      <name>m_svd_solver_threshold</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>ae3b8f54c6fd90df6be1498c298debeab</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>Matrix&lt; value_type &gt;</type>
+      <name>m_solutions</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>abce9022f32bac799f508af03c359ae83</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; value_type_abs &gt;</type>
+      <name>m_errors</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>a7b19065e0ec00ea9a4afa8b870c094ba</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::shared_ptr&lt; Logger &gt;</type>
+      <name>m_logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverDIIS.html</anchorfile>
+      <anchor>a06793418aaaff1b48c29497be8f7a243</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>molpro::linalg::itsolv::subspace::SubspaceSolverLinEig</name>
     <filename>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverLinEig.html</filename>
     <templarg>class RT</templarg>
@@ -9621,6 +10264,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>set_logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverLinEig.html</anchorfile>
+      <anchor>a38edf986712014c3891484062da3f355</anchor>
+      <arglist>(std::shared_ptr&lt; Logger &gt; logger) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>set_hermiticity</name>
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverLinEig.html</anchorfile>
       <anchor>abcb40eebed55e1c2c61a3d27a06e1885</anchor>
@@ -9653,6 +10303,13 @@
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverLinEig.html</anchorfile>
       <anchor>a4e7db02c63a673f14f1b6e6a9dbd3697</anchor>
       <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>int</type>
+      <name>convert_verbosity</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverLinEig.html</anchorfile>
+      <anchor>acdf681da569254a8f2a12dfa0bcb3125</anchor>
+      <arglist>(log::Verbosity verbosity)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
@@ -9809,6 +10466,13 @@
       <anchor>aba323c67f984e9bcb6ebd507812fffa3</anchor>
       <arglist>() const override</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverOptBFGS.html</anchorfile>
+      <anchor>a3319e46ae90d20a56005798002635cbe</anchor>
+      <arglist>(std::shared_ptr&lt; Logger &gt; logger) override</arglist>
+    </member>
     <member kind="variable" protection="protected">
       <type>Matrix&lt; value_type &gt;</type>
       <name>m_solutions</name>
@@ -9929,6 +10593,13 @@
       <anchor>ab3594645f031a4c20f80f532e303773b</anchor>
       <arglist>() const override</arglist>
     </member>
+    <member kind="function">
+      <type>void</type>
+      <name>set_logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverOptSD.html</anchorfile>
+      <anchor>a1a480a993bf67616bc78062ecb4f4722</anchor>
+      <arglist>(std::shared_ptr&lt; Logger &gt; logger) override</arglist>
+    </member>
     <member kind="variable">
       <type>value_type_abs</type>
       <name>m_svd_solver_threshold</name>
@@ -10013,6 +10684,18 @@
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1SubspaceSolverRSPT.html</anchorfile>
       <anchor>a7a5e00b4d721319ffa310f6cbdf74620</anchor>
       <arglist>(IXSpace&lt; R, Q, P &gt; &amp;xspace, const size_t nroots_max) override</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>molpro::linalg::itsolv::log::SummaryReport</name>
+    <filename>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1SummaryReport.html</filename>
+    <base>ContextBase&lt; SummaryReport, true &gt;</base>
+    <member kind="variable" static="yes">
+      <type>static constexpr const char *</type>
+      <name>name</name>
+      <anchorfile>structmolpro_1_1linalg_1_1itsolv_1_1log_1_1SummaryReport.html</anchorfile>
+      <anchor>aad38817bf0cbbf0ca19eb0a136eeefbd</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="struct">
@@ -10312,6 +10995,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>set_logger</name>
+      <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1XSpace.html</anchorfile>
+      <anchor>ad99657d1bb050c231ac2c15ba01761e3</anchor>
+      <arglist>(std::shared_ptr&lt; Logger &gt; logger) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>set_hermiticity</name>
       <anchorfile>classmolpro_1_1linalg_1_1itsolv_1_1subspace_1_1XSpace.html</anchorfile>
       <anchor>af9ba904dede4be6bb48b35329c85fb4a</anchor>
@@ -10423,18 +11113,51 @@
       <arglist></arglist>
     </member>
   </compound>
+  <compound kind="concept">
+    <name>molpro::linalg::itsolv::log::context</name>
+    <filename>conceptmolpro_1_1linalg_1_1itsolv_1_1log_1_1context.html</filename>
+  </compound>
+  <compound kind="concept">
+    <name>molpro::linalg::itsolv::log::context_uses_correct_arg_types</name>
+    <filename>conceptmolpro_1_1linalg_1_1itsolv_1_1log_1_1context__uses__correct__arg__types.html</filename>
+  </compound>
+  <compound kind="concept">
+    <name>molpro::linalg::itsolv::log::formattable</name>
+    <filename>conceptmolpro_1_1linalg_1_1itsolv_1_1log_1_1formattable.html</filename>
+  </compound>
+  <compound kind="concept">
+    <name>molpro::linalg::itsolv::log::handler_exists</name>
+    <filename>conceptmolpro_1_1linalg_1_1itsolv_1_1log_1_1handler__exists.html</filename>
+  </compound>
+  <compound kind="concept">
+    <name>molpro::linalg::itsolv::log::member_handler_exists</name>
+    <filename>conceptmolpro_1_1linalg_1_1itsolv_1_1log_1_1member__handler__exists.html</filename>
+  </compound>
+  <compound kind="concept">
+    <name>molpro::linalg::itsolv::log::name_tagged</name>
+    <filename>conceptmolpro_1_1linalg_1_1itsolv_1_1log_1_1name__tagged.html</filename>
+  </compound>
+  <compound kind="concept">
+    <name>molpro::linalg::itsolv::log::static_handler_exists</name>
+    <filename>conceptmolpro_1_1linalg_1_1itsolv_1_1log_1_1static__handler__exists.html</filename>
+  </compound>
+  <compound kind="concept">
+    <name>molpro::linalg::itsolv::log::streamable</name>
+    <filename>conceptmolpro_1_1linalg_1_1itsolv_1_1log_1_1streamable.html</filename>
+  </compound>
+  <compound kind="concept">
+    <name>molpro::linalg::itsolv::log::string_convertible_range</name>
+    <filename>conceptmolpro_1_1linalg_1_1itsolv_1_1log_1_1string__convertible__range.html</filename>
+  </compound>
+  <compound kind="concept">
+    <name>molpro::linalg::itsolv::log::stringify_supported</name>
+    <filename>conceptmolpro_1_1linalg_1_1itsolv_1_1log_1_1stringify__supported.html</filename>
+  </compound>
   <compound kind="namespace">
     <name>iterative_solver</name>
     <filename>namespaceiterative__solver.html</filename>
     <class kind="interface">iterative_solver::mpi_init</class>
     <class kind="interface">iterative_solver::mpi_rank_global</class>
-    <member kind="function">
-      <type>subroutine</type>
-      <name>test_select</name>
-      <anchorfile>namespaceiterative__solver.html</anchorfile>
-      <anchor>a762cf435ede70697d8e9df140d410d27</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="function">
       <type>integer(kind=mpicomm_kind) function, public</type>
       <name>mpicomm_compute</name>
@@ -10548,10 +11271,10 @@
       <arglist>(roots, parameters, action, synchronize)</arglist>
     </member>
     <member kind="function">
-      <type>function, public</type>
+      <type>integer function, public</type>
       <name>iterative_solver_end_iteration</name>
       <anchorfile>namespaceiterative__solver.html</anchorfile>
-      <anchor>ad609af42ab2050142d98f5ca57522322</anchor>
+      <anchor>aad6209cf87f4525b8d7e54712cae966a</anchor>
       <arglist>(solution, residual, synchronize)</arglist>
     </member>
     <member kind="function">
@@ -10609,13 +11332,6 @@
       <anchorfile>namespaceiterative__solver.html</anchorfile>
       <anchor>a3e077733271d54ad4d3182d2d9aeb9ab</anchor>
       <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>subroutine, public</type>
-      <name>apply_p_current_problem</name>
-      <anchorfile>namespaceiterative__solver.html</anchorfile>
-      <anchor>af549c18c82c1991ba10874982d745626</anchor>
-      <arglist>(p, g, nvec, ranges)</arglist>
     </member>
     <member kind="variable">
       <type>integer, parameter, public</type>
@@ -10788,6 +11504,13 @@
       <enumvalue file="namespacemolpro_1_1linalg_1_1array.html" anchor="acc52e65e7b1ba494644a4783d10a8500a7767e6bfd66b2c629f74e4be4031e01e">DistributedDisk</enumvalue>
     </member>
     <member kind="function">
+      <type>T</type>
+      <name>allocate_array</name>
+      <anchorfile>namespacemolpro_1_1linalg_1_1array.html</anchorfile>
+      <anchor>a0f1558ddafd2f5f706c0b761ab27af32</anchor>
+      <arglist>(std::size_t size)</arglist>
+    </member>
+    <member kind="function">
       <type>constexpr auto</type>
       <name>check_abs</name>
       <anchorfile>namespacemolpro_1_1linalg_1_1array.html</anchorfile>
@@ -10885,13 +11608,6 @@
       <anchor>a12b3a57e72d2ca5fd50a2925191f0ff9</anchor>
       <arglist></arglist>
     </member>
-    <member kind="variable">
-      <type>std::mutex</type>
-      <name>s_open_error_mutex</name>
-      <anchorfile>namespacemolpro_1_1linalg_1_1array.html</anchorfile>
-      <anchor>af25a43293d1736bcb38d4f07b8056745</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="namespace">
     <name>molpro::linalg::array::detail</name>
@@ -10939,6 +11655,8 @@
     <class kind="struct">molpro::linalg::array::util::CompareAbs</class>
     <class kind="class">molpro::linalg::array::util::DistrFlags</class>
     <class kind="class">molpro::linalg::array::util::Distribution</class>
+    <class kind="struct">molpro::linalg::array::util::is_allocatable</class>
+    <class kind="struct">molpro::linalg::array::util::is_allocatable&lt; T, std::enable_if_t&lt; std::is_constructible_v&lt; T, std::size_t &gt; &gt; &gt;</class>
     <class kind="struct">molpro::linalg::array::util::is_std_array</class>
     <class kind="struct">molpro::linalg::array::util::is_std_array&lt; std::array&lt; T, N &gt; &gt;</class>
     <class kind="class">molpro::linalg::array::util::LockMPI3</class>
@@ -11135,17 +11853,10 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>int</type>
-      <name>s_temp_file_name_count</name>
+      <type>constexpr bool</type>
+      <name>is_allocatable_v</name>
       <anchorfile>namespacemolpro_1_1linalg_1_1array_1_1util.html</anchorfile>
-      <anchor>a3be37e974c75f3bd166cc7303542dd4a</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::mutex</type>
-      <name>s_mutex</name>
-      <anchorfile>namespacemolpro_1_1linalg_1_1array_1_1util.html</anchorfile>
-      <anchor>ac5b51a7de2c9b92d70b9342bd48e5ed1</anchor>
+      <anchor>aaba327f38775ab51cf90be6370a3cf25</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -11157,6 +11868,7 @@
     <name>molpro::linalg::itsolv</name>
     <filename>namespacemolpro_1_1linalg_1_1itsolv.html</filename>
     <namespace>molpro::linalg::itsolv::detail</namespace>
+    <namespace>molpro::linalg::itsolv::log</namespace>
     <namespace>molpro::linalg::itsolv::subspace</namespace>
     <namespace>molpro::linalg::itsolv::util</namespace>
     <class kind="class">molpro::linalg::itsolv::ArrayHandlers</class>
@@ -11179,8 +11891,9 @@
     <class kind="class">molpro::linalg::itsolv::LinearEquationsDavidson</class>
     <class kind="struct">molpro::linalg::itsolv::LinearEquationsDavidsonOptions</class>
     <class kind="struct">molpro::linalg::itsolv::LinearEquationsOptions</class>
-    <class kind="struct">molpro::linalg::itsolv::Logger</class>
+    <class kind="class">molpro::linalg::itsolv::Logger</class>
     <class kind="class">molpro::linalg::itsolv::NonLinearEquations</class>
+    <class kind="class">molpro::linalg::itsolv::NonLinearEquationsDIIS</class>
     <class kind="struct">molpro::linalg::itsolv::NonLinearEquationsDIISOptions</class>
     <class kind="struct">molpro::linalg::itsolv::NonLinearEquationsOptions</class>
     <class kind="class">molpro::linalg::itsolv::Optimize</class>
@@ -11374,6 +12087,20 @@
       <arglist>(std::vector&lt; std::complex&lt; double &gt; &gt; &amp;solution, const std::vector&lt; std::complex&lt; double &gt; &gt; &amp;matrix, const size_t dimension, double svdThreshold, int verbosity)</arglist>
     </member>
     <member kind="function">
+      <type>std::list&lt; SVD&lt; value_type &gt; &gt;</type>
+      <name>svd_eigen_jacobi</name>
+      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv.html</anchorfile>
+      <anchor>aed5f5152ca0039709fc9f29a60595f68</anchor>
+      <arglist>(size_t nrows, size_t ncols, const array::Span&lt; value_type &gt; &amp;m, double threshold)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::list&lt; SVD&lt; value_type &gt; &gt;</type>
+      <name>svd_eigen_bdcsvd</name>
+      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv.html</anchorfile>
+      <anchor>a30d21b580f20c0e56221dfc117418b6a</anchor>
+      <arglist>(size_t nrows, size_t ncols, const array::Span&lt; value_type &gt; &amp;m, double threshold)</arglist>
+    </member>
+    <member kind="function">
       <type>void</type>
       <name>read_handler_counts</name>
       <anchorfile>namespacemolpro_1_1linalg_1_1itsolv.html</anchorfile>
@@ -11407,13 +12134,6 @@
       <anchorfile>namespacemolpro_1_1linalg_1_1itsolv.html</anchorfile>
       <anchor>a87291e93a2c4e59b1af5b46cdb7d2db6</anchor>
       <arglist>(const VecRef&lt; T &gt; &amp;action, const std::vector&lt; double &gt; &amp;shift, const T &amp;diagonals, typename std::enable_if&lt;!has_iterator&lt; T &gt;::value, void * &gt;::type=nullptr)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>test_problem_class</name>
-      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv.html</anchorfile>
-      <anchor>a4f49b32a485caf5f3f765ab0a49309cb</anchor>
-      <arglist>(Problem&lt; R, P &gt; &amp;problem_class_instance, R &amp;parameters, R &amp;residual, double step=1e-4, double tolerance=1e-8, int verbosity=0, bool test_hessian=true)</arglist>
     </member>
     <member kind="function">
       <type>auto</type>
@@ -11598,20 +12318,6 @@
       <arglist>(std::ostream &amp;os, const Interpolate::point &amp;p)</arglist>
     </member>
     <member kind="function">
-      <type>std::list&lt; SVD&lt; value_type &gt; &gt;</type>
-      <name>svd_eigen_jacobi</name>
-      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv.html</anchorfile>
-      <anchor>aed5f5152ca0039709fc9f29a60595f68</anchor>
-      <arglist>(size_t nrows, size_t ncols, const array::Span&lt; value_type &gt; &amp;m, double threshold)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::list&lt; SVD&lt; value_type &gt; &gt;</type>
-      <name>svd_eigen_bdcsvd</name>
-      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv.html</anchorfile>
-      <anchor>a30d21b580f20c0e56221dfc117418b6a</anchor>
-      <arglist>(size_t nrows, size_t ncols, const array::Span&lt; value_type &gt; &amp;m, double threshold)</arglist>
-    </member>
-    <member kind="function">
       <type>template void</type>
       <name>printMatrix&lt; value_type &gt;</name>
       <anchorfile>namespacemolpro_1_1linalg_1_1itsolv.html</anchorfile>
@@ -11659,6 +12365,13 @@
     <filename>namespacemolpro_1_1linalg_1_1itsolv_1_1detail.html</filename>
     <namespace>molpro::linalg::itsolv::detail::dspace</namespace>
     <class kind="class">molpro::linalg::itsolv::detail::DSpaceResetter</class>
+    <member kind="function">
+      <type>auto</type>
+      <name>redundant_parameters</name>
+      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv_1_1detail.html</anchorfile>
+      <anchor>af6f410b0781a5f1d5b8c88afece5d4b1</anchor>
+      <arglist>(const subspace::Matrix&lt; value_type &gt; &amp;overlap, const size_t oR, const size_t nR, const value_type_abs svd_thresh, Logger &amp;logger)</arglist>
+    </member>
     <member kind="function">
       <type>std::vector&lt; std::pair&lt; size_t, size_t &gt; &gt;</type>
       <name>parameter_batches</name>
@@ -11738,13 +12451,6 @@
     </member>
     <member kind="function">
       <type>auto</type>
-      <name>redundant_parameters</name>
-      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv_1_1detail.html</anchorfile>
-      <anchor>af6f410b0781a5f1d5b8c88afece5d4b1</anchor>
-      <arglist>(const subspace::Matrix&lt; value_type &gt; &amp;overlap, const size_t oR, const size_t nR, const value_type_abs svd_thresh, Logger &amp;logger)</arglist>
-    </member>
-    <member kind="function">
-      <type>auto</type>
       <name>get_new_working_set</name>
       <anchorfile>namespacemolpro_1_1linalg_1_1itsolv_1_1detail.html</anchorfile>
       <anchor>ad3c2afce975327f0d495ef8f7d2eff86</anchor>
@@ -11812,6 +12518,62 @@
     </member>
   </compound>
   <compound kind="namespace">
+    <name>molpro::linalg::itsolv::log</name>
+    <filename>namespacemolpro_1_1linalg_1_1itsolv_1_1log.html</filename>
+    <class kind="class">molpro::linalg::itsolv::log::ConstexprString</class>
+    <class kind="struct">molpro::linalg::itsolv::log::ContextBase</class>
+    <class kind="struct">molpro::linalg::itsolv::log::DataDump</class>
+    <class kind="struct">molpro::linalg::itsolv::log::FormatOption</class>
+    <class kind="struct">molpro::linalg::itsolv::log::Generic</class>
+    <class kind="struct">molpro::linalg::itsolv::log::IterationReport</class>
+    <class kind="struct">molpro::linalg::itsolv::log::LogHandler</class>
+    <class kind="struct">molpro::linalg::itsolv::log::NewIteration</class>
+    <class kind="struct">molpro::linalg::itsolv::log::SummaryReport</class>
+    <member kind="enumeration">
+      <type></type>
+      <name>Verbosity</name>
+      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv_1_1log.html</anchorfile>
+      <anchor>ab708267764ed3a7421489fb0aaabc1cd</anchor>
+      <arglist></arglist>
+      <enumvalue file="namespacemolpro_1_1linalg_1_1itsolv_1_1log.html" anchor="ab708267764ed3a7421489fb0aaabc1cdadd4ec0ac4e58f7c32a01244ae91150b1">Trace</enumvalue>
+      <enumvalue file="namespacemolpro_1_1linalg_1_1itsolv_1_1log.html" anchor="ab708267764ed3a7421489fb0aaabc1cdaa603905470e2a5b8c13e96b579ef0dba">Debug</enumvalue>
+      <enumvalue file="namespacemolpro_1_1linalg_1_1itsolv_1_1log.html" anchor="ab708267764ed3a7421489fb0aaabc1cda4059b0251f66a18cb56f544728796875">Info</enumvalue>
+      <enumvalue file="namespacemolpro_1_1linalg_1_1itsolv_1_1log.html" anchor="ab708267764ed3a7421489fb0aaabc1cda6adf97f83acf6453d4a6a4b1070f3754">None</enumvalue>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>Severity</name>
+      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv_1_1log.html</anchorfile>
+      <anchor>aefd57e6c9d903a9ebdf9c5328931baf0</anchor>
+      <arglist></arglist>
+      <enumvalue file="namespacemolpro_1_1linalg_1_1itsolv_1_1log.html" anchor="aefd57e6c9d903a9ebdf9c5328931baf0a960b44c579bc2f6818d2daaf9e4c16f0">Normal</enumvalue>
+      <enumvalue file="namespacemolpro_1_1linalg_1_1itsolv_1_1log.html" anchor="aefd57e6c9d903a9ebdf9c5328931baf0a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Warning</enumvalue>
+      <enumvalue file="namespacemolpro_1_1linalg_1_1itsolv_1_1log.html" anchor="aefd57e6c9d903a9ebdf9c5328931baf0a902b0d55fddef6f8d651fe1035b7d4bd">Error</enumvalue>
+      <enumvalue file="namespacemolpro_1_1linalg_1_1itsolv_1_1log.html" anchor="aefd57e6c9d903a9ebdf9c5328931baf0a882384ec38ce8d9582b57e70861730e4">Fatal</enumvalue>
+    </member>
+    <member kind="function">
+      <type>constexpr std::size_t</type>
+      <name>num_digits</name>
+      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv_1_1log.html</anchorfile>
+      <anchor>a57ee158b4d2f05f9a8e94b11869c6f42</anchor>
+      <arglist>(std::size_t val)</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr ConstexprString&lt; num_digits(precision)+4 &gt;</type>
+      <name>create_fmt_string_for_precision</name>
+      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv_1_1log.html</anchorfile>
+      <anchor>ac70ab2e80d1290423912509a803ba173</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable">
+      <type>constexpr const std::size_t</type>
+      <name>default_precision</name>
+      <anchorfile>namespacemolpro_1_1linalg_1_1itsolv_1_1log.html</anchorfile>
+      <anchor>a01797cc9fe37ece277e8804a11c24519</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
     <name>molpro::linalg::itsolv::subspace</name>
     <filename>namespacemolpro_1_1linalg_1_1itsolv_1_1subspace.html</filename>
     <namespace>molpro::linalg::itsolv::subspace::qspace</namespace>
@@ -11824,6 +12586,7 @@
     <class kind="class">molpro::linalg::itsolv::subspace::Matrix</class>
     <class kind="class">molpro::linalg::itsolv::subspace::PSpace</class>
     <class kind="struct">molpro::linalg::itsolv::subspace::QSpace</class>
+    <class kind="class">molpro::linalg::itsolv::subspace::SubspaceSolverDIIS</class>
     <class kind="class">molpro::linalg::itsolv::subspace::SubspaceSolverLinEig</class>
     <class kind="class">molpro::linalg::itsolv::subspace::SubspaceSolverOptBFGS</class>
     <class kind="class">molpro::linalg::itsolv::subspace::SubspaceSolverOptSD</class>
