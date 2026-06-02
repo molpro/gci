@@ -692,9 +692,9 @@ public:
   std::string m_description;
 
 private:
-  bool m_managed_buffer;
-  bool m_transposed;
-  bool m_diagonal; ///< if the matrix is diagonal
+  bool m_managed_buffer=true;
+  bool m_transposed=false;
+  bool m_diagonal=false; ///< if the matrix is diagonal
   molpro::array<T>* m_buffer;
   std::shared_ptr<molpro::array<T>> m_bufferp;
 
