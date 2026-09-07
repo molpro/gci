@@ -1,4 +1,4 @@
-FROM ubuntu:jammy-20220531
+FROM ubuntu:noble-20260730.1
 RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive apt install -y cmake git g++ doxygen graphviz bash rsync curl
 RUN DEBIAN_FRONTEND=noninteractive apt install -y mpich libhdf5-mpich-dev
