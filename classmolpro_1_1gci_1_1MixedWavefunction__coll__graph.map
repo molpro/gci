@@ -1,8 +1,15 @@
 <map id="molpro::gci::MixedWavefunction" name="molpro::gci::MixedWavefunction">
-<area shape="rect" id="node1" title="Mixed bosonic and fermionic wavefunction represented as configuration expansion in the direct product..." alt="" coords="839,62,1069,89"/>
-<area shape="rect" id="node2" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="5,10,167,37"/>
-<area shape="rect" id="node4" href="$classmolpro_1_1gci_1_1State.html" title="Class represents a quantum&#45;mechanical state with or without reference to a particular representation." alt="" coords="229,36,366,62"/>
-<area shape="rect" id="node3" href="$classmolpro_1_1gci_1_1Wavefunction.html" title="The Wavefunction class, which holds a configuration expansion in the tensor space defined by a hamilt..." alt="" coords="511,36,703,62"/>
-<area shape="rect" id="node5" href="$classmolpro_1_1gci_1_1HProductSet.html" title="Collection of Hartree products." alt="" coords="515,149,698,176"/>
-<area shape="rect" id="node6" href="$structmolpro_1_1gci_1_1VibSpace.html" title="Parameters defining the vibrational space." alt="" coords="216,112,379,138"/>
+<area shape="rect" id="Node000001" title="Mixed bosonic and fermionic wavefunction represented as configuration expansion in the direct product..." alt="" coords="839,64,1069,90"/>
+<area shape="rect" id="Node000002" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="5,11,167,36"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,12,307,5,466,4,641,12,729,22,815,37,911,62,910,67,814,42,728,28,641,18,466,9,307,11,181,18"/>
+<area shape="rect" id="Node000006" href="$classmolpro_1_1gci_1_1State.html" title="Class represents a quantum&#45;mechanical state with or without reference to a particular representation." alt="" coords="229,36,366,62"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="181,32,229,38,228,43,180,38"/>
+<area shape="rect" id="Node000003" href="$structmolpro_1_1gci_1_1VibSpace.html" title="Parameters defining the vibrational space." alt="" coords="216,112,379,138"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="392,115,838,83,838,88,393,121"/>
+<area shape="rect" id="Node000004" href="$classmolpro_1_1gci_1_1HProductSet.html" title="Collection of Hartree products." alt="" coords="515,150,698,175"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="393,134,515,149,514,154,392,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="711,151,763,143,814,132,875,110,926,87,929,92,877,115,815,137,764,148,712,156"/>
+<area shape="rect" id="Node000005" href="$classmolpro_1_1gci_1_1Wavefunction.html" title="The Wavefunction class, which holds a configuration expansion in the tensor space defined by a hamilt..." alt="" coords="511,36,703,62"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="717,55,838,65,838,70,716,60"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="380,46,510,46,510,52,380,52"/>
 </map>

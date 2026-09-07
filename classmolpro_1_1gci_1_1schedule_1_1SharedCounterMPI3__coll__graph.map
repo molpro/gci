@@ -1,4 +1,5 @@
 <map id="molpro::gci::schedule::SharedCounterMPI3" name="molpro::gci::schedule::SharedCounterMPI3">
-<area shape="rect" id="node1" title="Shared counter using MPI3 remote memory access." alt="" coords="5,95,167,136"/>
-<area shape="rect" id="node2" href="$classmolpro_1_1gci_1_1schedule_1_1SharedCounterBase.html" title="Base class for shared counters defining the interface." alt="" coords="5,5,167,47"/>
+<area shape="rect" id="Node000001" title="Shared counter using MPI3 remote memory access." alt="" coords="5,93,167,133"/>
+<area shape="rect" id="Node000002" href="$classmolpro_1_1gci_1_1schedule_1_1SharedCounterBase.html" title="Base class for shared counters defining the interface." alt="" coords="5,5,167,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,59,89,93,83,93,83,59"/>
 </map>

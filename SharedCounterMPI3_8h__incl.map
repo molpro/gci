@@ -1,7 +1,11 @@
 <map id="/__w/gci/gci/src/molpro/gci/schedule/SharedCounterMPI3.h" name="/__w/gci/gci/src/molpro/gci/schedule/SharedCounterMPI3.h">
-<area shape="rect" id="node1" title=" " alt="" coords="39,5,289,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,102,56,129"/>
-<area shape="rect" id="node3" title=" " alt="" coords="80,102,157,129"/>
-<area shape="rect" id="node4" title=" " alt="" coords="181,102,240,129"/>
-<area shape="rect" id="node5" href="$SharedCounterBase_8h.html" title=" " alt="" coords="265,95,431,136"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="39,5,289,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,101,56,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,48,61,95,59,91,133,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="80,101,157,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,47,134,89,129,87,152,44"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="181,101,240,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="177,44,200,87,195,90,172,47"/>
+<area shape="rect" id="Node000005" href="$SharedCounterBase_8h.html" title=" " alt="" coords="265,93,431,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="206,43,296,85,294,90,203,48"/>
 </map>

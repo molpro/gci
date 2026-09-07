@@ -1,7 +1,11 @@
 <map id="molpro::gci::State" name="molpro::gci::State">
-<area shape="rect" id="node1" title="Class represents a quantum&#45;mechanical state with or without reference to a particular representation." alt="" coords="217,80,355,107"/>
-<area shape="rect" id="node3" href="$classmolpro_1_1gci_1_1Determinant.html" title="A Slater determinant." alt="" coords="5,155,191,181"/>
-<area shape="rect" id="node4" href="$classmolpro_1_1gci_1_1String.html" title="A string, which is an ordered set of orbitals." alt="" coords="215,155,357,181"/>
-<area shape="rect" id="node5" href="$classmolpro_1_1gci_1_1Wavefunction.html" title="The Wavefunction class, which holds a configuration expansion in the tensor space defined by a hamilt..." alt="" coords="381,155,573,181"/>
-<area shape="rect" id="node2" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="205,5,367,32"/>
+<area shape="rect" id="Node000001" title="Class represents a quantum&#45;mechanical state with or without reference to a particular representation." alt="" coords="217,79,355,104"/>
+<area shape="rect" id="Node000003" href="$classmolpro_1_1gci_1_1Determinant.html" title="A Slater determinant." alt="" coords="5,152,191,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="244,111,130,154,128,149,242,106"/>
+<area shape="rect" id="Node000004" href="$classmolpro_1_1gci_1_1String.html" title="A string, which is an ordered set of orbitals." alt="" coords="215,152,357,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="289,118,289,152,283,152,283,118"/>
+<area shape="rect" id="Node000005" href="$classmolpro_1_1gci_1_1Wavefunction.html" title="The Wavefunction class, which holds a configuration expansion in the tensor space defined by a hamilt..." alt="" coords="381,152,573,177"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="330,106,446,149,445,154,329,111"/>
+<area shape="rect" id="Node000002" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="205,5,367,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,44,289,79,283,79,283,44"/>
 </map>

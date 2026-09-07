@@ -1,5 +1,7 @@
 <map id="molpro::gci::StringSet" name="molpro::gci::StringSet">
-<area shape="rect" id="node1" title="The StringSet class holds a set of String objects, possibly the complete set for a given number of ob..." alt="" coords="115,80,278,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,191,32"/>
-<area shape="rect" id="node3" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="215,5,376,32"/>
+<area shape="rect" id="Node000001" title="The StringSet class holds a set of String objects, possibly the complete set for a given number of ob..." alt="" coords="115,79,278,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,191,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,36,182,76,179,81,123,41"/>
+<area shape="rect" id="Node000003" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="215,5,376,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="270,41,214,81,211,76,267,36"/>
 </map>

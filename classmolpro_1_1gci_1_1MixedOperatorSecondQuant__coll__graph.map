@@ -1,4 +1,7 @@
 <map id="molpro::gci::MixedOperatorSecondQuant" name="molpro::gci::MixedOperatorSecondQuant">
-<area shape="rect" id="node1" title="Mixed electron&#45;vibration operator in a fully second quantized form." alt="" coords="5,109,204,151"/>
-<area shape="rect" id="node2" href="$classmolpro_1_1gci_1_1VibOperator.html" title=" " alt="" coords="14,5,195,47"/>
+<area shape="rect" id="Node000001" title="Mixed electron&#45;vibration operator in a fully second quantized form." alt="" coords="5,211,204,251"/>
+<area shape="rect" id="Node000002" href="$classmolpro_1_1gci_1_1VibOperator.html" title=" " alt="" coords="14,108,195,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,162,107,211,102,211,102,162"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="69,5,141,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="107,45,107,108,102,108,102,45"/>
 </map>

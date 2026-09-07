@@ -1,100 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<tagfile doxygen_version="1.9.1">
+<tagfile doxygen_version="1.9.8">
   <compound kind="file">
     <name>gci.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gci_8h.html</filename>
-    <includes id="SharedCounter_8h" name="SharedCounter.h" local="yes" imported="no">molpro/gci/schedule/SharedCounter.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="SharedCounter_8h" name="SharedCounter.h" local="yes" import="no" module="no" objc="no">molpro/gci/schedule/SharedCounter.h</includes>
     <namespace>molpro::gci</namespace>
-    <member kind="function">
-      <type>void</type>
-      <name>create_new_counter</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a9d22e939230de8d8c210abf6ef022518</anchor>
-      <arglist>(MPI_Comm communicator)</arglist>
-    </member>
-    <member kind="function">
-      <type>long</type>
-      <name>nextval</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ab44389f5c53dc69719109403ef3490d4</anchor>
-      <arglist>(MPI_Comm communicator, int64_t option=parallel_size)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>DivideTasks</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>aae40c4d391e95e3aab7e7e04db9df6e8</anchor>
-      <arglist>(std::size_t ntasks, std::size_t nMinBatch, std::size_t nMaxBatch, MPI_Comm communicator)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>NextTask</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ab9afaee349f6667c200845bb7e7b0dd8</anchor>
-      <arglist>(MPI_Comm communicator)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>EndTasks</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a4d731ebd047599af13d647023898b74c</anchor>
-      <arglist>(MPI_Comm communicator)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>gather_chunks</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ada0ad6980ad3eed9dfae614c5eb98d5c</anchor>
-      <arglist>(double *buffer, const size_t length, const size_t chunk, MPI_Comm communicator)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>gsum</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>afbedafc56dab2f307775ea18d64b9f71</anchor>
-      <arglist>(double *buffer, size_t len, MPI_Comm communicator)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>gsum</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a24c504d28e50c1888b7dc6245bc18cca</anchor>
-      <arglist>(std::map&lt; size_t, double &gt; &amp;buffer, MPI_Comm communicator)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>gsum</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ae4582e83757c8320433c2e72a2ac47d7</anchor>
-      <arglist>(molpro::array&lt; double &gt; v, MPI_Comm communicator)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>gsum</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a375859886a6cec9371f796286c4c845f</anchor>
-      <arglist>(molpro::vector&lt; double &gt; v, MPI_Comm communicator)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>gsum</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a3a5b3e42f12d16596ec7641ee3ad841e</anchor>
-      <arglist>(std::vector&lt; double &gt; v, MPI_Comm communicator)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciDavidson.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciDavidson_8cpp.html</filename>
-    <includes id="gciDavidson_8h" name="gciDavidson.h" local="yes" imported="no">gciDavidson.h</includes>
-    <includes id="gciMixedWavefunction_8h" name="gciMixedWavefunction.h" local="yes" imported="no">gciMixedWavefunction.h</includes>
-    <includes id="gciUtils_8h" name="gciUtils.h" local="yes" imported="no">gciUtils.h</includes>
-    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" imported="no">gciWavefunction.h</includes>
-    <includes id="WavefunctionHandler_8h" name="WavefunctionHandler.h" local="yes" imported="no">wavefunction/WavefunctionHandler.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciDavidson_8h" name="gciDavidson.h" local="yes" import="no" module="no" objc="no">gciDavidson.h</includes>
+    <includes id="gciMixedWavefunction_8h" name="gciMixedWavefunction.h" local="yes" import="no" module="no" objc="no">gciMixedWavefunction.h</includes>
+    <includes id="gciUtils_8h" name="gciUtils.h" local="yes" import="no" module="no" objc="no">gciUtils.h</includes>
+    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" import="no" module="no" objc="no">gciWavefunction.h</includes>
+    <includes id="WavefunctionHandler_8h" name="WavefunctionHandler.h" local="yes" import="no" module="no" objc="no">wavefunction/WavefunctionHandler.h</includes>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::run</namespace>
     <member kind="define">
@@ -104,114 +25,59 @@
       <anchor>a72876d2394751bd0ac29c69171515d62</anchor>
       <arglist></arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
-      <name>davidson_read_write_array</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1run.html</anchorfile>
-      <anchor>a64b77d8c195caf4fa08c7951d3a905aa</anchor>
-      <arglist>(MixedWavefunction &amp;w, const std::string &amp;fname, unsigned int i, int id, bool save)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>davidson_read_write_wfn</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1run.html</anchorfile>
-      <anchor>af8837323f27bb72f4c594b339aba6320</anchor>
-      <arglist>(std::vector&lt; t_Wavefunction &gt; &amp;ww, const std::string &amp;fname, bool save)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>davidson_read_write_wfn</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1run.html</anchorfile>
-      <anchor>a2b3aaef693eec2db68d6a21c09fa8f29</anchor>
-      <arglist>(std::vector&lt; Wavefunction &gt; &amp;ww, const std::string &amp;fname, bool save)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciDavidson.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciDavidson_8h.html</filename>
-    <includes id="Operator_8h" name="Operator.h" local="no" imported="no">molpro/symmetry_matrix/Operator.h</includes>
-    <includes id="gci_8h" name="gci.h" local="yes" imported="no">molpro/gci/gci.h</includes>
-    <includes id="gciOptions_8h" name="gciOptions.h" local="yes" imported="no">molpro/gci/gciOptions.h</includes>
-    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" imported="no">molpro/gci/gciWavefunction.h</includes>
+    <includes id="Operator_8h" name="Operator.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/Operator.h</includes>
+    <includes id="gci_8h" name="gci.h" local="yes" import="no" module="no" objc="no">molpro/gci/gci.h</includes>
+    <includes id="gciOptions_8h" name="gciOptions.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciOptions.h</includes>
+    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciWavefunction.h</includes>
     <class kind="class">molpro::gci::run::Davidson</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::run</namespace>
-    <member kind="function">
-      <type>void</type>
-      <name>davidson_read_write_wfn</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1run.html</anchorfile>
-      <anchor>af8837323f27bb72f4c594b339aba6320</anchor>
-      <arglist>(std::vector&lt; t_Wavefunction &gt; &amp;ww, const std::string &amp;fname, bool save)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciDeterminant.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciDeterminant_8cpp.html</filename>
-    <includes id="gciDeterminant_8h" name="gciDeterminant.h" local="yes" imported="no">gciDeterminant.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciDeterminant_8h" name="gciDeterminant.h" local="yes" import="no" module="no" objc="no">gciDeterminant.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciDeterminant.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciDeterminant_8h.html</filename>
-    <includes id="gci_8h" name="gci.h" local="yes" imported="no">molpro/gci/gci.h</includes>
-    <includes id="gciState_8h" name="gciState.h" local="yes" imported="no">molpro/gci/gciState.h</includes>
-    <includes id="gciString_8h" name="gciString.h" local="yes" imported="no">molpro/gci/gciString.h</includes>
+    <includes id="gci_8h" name="gci.h" local="yes" import="no" module="no" objc="no">molpro/gci/gci.h</includes>
+    <includes id="gciState_8h" name="gciState.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciState.h</includes>
+    <includes id="gciString_8h" name="gciString.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciString.h</includes>
     <class kind="class">molpro::gci::Determinant</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciExcitationSet.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciExcitationSet_8cpp.html</filename>
-    <includes id="gciExcitationSet_8h" name="gciExcitationSet.h" local="yes" imported="no">gciExcitationSet.h</includes>
-    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" imported="no">gciStringSet.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciExcitationSet_8h" name="gciExcitationSet.h" local="yes" import="no" module="no" objc="no">gciExcitationSet.h</includes>
+    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" import="no" module="no" objc="no">gciStringSet.h</includes>
     <namespace>molpro::gci</namespace>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a425973d8799515ed20b0604c078bfdb0</anchor>
-      <arglist>(std::ostream &amp;os, ExcitationSet const &amp;obj)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciExcitationSet.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciExcitationSet_8h.html</filename>
-    <includes id="gciString_8h" name="gciString.h" local="yes" imported="no">molpro/gci/gciString.h</includes>
-    <includes id="SMat_8h" name="SMat.h" local="no" imported="no">molpro/symmetry_matrix/SMat.h</includes>
+    <includes id="gciString_8h" name="gciString.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciString.h</includes>
+    <includes id="SMat_8h" name="SMat.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/SMat.h</includes>
     <class kind="class">molpro::gci::Excitation</class>
     <class kind="class">molpro::gci::ExcitationSet</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
-    <member kind="typedef">
-      <type>std::vector&lt; Excitation &gt;</type>
-      <name>ExcitationSetContainer</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a7045e610f51477b48f588b9d924d7cdb</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a425973d8799515ed20b0604c078bfdb0</anchor>
-      <arglist>(std::ostream &amp;os, ExcitationSet const &amp;obj)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciFile.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciFile_8cpp.html</filename>
-    <includes id="gciFile_8h" name="gciFile.h" local="yes" imported="no">gciFile.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciFile_8h" name="gciFile.h" local="yes" import="no" module="no" objc="no">gciFile.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
@@ -219,148 +85,79 @@
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciFile_8h.html</filename>
     <class kind="class">molpro::gci::File</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciHProduct.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciHProduct_8cpp.html</filename>
-    <includes id="gciHProduct_8h" name="gciHProduct.h" local="yes" imported="no">gciHProduct.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciHProduct_8h" name="gciHProduct.h" local="yes" import="no" module="no" objc="no">gciHProduct.h</includes>
     <namespace>molpro::gci</namespace>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a6a98b862d7dd4647cac838d26456a32c</anchor>
-      <arglist>(std::ostream &amp;os, HProduct const &amp;obj)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciHProduct.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciHProduct_8h.html</filename>
-    <includes id="gciVibExcitation_8h" name="gciVibExcitation.h" local="yes" imported="no">molpro/gci/gciVibExcitation.h</includes>
-    <includes id="gciVibSpace_8h" name="gciVibSpace.h" local="yes" imported="no">molpro/gci/gciVibSpace.h</includes>
+    <includes id="gciVibExcitation_8h" name="gciVibExcitation.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciVibExcitation.h</includes>
+    <includes id="gciVibSpace_8h" name="gciVibSpace.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciVibSpace.h</includes>
     <class kind="class">molpro::gci::HProduct</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a6a98b862d7dd4647cac838d26456a32c</anchor>
-      <arglist>(std::ostream &amp;os, HProduct const &amp;obj)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciHProductSet.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciHProductSet_8cpp.html</filename>
-    <includes id="gciHProductSet_8h" name="gciHProductSet.h" local="yes" imported="no">gciHProductSet.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciHProductSet_8h" name="gciHProductSet.h" local="yes" import="no" module="no" objc="no">gciHProductSet.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciHProductSet.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciHProductSet_8h.html</filename>
-    <includes id="gciHProduct_8h" name="gciHProduct.h" local="yes" imported="no">molpro/gci/gciHProduct.h</includes>
-    <includes id="gciMixedOperator_8h" name="gciMixedOperator.h" local="yes" imported="no">molpro/gci/gciMixedOperator.h</includes>
-    <includes id="gciVibSpace_8h" name="gciVibSpace.h" local="yes" imported="no">molpro/gci/gciVibSpace.h</includes>
+    <includes id="gciHProduct_8h" name="gciHProduct.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciHProduct.h</includes>
+    <includes id="gciMixedOperator_8h" name="gciMixedOperator.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciMixedOperator.h</includes>
+    <includes id="gciVibSpace_8h" name="gciVibSpace.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciVibSpace.h</includes>
     <class kind="class">molpro::gci::HProductSet</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciMixedOperator.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciMixedOperator_8cpp.html</filename>
-    <includes id="gciMixedOperator_8h" name="gciMixedOperator.h" local="yes" imported="no">gciMixedOperator.h</includes>
-    <includes id="gciRun_8h" name="gciRun.h" local="yes" imported="no">gciRun.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciMixedOperator_8h" name="gciMixedOperator.h" local="yes" import="no" module="no" objc="no">gciMixedOperator.h</includes>
+    <includes id="gciRun_8h" name="gciRun.h" local="yes" import="no" module="no" objc="no">gciRun.h</includes>
     <namespace>molpro::gci</namespace>
-    <member kind="function">
-      <type>molpro::Operator</type>
-      <name>constructOperatorT1</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ac4c7ecbe6e8c5527cf065869a85cb8a2</anchor>
-      <arglist>(const molpro::FCIdump &amp;dump)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciMixedOperator.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciMixedOperator_8h.html</filename>
-    <includes id="Operator_8h" name="Operator.h" local="no" imported="no">molpro/symmetry_matrix/Operator.h</includes>
-    <includes id="gciHProduct_8h" name="gciHProduct.h" local="yes" imported="no">gciHProduct.h</includes>
-    <includes id="gciRun_8h" name="gciRun.h" local="yes" imported="no">gciRun.h</includes>
+    <includes id="Operator_8h" name="Operator.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/Operator.h</includes>
+    <includes id="gciHProduct_8h" name="gciHProduct.h" local="yes" import="no" module="no" objc="no">gciHProduct.h</includes>
+    <includes id="gciRun_8h" name="gciRun.h" local="yes" import="no" module="no" objc="no">gciRun.h</includes>
     <class kind="class">molpro::gci::VibOp</class>
     <class kind="struct">molpro::gci::MixedOpTerm</class>
     <class kind="class">molpro::gci::MixedOperator</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
-    <member kind="enumeration">
-      <type></type>
-      <name>VibOpType</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a75e1db8c4a2e6df48f661dd3ba9352ba</anchor>
-      <arglist></arglist>
-      <enumvalue file="namespacemolpro_1_1gci.html" anchor="a75e1db8c4a2e6df48f661dd3ba9352baa3969dc7ec85ba96faa4cc7c446f7401c">HO</enumvalue>
-      <enumvalue file="namespacemolpro_1_1gci.html" anchor="a75e1db8c4a2e6df48f661dd3ba9352baaf09564c9ca56850d4cd6b3319e541aee">Q</enumvalue>
-      <enumvalue file="namespacemolpro_1_1gci.html" anchor="a75e1db8c4a2e6df48f661dd3ba9352baa623ce4ee9b146516003af19773c3cb41">dQ</enumvalue>
-      <enumvalue file="namespacemolpro_1_1gci.html" anchor="a75e1db8c4a2e6df48f661dd3ba9352baa3bc0a671839f3692167917d77b9444cb">Qsq</enumvalue>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciMixedOperatorSecondQuant.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciMixedOperatorSecondQuant_8cpp.html</filename>
-    <includes id="gciMixedOperatorSecondQuant_8h" name="gciMixedOperatorSecondQuant.h" local="yes" imported="no">gciMixedOperatorSecondQuant.h</includes>
-    <includes id="gciPersistentOperator_8h" name="gciPersistentOperator.h" local="yes" imported="no">gciPersistentOperator.h</includes>
-    <includes id="gciRun_8h" name="gciRun.h" local="yes" imported="no">gciRun.h</includes>
-    <includes id="gciUtils_8h" name="gciUtils.h" local="yes" imported="no">gciUtils.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciMixedOperatorSecondQuant_8h" name="gciMixedOperatorSecondQuant.h" local="yes" import="no" module="no" objc="no">gciMixedOperatorSecondQuant.h</includes>
+    <includes id="gciPersistentOperator_8h" name="gciPersistentOperator.h" local="yes" import="no" module="no" objc="no">gciPersistentOperator.h</includes>
+    <includes id="gciRun_8h" name="gciRun.h" local="yes" import="no" module="no" objc="no">gciRun.h</includes>
+    <includes id="gciUtils_8h" name="gciUtils.h" local="yes" import="no" module="no" objc="no">gciUtils.h</includes>
     <namespace>molpro::gci</namespace>
-    <member kind="function">
-      <type>PersistentOperator</type>
-      <name>create_persistentoperator</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>afde796ffae8dec801f2d15c14096691f</anchor>
-      <arglist>(const std::string &amp;fcidump, bool restart, std::string description, int hid_file, int root, Op(*construct_op)(const molpro::FCIdump &amp;, bool))</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>constructHvib</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a07f7d9dafcc03d24b27bdf58528246b6</anchor>
-      <arglist>(VibOperator&lt; double &gt; &amp;Hvib, const std::string &amp;fcidump_name, int nmode, int nmodal)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>constructHvib</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ad2ba4c052820d85cc3b9bf6e9e571f54</anchor>
-      <arglist>(VibOperator&lt; double &gt; &amp;Hvib, int nmode, int nmodal, std::vector&lt; double &gt; freq)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>constructDMcoupling</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a2368b28f705b3703dc6a052600799382</anchor>
-      <arglist>(std::map&lt; std::string, MixedOperatorSecondQuant::hel_t &gt; &amp;elHam2, std::map&lt; std::string, VibOperator&lt; MixedOperatorSecondQuant::hel_t &gt;&gt; &amp;mixedHam, const std::string &amp;fcidump_f, const std::vector&lt; double &gt; &amp;gamma, const std::vector&lt; double &gt; &amp;freq, int nmode, int nmodal)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciMixedOperatorSecondQuant.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciMixedOperatorSecondQuant_8h.html</filename>
-    <includes id="gciOptions_8h" name="gciOptions.h" local="yes" imported="no">molpro/gci/gciOptions.h</includes>
-    <includes id="gciPersistentOperator_8h" name="gciPersistentOperator.h" local="yes" imported="no">molpro/gci/gciPersistentOperator.h</includes>
-    <includes id="gciVibOperator_8h" name="gciVibOperator.h" local="yes" imported="no">molpro/gci/gciVibOperator.h</includes>
+    <includes id="gciOptions_8h" name="gciOptions.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciOptions.h</includes>
+    <includes id="gciPersistentOperator_8h" name="gciPersistentOperator.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciPersistentOperator.h</includes>
+    <includes id="gciVibOperator_8h" name="gciVibOperator.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciVibOperator.h</includes>
     <class kind="class">molpro::gci::MixedOperatorSecondQuant</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
     <member kind="define">
       <type>#define</type>
@@ -369,54 +166,24 @@
       <anchor>a72876d2394751bd0ac29c69171515d62</anchor>
       <arglist></arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
-      <name>constructHvib</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a07f7d9dafcc03d24b27bdf58528246b6</anchor>
-      <arglist>(VibOperator&lt; double &gt; &amp;Hvib, const std::string &amp;fcidump_name, int nmode, int nmodal)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>constructHvib</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ad2ba4c052820d85cc3b9bf6e9e571f54</anchor>
-      <arglist>(VibOperator&lt; double &gt; &amp;Hvib, int nmode, int nmodal, std::vector&lt; double &gt; freq)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>constructDMcoupling</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a2368b28f705b3703dc6a052600799382</anchor>
-      <arglist>(std::map&lt; std::string, MixedOperatorSecondQuant::hel_t &gt; &amp;elHam2, std::map&lt; std::string, VibOperator&lt; MixedOperatorSecondQuant::hel_t &gt;&gt; &amp;mixedHam, const std::string &amp;fcidump_f, const std::vector&lt; double &gt; &amp;gamma, const std::vector&lt; double &gt; &amp;freq, int nmode, int nmodal)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>af11e0e1ee586418f66120d0e9aee5a8b</anchor>
-      <arglist>(std::ostream &amp;o, const MixedOperatorSecondQuant &amp;op)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciMixedWavefunction.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciMixedWavefunction_8cpp.html</filename>
-    <includes id="gciMixedWavefunction_8h" name="gciMixedWavefunction.h" local="yes" imported="no">gciMixedWavefunction.h</includes>
-    <includes id="gciHProductSet_8h" name="gciHProductSet.h" local="yes" imported="no">gciHProductSet.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciMixedWavefunction_8h" name="gciMixedWavefunction.h" local="yes" import="no" module="no" objc="no">gciMixedWavefunction.h</includes>
+    <includes id="gciHProductSet_8h" name="gciHProductSet.h" local="yes" import="no" module="no" objc="no">gciHProductSet.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciMixedWavefunction.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciMixedWavefunction_8h.html</filename>
-    <includes id="gciHProductSet_8h" name="gciHProductSet.h" local="yes" imported="no">molpro/gci/gciHProductSet.h</includes>
-    <includes id="gciMixedOperator_8h" name="gciMixedOperator.h" local="yes" imported="no">molpro/gci/gciMixedOperator.h</includes>
-    <includes id="gciMixedOperatorSecondQuant_8h" name="gciMixedOperatorSecondQuant.h" local="yes" imported="no">molpro/gci/gciMixedOperatorSecondQuant.h</includes>
-    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" imported="no">molpro/gci/gciWavefunction.h</includes>
+    <includes id="gciHProductSet_8h" name="gciHProductSet.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciHProductSet.h</includes>
+    <includes id="gciMixedOperator_8h" name="gciMixedOperator.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciMixedOperator.h</includes>
+    <includes id="gciMixedOperatorSecondQuant_8h" name="gciMixedOperatorSecondQuant.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciMixedOperatorSecondQuant.h</includes>
+    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciWavefunction.h</includes>
     <class kind="class">molpro::gci::MixedWavefunction</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::array</namespace>
   </compound>
@@ -425,56 +192,50 @@
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciOptions_8h.html</filename>
     <class kind="class">molpro::gci::Options</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciOrbitals.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciOrbitals_8h.html</filename>
-    <includes id="gciOrbitalSpace_8h" name="gciOrbitalSpace.h" local="yes" imported="no">molpro/gci/gciOrbitalSpace.h</includes>
-    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" imported="no">molpro/gci/gciPrintable.h</includes>
-    <includes id="SMat_8h" name="SMat.h" local="no" imported="no">molpro/symmetry_matrix/SMat.h</includes>
+    <includes id="gciOrbitalSpace_8h" name="gciOrbitalSpace.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciOrbitalSpace.h</includes>
+    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciPrintable.h</includes>
+    <includes id="SMat_8h" name="SMat.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/SMat.h</includes>
     <class kind="class">molpro::gci::Orbitals</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciOrbitalSpace.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciOrbitalSpace_8cpp.html</filename>
-    <includes id="gciOrbitalSpace_8h" name="gciOrbitalSpace.h" local="yes" imported="no">gciOrbitalSpace.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciOrbitalSpace_8h" name="gciOrbitalSpace.h" local="yes" import="no" module="no" objc="no">gciOrbitalSpace.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciOrbitalSpace.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciOrbitalSpace_8h.html</filename>
-    <includes id="gciOptions_8h" name="gciOptions.h" local="yes" imported="no">gciOptions.h</includes>
-    <includes id="gciSymmetrySpace_8h" name="gciSymmetrySpace.h" local="yes" imported="no">gciSymmetrySpace.h</includes>
-    <includes id="Operator_8h" name="Operator.h" local="no" imported="no">molpro/symmetry_matrix/Operator.h</includes>
+    <includes id="gciOptions_8h" name="gciOptions.h" local="yes" import="no" module="no" objc="no">gciOptions.h</includes>
+    <includes id="gciSymmetrySpace_8h" name="gciSymmetrySpace.h" local="yes" import="no" module="no" objc="no">gciSymmetrySpace.h</includes>
+    <includes id="Operator_8h" name="Operator.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/Operator.h</includes>
     <class kind="class">molpro::gci::OrbitalSpace</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciPersistentOperator.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciPersistentOperator_8cpp.html</filename>
-    <includes id="gciPersistentOperator_8h" name="gciPersistentOperator.h" local="yes" imported="no">gciPersistentOperator.h</includes>
-    <includes id="gci_8h" name="gci.h" local="yes" imported="no">gci.h</includes>
-    <includes id="gciUtils_8h" name="gciUtils.h" local="yes" imported="no">gciUtils.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciPersistentOperator_8h" name="gciPersistentOperator.h" local="yes" import="no" module="no" objc="no">gciPersistentOperator.h</includes>
+    <includes id="gci_8h" name="gci.h" local="yes" import="no" module="no" objc="no">gci.h</includes>
+    <includes id="gciUtils_8h" name="gciUtils.h" local="yes" import="no" module="no" objc="no">gciUtils.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciPersistentOperator.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciPersistentOperator_8h.html</filename>
-    <includes id="Operator_8h" name="Operator.h" local="no" imported="no">molpro/symmetry_matrix/Operator.h</includes>
+    <includes id="Operator_8h" name="Operator.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/Operator.h</includes>
     <class kind="class">molpro::gci::PersistentOperator</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
     <member kind="define">
       <type>#define</type>
@@ -488,35 +249,26 @@
     <name>gciPrintable.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciPrintable_8h.html</filename>
-    <includes id="gci_8h" name="gci.h" local="yes" imported="no">molpro/gci/gci.h</includes>
+    <includes id="gci_8h" name="gci.h" local="yes" import="no" module="no" objc="no">molpro/gci/gci.h</includes>
     <class kind="class">molpro::gci::Printable</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>afe901d292779e127d2e208c7a5562c38</anchor>
-      <arglist>(std::ostream &amp;os, Printable const &amp;obj)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciRun.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciRun_8cpp.html</filename>
-    <includes id="Operator_8h" name="Operator.h" local="no" imported="no">molpro/symmetry_matrix/Operator.h</includes>
-    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" imported="no">molpro/gci/gciWavefunction.h</includes>
-    <includes id="WavefunctionHandler_8h" name="WavefunctionHandler.h" local="no" imported="no">molpro/gci/wavefunction/WavefunctionHandler.h</includes>
-    <includes id="Problem_8h" name="Problem.h" local="yes" imported="no">Problem.h</includes>
-    <includes id="gciDavidson_8h" name="gciDavidson.h" local="yes" imported="no">gciDavidson.h</includes>
-    <includes id="gciMixedWavefunction_8h" name="gciMixedWavefunction.h" local="yes" imported="no">gciMixedWavefunction.h</includes>
-    <includes id="gciRun_8h" name="gciRun.h" local="yes" imported="no">gciRun.h</includes>
-    <includes id="gciOptions_8h" name="gciOptions.h" local="yes" imported="no">gciOptions.h</includes>
+    <includes id="Operator_8h" name="Operator.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/Operator.h</includes>
+    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciWavefunction.h</includes>
+    <includes id="WavefunctionHandler_8h" name="WavefunctionHandler.h" local="no" import="no" module="no" objc="no">molpro/gci/wavefunction/WavefunctionHandler.h</includes>
+    <includes id="Problem_8h" name="Problem.h" local="yes" import="no" module="no" objc="no">Problem.h</includes>
+    <includes id="gciDavidson_8h" name="gciDavidson.h" local="yes" import="no" module="no" objc="no">gciDavidson.h</includes>
+    <includes id="gciMixedWavefunction_8h" name="gciMixedWavefunction.h" local="yes" import="no" module="no" objc="no">gciMixedWavefunction.h</includes>
+    <includes id="gciRun_8h" name="gciRun.h" local="yes" import="no" module="no" objc="no">gciRun.h</includes>
+    <includes id="gciOptions_8h" name="gciOptions.h" local="yes" import="no" module="no" objc="no">gciOptions.h</includes>
     <class kind="struct">molpro::gci::residual</class>
     <class kind="struct">molpro::gci::Presidual</class>
     <class kind="struct">molpro::gci::meanfield_residual</class>
     <class kind="struct">molpro::gci::updater</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::linalg</namespace>
     <namespace>molpro::gci</namespace>
     <member kind="typedef">
@@ -524,27 +276,6 @@
       <name>uint</name>
       <anchorfile>gciRun_8cpp.html</anchorfile>
       <anchor>a69aa29b598b851b0640aa225a9e5d61d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; Wavefunction &gt;</type>
-      <name>ParameterVectorSet</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a6aff8525163d30020a0dfc9f03dbac92</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>double</type>
-      <name>scalar</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ad290ac7c1ac2e78dfb9a34ace3c59082</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::map&lt; size_t, double &gt;</type>
-      <name>Pvector</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a93bc4e37dd503e5a6334adfbd5dc43a5</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -555,67 +286,11 @@
       <arglist>(const std::string &amp;name, const std::vector&lt; double &gt; &amp;values, size_t offset=0, size_t length=SIZE_MAX)</arglist>
     </member>
     <member kind="function">
-      <type>MPI_Comm</type>
-      <name>create_new_comm</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a5b972710edeaf1387434f969e65ea44b</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Eigen::VectorXd</type>
-      <name>int1</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a8b577999c4d871d66410fe046692cd70</anchor>
-      <arglist>(const molpro::Operator &amp;hamiltonian, int spin)</arglist>
-    </member>
-    <member kind="function">
-      <type>Eigen::MatrixXd</type>
-      <name>intJ</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>adf86f34bf19ae32b3a84dde1a10b2d60</anchor>
-      <arglist>(const molpro::Operator &amp;hamiltonian, int spini, int spinj)</arglist>
-    </member>
-    <member kind="function">
-      <type>Eigen::MatrixXd</type>
-      <name>intK</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a152bd8328e9e1fe853d5a395f0437950</anchor>
-      <arglist>(const molpro::Operator &amp;hamiltonian, int spin)</arglist>
-    </member>
-    <member kind="function">
-      <type>molpro::Operator</type>
-      <name>constructOperator</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>aec7484a4f64e8334c4665b49a9eab953</anchor>
-      <arglist>(const molpro::FCIdump &amp;dump, bool collective=true)</arglist>
-    </member>
-    <member kind="function">
       <type>void</type>
-      <name>FCIDump</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a48a994389e84ce021f24245c03dbf33e</anchor>
-      <arglist>(const molpro::Operator &amp;op, const std::string filename, std::vector&lt; int &gt; orbital_symmetries=std::vector&lt; int &gt;(0))</arglist>
-    </member>
-    <member kind="function">
-      <type>molpro::Operator</type>
-      <name>fockOperator</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a4fb1d4d9051a5c77e5cf63472b2038fe</anchor>
-      <arglist>(const molpro::Operator &amp;hamiltonian, const Determinant &amp;reference, std::string description=&quot;Fock&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type>molpro::Operator</type>
-      <name>sameSpinOperator</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>aff0a782594874cd13b816f3248e5645f</anchor>
-      <arglist>(const molpro::Operator &amp;hamiltonian, const Determinant &amp;reference, std::string description=&quot;Same Spin Hamiltonian&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>gsum</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a2b9b892dfad15e9f6ce88e7c363accee</anchor>
-      <arglist>(molpro::Operator &amp;op)</arglist>
+      <name>set_molpro_variable</name>
+      <anchorfile>gciRun_8cpp.html</anchorfile>
+      <anchor>ab95ce13d2ee44787f1153ca22582f7ac</anchor>
+      <arglist>(const std::string &amp;name, const std::vector&lt; T &gt; &amp;ivalues, size_t offset=0, size_t length=SIZE_MAX)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -624,305 +299,117 @@
       <anchor>a4935915813c73a596de74034afeb9583</anchor>
       <arglist>(double *energies, int nenergies, char *fcidump, int64_t communicator)</arglist>
     </member>
-    <member kind="variable">
-      <type>int</type>
-      <name>parallel_size</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a03a3f22b8cd7b2789b98e6e3474bcb9b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>int</type>
-      <name>parallel_rank</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a69609a4424d1e27aae322f69a8d6194e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>bool</type>
-      <name>molpro_plugin</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ac21415d9dbec3ac5a369b37e5a75c494</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>MPI_Comm</type>
-      <name>molpro_plugin_intercomm</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>afe262cf1cfd346b886eb2e6960cc80b7</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::map&lt; MPI_Comm, std::unique_ptr&lt; schedule::SharedCounter &gt; &gt;</type>
-      <name>_nextval_counter</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>af584c0dd9eb59177902e0c9b09cd6d19</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::map&lt; MPI_Comm, int &gt;</type>
-      <name>_ga_pgroups</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ab68e9705410b18a0c47e1474b60595c6</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>MPI_Comm</type>
-      <name>_sub_communicator</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a6c1a231dfda15edff66c0b83603c18cd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>MPI_Comm</type>
-      <name>mpi_comm_compute</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a40ef598d77230c2fd441c7800ae19540</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::map&lt; MPI_Comm, long int &gt;</type>
-      <name>__my_first_task</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>add4a7d73fd92aee07b5d4a5c3d6af6d4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::map&lt; MPI_Comm, long int &gt;</type>
-      <name>__task</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ab0edc7c75d899e607ea44372db45d53d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::map&lt; MPI_Comm, long int &gt;</type>
-      <name>__task_granularity</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a0ae7fb09ab1a40ffcc81594ee448e9a5</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::unique_ptr&lt; molpro::Profiler &gt;</type>
-      <name>profiler</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a693228c63ef13caf937a222aed70c61c</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciRun.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciRun_8h.html</filename>
-    <includes id="gciState_8h" name="gciState.h" local="yes" imported="no">molpro/gci/gciState.h</includes>
-    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" imported="no">molpro/gci/gciWavefunction.h</includes>
+    <includes id="gciState_8h" name="gciState.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciState.h</includes>
+    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciWavefunction.h</includes>
     <class kind="class">molpro::gci::Run</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
-    <member kind="function">
-      <type>Eigen::VectorXd</type>
-      <name>int1</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a8b577999c4d871d66410fe046692cd70</anchor>
-      <arglist>(const molpro::Operator &amp;hamiltonian, int spin)</arglist>
-    </member>
-    <member kind="function">
-      <type>Eigen::MatrixXd</type>
-      <name>intJ</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>adf86f34bf19ae32b3a84dde1a10b2d60</anchor>
-      <arglist>(const molpro::Operator &amp;hamiltonian, int spini, int spinj)</arglist>
-    </member>
-    <member kind="function">
-      <type>Eigen::MatrixXd</type>
-      <name>intK</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a152bd8328e9e1fe853d5a395f0437950</anchor>
-      <arglist>(const molpro::Operator &amp;hamiltonian, int spin)</arglist>
-    </member>
-    <member kind="function">
-      <type>molpro::Operator</type>
-      <name>constructOperator</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>aec7484a4f64e8334c4665b49a9eab953</anchor>
-      <arglist>(const molpro::FCIdump &amp;dump, bool collective=true)</arglist>
-    </member>
-    <member kind="function">
-      <type>molpro::Operator</type>
-      <name>fockOperator</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a4fb1d4d9051a5c77e5cf63472b2038fe</anchor>
-      <arglist>(const molpro::Operator &amp;hamiltonian, const Determinant &amp;reference, std::string description=&quot;Fock&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>gsum</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a2b9b892dfad15e9f6ce88e7c363accee</anchor>
-      <arglist>(molpro::Operator &amp;op)</arglist>
-    </member>
-    <member kind="function">
-      <type>molpro::Operator</type>
-      <name>sameSpinOperator</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>aff0a782594874cd13b816f3248e5645f</anchor>
-      <arglist>(const molpro::Operator &amp;hamiltonian, const Determinant &amp;reference, std::string description=&quot;Same Spin Hamiltonian&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>FCIDump</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a48a994389e84ce021f24245c03dbf33e</anchor>
-      <arglist>(const molpro::Operator &amp;op, const std::string filename, std::vector&lt; int &gt; orbital_symmetries=std::vector&lt; int &gt;(0))</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciState.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciState_8cpp.html</filename>
-    <includes id="gciState_8h" name="gciState.h" local="yes" imported="no">gciState.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciState_8h" name="gciState.h" local="yes" import="no" module="no" objc="no">gciState.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciState.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciState_8h.html</filename>
-    <includes id="gci_8h" name="gci.h" local="yes" imported="no">molpro/gci/gci.h</includes>
-    <includes id="gciOptions_8h" name="gciOptions.h" local="yes" imported="no">molpro/gci/gciOptions.h</includes>
-    <includes id="gciOrbitalSpace_8h" name="gciOrbitalSpace.h" local="yes" imported="no">molpro/gci/gciOrbitalSpace.h</includes>
-    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" imported="no">molpro/gci/gciPrintable.h</includes>
+    <includes id="gci_8h" name="gci.h" local="yes" import="no" module="no" objc="no">molpro/gci/gci.h</includes>
+    <includes id="gciOptions_8h" name="gciOptions.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciOptions.h</includes>
+    <includes id="gciOrbitalSpace_8h" name="gciOrbitalSpace.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciOrbitalSpace.h</includes>
+    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciPrintable.h</includes>
     <class kind="class">molpro::gci::State</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciString.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciString_8cpp.html</filename>
-    <includes id="gciString_8h" name="gciString.h" local="yes" imported="no">gciString.h</includes>
-    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" imported="no">gciStringSet.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciString_8h" name="gciString.h" local="yes" import="no" module="no" objc="no">gciString.h</includes>
+    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" import="no" module="no" objc="no">gciStringSet.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciString.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciString_8h.html</filename>
-    <includes id="gci_8h" name="gci.h" local="yes" imported="no">molpro/gci/gci.h</includes>
-    <includes id="gciState_8h" name="gciState.h" local="yes" imported="no">molpro/gci/gciState.h</includes>
+    <includes id="gci_8h" name="gci.h" local="yes" import="no" module="no" objc="no">molpro/gci/gci.h</includes>
+    <includes id="gciState_8h" name="gciState.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciState.h</includes>
     <class kind="class">molpro::gci::String</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciStringSet.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciStringSet_8cpp.html</filename>
-    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" imported="no">gciStringSet.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" import="no" module="no" objc="no">gciStringSet.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciStringSet.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciStringSet_8h.html</filename>
-    <includes id="gciExcitationSet_8h" name="gciExcitationSet.h" local="yes" imported="no">molpro/gci/gciExcitationSet.h</includes>
-    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" imported="no">molpro/gci/gciPrintable.h</includes>
-    <includes id="gciString_8h" name="gciString.h" local="yes" imported="no">molpro/gci/gciString.h</includes>
+    <includes id="gciExcitationSet_8h" name="gciExcitationSet.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciExcitationSet.h</includes>
+    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciPrintable.h</includes>
+    <includes id="gciString_8h" name="gciString.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciString.h</includes>
     <class kind="class">molpro::gci::StringSet</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciSymmetrySpace.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciSymmetrySpace_8cpp.html</filename>
-    <includes id="gciSymmetrySpace_8h" name="gciSymmetrySpace.h" local="yes" imported="no">gciSymmetrySpace.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciSymmetrySpace_8h" name="gciSymmetrySpace.h" local="yes" import="no" module="no" objc="no">gciSymmetrySpace.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciSymmetrySpace.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciSymmetrySpace_8h.html</filename>
-    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" imported="no">molpro/gci/gciPrintable.h</includes>
+    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciPrintable.h</includes>
     <class kind="class">molpro::gci::SymmetrySpace</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciTransitionDensity.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciTransitionDensity_8cpp.html</filename>
-    <includes id="gciTransitionDensity_8h" name="gciTransitionDensity.h" local="yes" imported="no">gciTransitionDensity.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciTransitionDensity_8h" name="gciTransitionDensity.h" local="yes" import="no" module="no" objc="no">gciTransitionDensity.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciTransitionDensity.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciTransitionDensity_8h.html</filename>
-    <includes id="Operator_8h" name="Operator.h" local="no" imported="no">molpro/symmetry_matrix/Operator.h</includes>
-    <includes id="SMat_8h" name="SMat.h" local="no" imported="no">molpro/symmetry_matrix/SMat.h</includes>
-    <includes id="gciOrbitalSpace_8h" name="gciOrbitalSpace.h" local="yes" imported="no">molpro/gci/gciOrbitalSpace.h</includes>
-    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" imported="no">molpro/gci/gciPrintable.h</includes>
-    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" imported="no">molpro/gci/gciStringSet.h</includes>
-    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" imported="no">molpro/gci/gciWavefunction.h</includes>
+    <includes id="Operator_8h" name="Operator.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/Operator.h</includes>
+    <includes id="SMat_8h" name="SMat.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/SMat.h</includes>
+    <includes id="gciOrbitalSpace_8h" name="gciOrbitalSpace.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciOrbitalSpace.h</includes>
+    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciPrintable.h</includes>
+    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciStringSet.h</includes>
+    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciWavefunction.h</includes>
     <class kind="class">molpro::gci::ctor_allocator</class>
     <class kind="struct">molpro::gci::ctor_allocator::rebind</class>
     <class kind="class">molpro::gci::TransitionDensity</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciUtils.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciUtils_8cpp.html</filename>
-    <includes id="gciUtils_8h" name="gciUtils.h" local="yes" imported="no">gciUtils.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciUtils_8h" name="gciUtils.h" local="yes" import="no" module="no" objc="no">gciUtils.h</includes>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::utils</namespace>
-    <member kind="function">
-      <type>bool</type>
-      <name>file_exists</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1utils.html</anchorfile>
-      <anchor>af40e41132a0026382ba114be8fbff4fa</anchor>
-      <arglist>(const std::string &amp;fname, const std::string &amp;message=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>open_hdf5_file</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1utils.html</anchorfile>
-      <anchor>a82309a03d6f6d74b61efa6c3a1bd37e1</anchor>
-      <arglist>(const std::string &amp;fname, MPI_Comm communicator, bool create)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>hdf5_file_open</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1utils.html</anchorfile>
-      <anchor>af70b57521b6923b2bb7c9716519bbae6</anchor>
-      <arglist>(int file_id)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>hdf5_dataset_exists</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1utils.html</anchorfile>
-      <anchor>ac2298febd5f20fb4daed9b79a5581039</anchor>
-      <arglist>(int location, const std::string &amp;dataset_name)</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>open_or_create_hdf5_dataset</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1utils.html</anchorfile>
-      <anchor>adfb84b16291cc485f9131f67c804dc36</anchor>
-      <arglist>(const int &amp;location, const std::string &amp;dataset_name, const int &amp;dtype_id, const size_t &amp;length)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciUtils.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciUtils_8h.html</filename>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::utils</namespace>
     <member kind="define">
@@ -932,144 +419,39 @@
       <anchor>a72876d2394751bd0ac29c69171515d62</anchor>
       <arglist></arglist>
     </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>file_exists</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1utils.html</anchorfile>
-      <anchor>af40e41132a0026382ba114be8fbff4fa</anchor>
-      <arglist>(const std::string &amp;fname, const std::string &amp;message=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>open_hdf5_file</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1utils.html</anchorfile>
-      <anchor>a82309a03d6f6d74b61efa6c3a1bd37e1</anchor>
-      <arglist>(const std::string &amp;fname, MPI_Comm communicator, bool create)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>hdf5_file_open</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1utils.html</anchorfile>
-      <anchor>af70b57521b6923b2bb7c9716519bbae6</anchor>
-      <arglist>(int file_id)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>hdf5_dataset_exists</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1utils.html</anchorfile>
-      <anchor>ac2298febd5f20fb4daed9b79a5581039</anchor>
-      <arglist>(int location, const std::string &amp;dataset_name)</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>open_or_create_hdf5_dataset</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1utils.html</anchorfile>
-      <anchor>adfb84b16291cc485f9131f67c804dc36</anchor>
-      <arglist>(const int &amp;location, const std::string &amp;dataset_name, const int &amp;dtype_id, const size_t &amp;length)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciVibExcitation.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciVibExcitation_8h.html</filename>
     <class kind="class">molpro::gci::VibExcitation</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciVibOperator.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciVibOperator_8cpp.html</filename>
-    <includes id="gciVibOperator_8h" name="gciVibOperator.h" local="yes" imported="no">gciVibOperator.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciVibOperator_8h" name="gciVibOperator.h" local="yes" import="no" module="no" objc="no">gciVibOperator.h</includes>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::ns_VibOperator</namespace>
-    <member kind="function">
-      <type>size_t</type>
-      <name>hash</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1ns__VibOperator.html</anchorfile>
-      <anchor>a3d66de902247b393b0b21e7cc0ab5028</anchor>
-      <arglist>(const VibExcitation &amp;exc, int nMode, int nModal, parity_t hermiticity, parity_t exchange)</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>hash_mc1_sym</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1ns__VibOperator.html</anchorfile>
-      <anchor>a6614730933ba1ea2fce486aaa6b1a04b</anchor>
-      <arglist>(const VibExcitation &amp;exc, int nModal)</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>hash_mc1_nosym</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1ns__VibOperator.html</anchorfile>
-      <anchor>abcf16d1a771c4506564f4e034312b194</anchor>
-      <arglist>(const VibExcitation &amp;exc, int nModal)</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>hash_mc1_nosym_old</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1ns__VibOperator.html</anchorfile>
-      <anchor>a1725c302094ef19c87f10627820a8d4e</anchor>
-      <arglist>(const VibExcitation &amp;exc, int nModal)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciVibOperator.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciVibOperator_8h.html</filename>
-    <includes id="Operator_8h" name="Operator.h" local="no" imported="no">molpro/symmetry_matrix/Operator.h</includes>
-    <includes id="gciHProduct_8h" name="gciHProduct.h" local="yes" imported="no">molpro/gci/gciHProduct.h</includes>
-    <includes id="gciVibExcitation_8h" name="gciVibExcitation.h" local="yes" imported="no">molpro/gci/gciVibExcitation.h</includes>
+    <includes id="Operator_8h" name="Operator.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/Operator.h</includes>
+    <includes id="gciHProduct_8h" name="gciHProduct.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciHProduct.h</includes>
+    <includes id="gciVibExcitation_8h" name="gciVibExcitation.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciVibExcitation.h</includes>
     <class kind="class">molpro::gci::VibTensEl</class>
     <class kind="class">molpro::gci::VibOperator</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::ns_VibOperator</namespace>
-    <member kind="enumeration">
-      <type></type>
-      <name>parity_t</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1ns__VibOperator.html</anchorfile>
-      <anchor>aa6b0eccb81cf71f699d384838a9f8b53</anchor>
-      <arglist></arglist>
-      <enumvalue file="namespacemolpro_1_1gci_1_1ns__VibOperator.html" anchor="aa6b0eccb81cf71f699d384838a9f8b53a334c4a4c42fdb79d7ebc3e73b517e6f8">none</enumvalue>
-      <enumvalue file="namespacemolpro_1_1gci_1_1ns__VibOperator.html" anchor="aa6b0eccb81cf71f699d384838a9f8b53acc935c5faf4c8f7a0468d7552a9b8138">even</enumvalue>
-      <enumvalue file="namespacemolpro_1_1gci_1_1ns__VibOperator.html" anchor="aa6b0eccb81cf71f699d384838a9f8b53aa2b6f2a6066ed8700d83335fc50a2b8e">odd</enumvalue>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>hash</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1ns__VibOperator.html</anchorfile>
-      <anchor>a3d66de902247b393b0b21e7cc0ab5028</anchor>
-      <arglist>(const VibExcitation &amp;exc, int nMode, int nModal, parity_t hermiticity, parity_t exchange)</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>hash_mc1_sym</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1ns__VibOperator.html</anchorfile>
-      <anchor>a6614730933ba1ea2fce486aaa6b1a04b</anchor>
-      <arglist>(const VibExcitation &amp;exc, int nModal)</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>hash_mc1_nosym</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1ns__VibOperator.html</anchorfile>
-      <anchor>abcf16d1a771c4506564f4e034312b194</anchor>
-      <arglist>(const VibExcitation &amp;exc, int nModal)</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>hash_mc1_nosym_old</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1ns__VibOperator.html</anchorfile>
-      <anchor>a1725c302094ef19c87f10627820a8d4e</anchor>
-      <arglist>(const VibExcitation &amp;exc, int nModal)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciVibSpace.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciVibSpace_8cpp.html</filename>
-    <includes id="gciVibSpace_8h" name="gciVibSpace.h" local="yes" imported="no">gciVibSpace.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciVibSpace_8h" name="gciVibSpace.h" local="yes" import="no" module="no" objc="no">gciVibSpace.h</includes>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
@@ -1077,172 +459,55 @@
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciVibSpace_8h.html</filename>
     <class kind="struct">molpro::gci::VibSpace</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>gciWavefunction.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciWavefunction_8cpp.html</filename>
-    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" imported="no">gciWavefunction.h</includes>
-    <includes id="gci_8h" name="gci.h" local="yes" imported="no">gci.h</includes>
-    <includes id="gciOrbitals_8h" name="gciOrbitals.h" local="yes" imported="no">gciOrbitals.h</includes>
-    <includes id="gciRun_8h" name="gciRun.h" local="yes" imported="no">gciRun.h</includes>
-    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" imported="no">gciStringSet.h</includes>
-    <includes id="gciTransitionDensity_8h" name="gciTransitionDensity.h" local="yes" imported="no">gciTransitionDensity.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" import="no" module="no" objc="no">gciWavefunction.h</includes>
+    <includes id="gci_8h" name="gci.h" local="yes" import="no" module="no" objc="no">gci.h</includes>
+    <includes id="gciOrbitals_8h" name="gciOrbitals.h" local="yes" import="no" module="no" objc="no">gciOrbitals.h</includes>
+    <includes id="gciRun_8h" name="gciRun.h" local="yes" import="no" module="no" objc="no">gciRun.h</includes>
+    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" import="no" module="no" objc="no">gciStringSet.h</includes>
+    <includes id="gciTransitionDensity_8h" name="gciTransitionDensity.h" local="yes" import="no" module="no" objc="no">gciTransitionDensity.h</includes>
     <namespace>molpro::gci</namespace>
-    <member kind="typedef">
-      <type>unsigned int</type>
-      <name>uint</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a2be15605b2c4fe82556bd5ac93701798</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>_mpi_rank</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ad164612271e547366674a008f2731d1c</anchor>
-      <arglist>(MPI_Comm comm)</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>_mpi_size</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a07e1c7b62b114bfbcc359bf6feb553a1</anchor>
-      <arglist>(MPI_Comm comm)</arglist>
-    </member>
-    <member kind="function">
-      <type>Wavefunction</type>
-      <name>operator+</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>aba0738b624c3e61af44a30c22b3aab14</anchor>
-      <arglist>(const Wavefunction &amp;w1, const Wavefunction &amp;w2)</arglist>
-    </member>
-    <member kind="function">
-      <type>Wavefunction</type>
-      <name>operator-</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a05484faf6c56746f042757a6280bd6f9</anchor>
-      <arglist>(const Wavefunction &amp;w1, const Wavefunction &amp;w2)</arglist>
-    </member>
-    <member kind="function">
-      <type>Wavefunction</type>
-      <name>operator/</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a222c8dc451777cc1c2bfdc9ff93270e8</anchor>
-      <arglist>(const Wavefunction &amp;w1, const Wavefunction &amp;w2)</arglist>
-    </member>
-    <member kind="function">
-      <type>Wavefunction</type>
-      <name>operator*</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>afe29acb0c67e08af6217e7329966ddee</anchor>
-      <arglist>(const Wavefunction &amp;w1, const double &amp;value)</arglist>
-    </member>
-    <member kind="function">
-      <type>Wavefunction</type>
-      <name>operator*</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a3a9f77ca823dfa72880c5413f52db8ab</anchor>
-      <arglist>(const double &amp;value, const Wavefunction &amp;w1)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>operator*</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a50323d4a8da2af64d2046d73bdc79f39</anchor>
-      <arglist>(const Wavefunction &amp;w1, const Wavefunction &amp;w2)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>MXM</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>ae83ac4a872001cdd083e7cabcd874f3e</anchor>
-      <arglist>(double *Out, const double *A, const double *B, uint nRows, uint nLink, uint nCols, bool AddToDest, int nStrideLink=-1)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>gciWavefunction.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>gciWavefunction_8h.html</filename>
-    <includes id="gci_8h" name="gci.h" local="yes" imported="no">molpro/gci/gci.h</includes>
-    <includes id="gciDeterminant_8h" name="gciDeterminant.h" local="yes" imported="no">molpro/gci/gciDeterminant.h</includes>
-    <includes id="gciFile_8h" name="gciFile.h" local="yes" imported="no">molpro/gci/gciFile.h</includes>
-    <includes id="gciOrbitals_8h" name="gciOrbitals.h" local="yes" imported="no">molpro/gci/gciOrbitals.h</includes>
-    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" imported="no">molpro/gci/gciPrintable.h</includes>
-    <includes id="gciState_8h" name="gciState.h" local="yes" imported="no">molpro/gci/gciState.h</includes>
-    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" imported="no">molpro/gci/gciStringSet.h</includes>
-    <includes id="SMat_8h" name="SMat.h" local="no" imported="no">molpro/symmetry_matrix/SMat.h</includes>
+    <includes id="gci_8h" name="gci.h" local="yes" import="no" module="no" objc="no">molpro/gci/gci.h</includes>
+    <includes id="gciDeterminant_8h" name="gciDeterminant.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciDeterminant.h</includes>
+    <includes id="gciFile_8h" name="gciFile.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciFile.h</includes>
+    <includes id="gciOrbitals_8h" name="gciOrbitals.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciOrbitals.h</includes>
+    <includes id="gciPrintable_8h" name="gciPrintable.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciPrintable.h</includes>
+    <includes id="gciState_8h" name="gciState.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciState.h</includes>
+    <includes id="gciStringSet_8h" name="gciStringSet.h" local="yes" import="no" module="no" objc="no">molpro/gci/gciStringSet.h</includes>
+    <includes id="SMat_8h" name="SMat.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/SMat.h</includes>
     <class kind="class">molpro::gci::Wavefunction</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
-    <member kind="function">
-      <type>double</type>
-      <name>operator*</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a50323d4a8da2af64d2046d73bdc79f39</anchor>
-      <arglist>(const Wavefunction &amp;w1, const Wavefunction &amp;w2)</arglist>
-    </member>
-    <member kind="function">
-      <type>Wavefunction</type>
-      <name>operator+</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>aba0738b624c3e61af44a30c22b3aab14</anchor>
-      <arglist>(const Wavefunction &amp;w1, const Wavefunction &amp;w2)</arglist>
-    </member>
-    <member kind="function">
-      <type>Wavefunction</type>
-      <name>operator-</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a05484faf6c56746f042757a6280bd6f9</anchor>
-      <arglist>(const Wavefunction &amp;w1, const Wavefunction &amp;w2)</arglist>
-    </member>
-    <member kind="function">
-      <type>Wavefunction</type>
-      <name>operator/</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a222c8dc451777cc1c2bfdc9ff93270e8</anchor>
-      <arglist>(const Wavefunction &amp;w1, const Wavefunction &amp;w2)</arglist>
-    </member>
-    <member kind="function">
-      <type>Wavefunction</type>
-      <name>operator*</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>afe29acb0c67e08af6217e7329966ddee</anchor>
-      <arglist>(const Wavefunction &amp;w1, const double &amp;value)</arglist>
-    </member>
-    <member kind="function">
-      <type>Wavefunction</type>
-      <name>operator*</name>
-      <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a3a9f77ca823dfa72880c5413f52db8ab</anchor>
-      <arglist>(const double &amp;value, const Wavefunction &amp;w1)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>Problem.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>Problem_8cpp.html</filename>
-    <includes id="Problem_8h" name="Problem.h" local="yes" imported="no">Problem.h</includes>
+    <includes id="Problem_8h" name="Problem.h" local="yes" import="no" module="no" objc="no">Problem.h</includes>
   </compound>
   <compound kind="file">
     <name>Problem.h</name>
     <path>/__w/gci/gci/src/molpro/gci/</path>
     <filename>Problem_8h.html</filename>
-    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" imported="no">gciWavefunction.h</includes>
-    <includes id="Operator_8h" name="Operator.h" local="no" imported="no">molpro/symmetry_matrix/Operator.h</includes>
+    <includes id="gciWavefunction_8h" name="gciWavefunction.h" local="yes" import="no" module="no" objc="no">gciWavefunction.h</includes>
+    <includes id="Operator_8h" name="Operator.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/Operator.h</includes>
     <class kind="class">molpro::gci::Problem</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
   </compound>
   <compound kind="file">
     <name>SharedCounter.h</name>
     <path>/__w/gci/gci/src/molpro/gci/schedule/</path>
     <filename>SharedCounter_8h.html</filename>
-    <includes id="SharedCounterMPI3_8h" name="SharedCounterMPI3.h" local="yes" imported="no">molpro/gci/schedule/SharedCounterMPI3.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="SharedCounterMPI3_8h" name="SharedCounterMPI3.h" local="yes" import="no" module="no" objc="no">molpro/gci/schedule/SharedCounterMPI3.h</includes>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::schedule</namespace>
     <member kind="define">
@@ -1252,20 +517,12 @@
       <anchor>a2f9579fa97427a900c8f3785a721ca46</anchor>
       <arglist></arglist>
     </member>
-    <member kind="typedef">
-      <type>SharedCounterMPI3</type>
-      <name>SharedCounter</name>
-      <anchorfile>namespacemolpro_1_1gci_1_1schedule.html</anchorfile>
-      <anchor>a69d55cb27e27909aeeb0446cf3e36c76</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>SharedCounterBase.h</name>
     <path>/__w/gci/gci/src/molpro/gci/schedule/</path>
     <filename>SharedCounterBase_8h.html</filename>
     <class kind="class">molpro::gci::schedule::SharedCounterBase</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::schedule</namespace>
   </compound>
@@ -1273,8 +530,7 @@
     <name>SharedCounterMPI3.cpp</name>
     <path>/__w/gci/gci/src/molpro/gci/schedule/</path>
     <filename>SharedCounterMPI3_8cpp.html</filename>
-    <includes id="SharedCounterMPI3_8h" name="SharedCounterMPI3.h" local="yes" imported="no">SharedCounterMPI3.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="SharedCounterMPI3_8h" name="SharedCounterMPI3.h" local="yes" import="no" module="no" objc="no">SharedCounterMPI3.h</includes>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::schedule</namespace>
   </compound>
@@ -1282,9 +538,8 @@
     <name>SharedCounterMPI3.h</name>
     <path>/__w/gci/gci/src/molpro/gci/schedule/</path>
     <filename>SharedCounterMPI3_8h.html</filename>
-    <includes id="SharedCounterBase_8h" name="SharedCounterBase.h" local="yes" imported="no">molpro/gci/schedule/SharedCounterBase.h</includes>
+    <includes id="SharedCounterBase_8h" name="SharedCounterBase.h" local="yes" import="no" module="no" objc="no">molpro/gci/schedule/SharedCounterBase.h</includes>
     <class kind="class">molpro::gci::schedule::SharedCounterMPI3</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::schedule</namespace>
   </compound>
@@ -1294,7 +549,6 @@
     <filename>WavefunctionHandler_8h.html</filename>
     <class kind="class">molpro::gci::wavefunction::WavefunctionHandler</class>
     <class kind="class">molpro::gci::wavefunction::WavefunctionHandlerSparse</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::gci</namespace>
     <namespace>molpro::gci::wavefunction</namespace>
   </compound>
@@ -1302,7 +556,7 @@
     <name>Operator-double.cpp</name>
     <path>/__w/gci/gci/src/molpro/symmetry_matrix/</path>
     <filename>Operator-double_8cpp.html</filename>
-    <includes id="Operator-implementation_8h" name="Operator-implementation.h" local="yes" imported="no">Operator-implementation.h</includes>
+    <includes id="Operator-implementation_8h" name="Operator-implementation.h" local="yes" import="no" module="no" objc="no">Operator-implementation.h</includes>
     <class kind="class">Constants</class>
     <member kind="typedef">
       <type>double</type>
@@ -1316,7 +570,7 @@
     <name>Operator-implementation.h</name>
     <path>/__w/gci/gci/src/molpro/symmetry_matrix/</path>
     <filename>Operator-implementation_8h.html</filename>
-    <includes id="Operator_8h" name="Operator.h" local="no" imported="no">molpro/symmetry_matrix/Operator.h</includes>
+    <includes id="Operator_8h" name="Operator.h" local="no" import="no" module="no" objc="no">molpro/symmetry_matrix/Operator.h</includes>
     <member kind="function">
       <type>parity_t</type>
       <name>parity</name>
@@ -1329,38 +583,21 @@
     <name>Operator.h</name>
     <path>/__w/gci/gci/src/molpro/symmetry_matrix/</path>
     <filename>Operator_8h.html</filename>
-    <includes id="SMat_8h" name="SMat.h" local="yes" imported="no">SMat.h</includes>
-    <includes id="SMatMat_8h" name="SMatMat.h" local="yes" imported="no">SMatMat.h</includes>
+    <includes id="SMat_8h" name="SMat.h" local="yes" import="no" module="no" objc="no">SMat.h</includes>
+    <includes id="SMatMat_8h" name="SMatMat.h" local="yes" import="no" module="no" objc="no">SMatMat.h</includes>
     <class kind="class">molpro::Operator_</class>
-    <namespace>molpro</namespace>
-    <member kind="typedef">
-      <type>typename molpro::Operator_&lt; double &gt;</type>
-      <name>Operator</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ac7045436261ae89fc1236ff3d70c9218</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>aeb1a854b5d484750e84957171556c573</anchor>
-      <arglist>(std::ostream &amp;os, Operator_&lt; T &gt; const &amp;obj)</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>SMat-double.cpp</name>
     <path>/__w/gci/gci/src/molpro/symmetry_matrix/</path>
     <filename>SMat-double_8cpp.html</filename>
-    <includes id="SMat-implementation_8h" name="SMat-implementation.h" local="yes" imported="no">SMat-implementation.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="SMat-implementation_8h" name="SMat-implementation.h" local="yes" import="no" module="no" objc="no">SMat-implementation.h</includes>
   </compound>
   <compound kind="file">
     <name>SMat-implementation.h</name>
     <path>/__w/gci/gci/src/molpro/symmetry_matrix/</path>
     <filename>SMat-implementation_8h.html</filename>
-    <includes id="SMat_8h" name="SMat.h" local="yes" imported="no">SMat.h</includes>
-    <namespace>molpro</namespace>
+    <includes id="SMat_8h" name="SMat.h" local="yes" import="no" module="no" objc="no">SMat.h</includes>
     <member kind="define">
       <type>#define</type>
       <name>ErrorExit</name>
@@ -1401,7 +638,7 @@
     <name>SMat.cpp</name>
     <path>/__w/gci/gci/src/molpro/symmetry_matrix/</path>
     <filename>SMat_8cpp.html</filename>
-    <includes id="SMat_8h" name="SMat.h" local="yes" imported="no">SMat.h</includes>
+    <includes id="SMat_8h" name="SMat.h" local="yes" import="no" module="no" objc="no">SMat.h</includes>
     <member kind="function">
       <type>void</type>
       <name>default_get_orbital_space</name>
@@ -1416,154 +653,31 @@
     <filename>SMat_8h.html</filename>
     <class kind="class">molpro::SMat_</class>
     <class kind="class">molpro::SMat_::SVD</class>
-    <namespace>molpro</namespace>
     <namespace>molpro::SymmetryMatrix</namespace>
-    <member kind="typedef">
-      <type>std::vector&lt; size_t &gt;</type>
-      <name>dim_t</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a67177c2ad49feab84008cc04c3bb1f7c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; dim_t &gt;</type>
-      <name>dims_t</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a7a136b7a21c942e40967ed5bab20ff2e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename molpro::SMat_&lt; double &gt;</type>
-      <name>SMat</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ad80f79742f183b105c60b295863d6718</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumeration">
-      <type></type>
-      <name>parity_t</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>parityNone</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6fab84d144528f1a54d906ec2d9922f3aec</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>parityEven</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6fa09ceea7356628ff7d1cbc1d0149544e7</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>parityOdd</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6fa5d5c6a3594b6f312d3d19b349ca8d25e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>parityOddPacked</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6fadf9df807b4f5e704d4dd447772943798</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>parityUnspecified</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6fa36d4c7d8181c3d6fc1f1519c27b6e543</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_&lt; T &gt;</type>
-      <name>operator*</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a5be765a88a29ee1d6f4fd32ce4afec05</anchor>
-      <arglist>(typename SMat_&lt; T &gt;::value_type a, SMat_&lt; T &gt; const &amp;b)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_&lt; T &gt;</type>
-      <name>transpose</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a85fc3fa2c992ee01ccea2509b9d76f37</anchor>
-      <arglist>(const SMat_&lt; T &gt; &amp;mat)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_&lt; T &gt;</type>
-      <name>eval</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a796fa89776bd8cfb5cf59059f67cadda</anchor>
-      <arglist>(const SMat_&lt; T &gt; &amp;mat)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_&lt; T &gt;</type>
-      <name>trim</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ac578bd58532fe11d0ef06da0ad0443e2</anchor>
-      <arglist>(const SMat_&lt; T &gt; &amp;mat, typename SMat_&lt; T &gt;::scalar_type cut=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a2913f10101dccd0a0d37d4f3196af078</anchor>
-      <arglist>(std::ostream &amp;os, SMat_&lt; T &gt; const &amp;obj)</arglist>
-    </member>
-    <member kind="function">
-      <type>dims_t</type>
-      <name>spaces</name>
-      <anchorfile>namespacemolpro_1_1SymmetryMatrix.html</anchorfile>
-      <anchor>a0f57c0ef0c5cc587b17a063ef926d548</anchor>
-      <arglist>(std::string space)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>register_get_orbital_space</name>
-      <anchorfile>namespacemolpro_1_1SymmetryMatrix.html</anchorfile>
-      <anchor>a2a57659578f3ba39e34a8c2d08256d09</anchor>
-      <arglist>(void(*func)(char c, size_t nt[]))</arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>SMatMat-double.cpp</name>
     <path>/__w/gci/gci/src/molpro/symmetry_matrix/</path>
     <filename>SMatMat-double_8cpp.html</filename>
-    <includes id="SMatMat-implementation_8h" name="SMatMat-implementation.h" local="yes" imported="no">SMatMat-implementation.h</includes>
+    <includes id="SMatMat-implementation_8h" name="SMatMat-implementation.h" local="yes" import="no" module="no" objc="no">SMatMat-implementation.h</includes>
   </compound>
   <compound kind="file">
     <name>SMatMat-implementation.h</name>
     <path>/__w/gci/gci/src/molpro/symmetry_matrix/</path>
     <filename>SMatMat-implementation_8h.html</filename>
-    <includes id="SMatMat_8h" name="SMatMat.h" local="yes" imported="no">SMatMat.h</includes>
+    <includes id="SMatMat_8h" name="SMatMat.h" local="yes" import="no" module="no" objc="no">SMatMat.h</includes>
   </compound>
   <compound kind="file">
     <name>SMatMat.h</name>
     <path>/__w/gci/gci/src/molpro/symmetry_matrix/</path>
     <filename>SMatMat_8h.html</filename>
-    <includes id="SMat_8h" name="SMat.h" local="yes" imported="no">SMat.h</includes>
+    <includes id="SMat_8h" name="SMat.h" local="yes" import="no" module="no" objc="no">SMat.h</includes>
     <class kind="class">molpro::SMatMat_</class>
-    <namespace>molpro</namespace>
-    <member kind="typedef">
-      <type>typename molpro::SMatMat_&lt; molpro::SMat_&lt; double &gt; &gt;</type>
-      <name>SMatMat</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a68eb83545d98691e82c07cb7b980adbe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a2edea01905081b3094c90bc9fc891282</anchor>
-      <arglist>(std::ostream &amp;os, SMatMat_&lt; T &gt; const &amp;obj)</arglist>
-    </member>
   </compound>
   <compound kind="class">
     <name>Constants</name>
     <filename>classConstants.html</filename>
-    <templarg></templarg>
+    <templarg>class T</templarg>
     <member kind="variable">
       <type>const T</type>
       <name>s_zero</name>
@@ -1582,8 +696,8 @@
   <compound kind="class">
     <name>molpro::gci::ctor_allocator</name>
     <filename>classmolpro_1_1gci_1_1ctor__allocator.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>typename T</templarg>
+    <templarg>typename A</templarg>
     <class kind="struct">molpro::gci::ctor_allocator::rebind</class>
     <member kind="function">
       <type>void</type>
@@ -1603,8 +717,8 @@
   <compound kind="class">
     <name>molpro::gci::run::Davidson</name>
     <filename>classmolpro_1_1gci_1_1run_1_1Davidson.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>class t_Wavefunction</templarg>
+    <templarg>class t_Operator</templarg>
     <member kind="typedef">
       <type>std::vector&lt; t_Wavefunction &gt;</type>
       <name>ParameterVectorSet</name>
@@ -2176,7 +1290,7 @@
       <type>const auto &amp;</type>
       <name>operator[]</name>
       <anchorfile>classmolpro_1_1gci_1_1HProduct.html</anchorfile>
-      <anchor>a2c7496db646ab1c0050b2e30e77ce79f</anchor>
+      <anchor>a70065d7ea661b3065b0761be126fd8ab</anchor>
       <arglist>(unsigned long i) const</arglist>
     </member>
     <member kind="function">
@@ -2292,7 +1406,7 @@
       <type>const auto &amp;</type>
       <name>operator[]</name>
       <anchorfile>classmolpro_1_1gci_1_1HProductSet.html</anchorfile>
-      <anchor>a38ed287b611bbd678c32e5633be6525e</anchor>
+      <anchor>a935a1b70a4fadca90d7f0e3dba96f438</anchor>
       <arglist>(unsigned long i) const</arglist>
     </member>
     <member kind="function">
@@ -3133,7 +2247,7 @@
   <compound kind="class">
     <name>molpro::Operator_</name>
     <filename>classmolpro_1_1Operator__.html</filename>
-    <templarg></templarg>
+    <templarg>class T</templarg>
     <member kind="typedef">
       <type>typename molpro::SMat_&lt; T &gt;</type>
       <name>SMat</name>
@@ -3250,7 +2364,7 @@
       <type>SMat &amp;</type>
       <name>O1</name>
       <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>aa4551acbf71b32165d1eddf6bcdcee69</anchor>
+      <anchor>ab8a1b98b790756590b714ad7c75bbc3e</anchor>
       <arglist>(bool spinUp=true)</arglist>
     </member>
     <member kind="function">
@@ -3264,7 +2378,7 @@
       <type>SMatMat &amp;</type>
       <name>O2</name>
       <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a0cfc712beccff1681e55161dda503746</anchor>
+      <anchor>ad09aed84e832359aa0080e8c0767e5b0</anchor>
       <arglist>(bool spinUp1=true, bool spinUp2=true)</arglist>
     </member>
     <member kind="function">
@@ -3285,466 +2399,14 @@
       <type>const value_type &amp;</type>
       <name>element</name>
       <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>abe5cbe7c2113d4073d1dd944d5205b02</anchor>
+      <anchor>a7d38cfa497032fc1d20cfbdf9bca65fe</anchor>
       <arglist>(int i, int isym, int j, int jsym, bool spinUp1=true) const</arglist>
     </member>
     <member kind="function">
       <type>value_type &amp;</type>
       <name>element</name>
       <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ae2edad167011e906cb8b510bee0525e7</anchor>
-      <arglist>(int i, int isym, int j, int jsym, bool spinUp1=true)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::string</type>
-      <name>str</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ad34403a5cf7a4cd77944d1f5e54bda13</anchor>
-      <arglist>(std::string title=&quot;&quot;, int level=1) const</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>dimension</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a15c240d847db968d49232583f481fc5c</anchor>
-      <arglist>(unsigned int symmetry=0, unsigned int axis=0, bool spinUp=true) const</arglist>
-    </member>
-    <member kind="function">
-      <type>class molpro::bytestream</type>
-      <name>bytestream</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a1d2d5660ff702b36c528629ab5aaee76</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>class Operator_</type>
-      <name>fock</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a669299f878e03d1e06e65ddf09e3d3d9</anchor>
-      <arglist>(const class Operator_ &amp;density, bool oneElectron=true, std::string description=&quot;&quot;) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>zero</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a1b8666aedb49899b0176cef3fe5d94ec</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>class Operator_ &amp;</type>
-      <name>operator+=</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a6179fc8618d97b316f340239f8cee816</anchor>
-      <arglist>(const class Operator_ &amp;other)</arglist>
-    </member>
-    <member kind="function">
-      <type>class Operator_ &amp;</type>
-      <name>operator-=</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a92a18303329a4a9a8f1aedc1c20435dc</anchor>
-      <arglist>(const class Operator_ &amp;other)</arglist>
-    </member>
-    <member kind="function">
-      <type>class Operator_ &amp;</type>
-      <name>operator*=</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ab93c4112118146afd29556550d07467f</anchor>
-      <arglist>(value_type other)</arglist>
-    </member>
-    <member kind="function">
-      <type>scalar_type</type>
-      <name>operator&amp;</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a87ab2b8812f1233c41f57fcd5ffc4265</anchor>
-      <arglist>(const class Operator_ &amp;other) const</arglist>
-    </member>
-    <member kind="function">
-      <type>const class Operator_</type>
-      <name>operator+</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ad9bf663a64c1a07579f743d1a6cf7e30</anchor>
-      <arglist>(const class Operator_ &amp;other)</arglist>
-    </member>
-    <member kind="function">
-      <type>const class Operator_</type>
-      <name>operator-</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a4b02834725b1fcd3bcafc08bea5e2024</anchor>
-      <arglist>(const class Operator_ &amp;other)</arglist>
-    </member>
-    <member kind="function">
-      <type>const class Operator_</type>
-      <name>operator*</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a749b8fa3f30d5e9b1e53844e63ef026c</anchor>
-      <arglist>(value_type other)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>compatible</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a6bfacd8c7fe9568a705a3cc80b157e3c</anchor>
-      <arglist>(const class Operator_ &amp;other) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>checkCompatible</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a20000a4a42912922560beade06407dc5</anchor>
-      <arglist>(const class Operator_ &amp;other) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>mulliken_from_dirac</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a9227a41e2d01d3e9c2322878ed2431e0</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat</type>
-      <name>metric</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ab701242e04c76327c6d0a88aaf4b3859</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>ensure_dirac</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a04873a23f31ee4da6e98e632f538b0b8</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>set_dirty</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a2c884131888790d27bcf65f6001afda5</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static class Operator_</type>
-      <name>construct</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a420f17fcb448c0596d357cb6b5e850bb</anchor>
-      <arglist>(const char *dump)</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static class Operator_</type>
-      <name>construct</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>aab5169519cb3db69c09654308fcf2c60</anchor>
-      <arglist>(class molpro::bytestream &amp;bs)</arglist>
-    </member>
-    <member kind="variable">
-      <type>const int</type>
-      <name>m_rank</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ad2b850d157e7af62771a089e415d20a6</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>const bool</type>
-      <name>m_uhf</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>addb215888a5251d81aba6db8f9926b3f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>const std::vector&lt; int &gt;</type>
-      <name>m_hermiticity</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a56ee0078a62b241588913b717ca60178</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>const std::vector&lt; int &gt;</type>
-      <name>m_exchange</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ab1be924f24f25900aad356f0309d9f1a</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>const unsigned int</type>
-      <name>m_symmetry</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ab79af3384f9ddd70a9f08f82267b6f65</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::string</type>
-      <name>m_description</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a0ce4e4cf159d614704523aecf94e70d4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>value_type</type>
-      <name>m_O0</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a16bf7f125cb7fbf5e26d5102d3311483</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>const bool</type>
-      <name>m_covariant</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a3463c856ca134df3e1237fe28d129446</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>const bool</type>
-      <name>m_diagonal</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a27ae8bd941dc27e01dc7942ee1944610</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>size_t</type>
-      <name>offset</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a99dbdfd1d3efd5931d7135bbdca43531</anchor>
-      <arglist>(int isym, int jsym, int ksym, int lsym, int i, int j, int k, int l, bool mulliken=true, bool spinUp1=true, bool spinUp2=true)</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::shared_ptr&lt; SMat &gt;</type>
-      <name>m_O1a</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a468d6e8eb978198531c2c90776f9ebaa</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::shared_ptr&lt; SMat &gt;</type>
-      <name>m_O1b</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>aa19f592a7a1eb89168d50f8e92b85160</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::shared_ptr&lt; SMatMat &gt;</type>
-      <name>m_O2aa_mulliken</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ada91d58116a902824c0db68affb93c53</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::shared_ptr&lt; SMatMat &gt;</type>
-      <name>m_O2ab_mulliken</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ac507cb97c4b761359154c2cafc71038f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::shared_ptr&lt; SMatMat &gt;</type>
-      <name>m_O2ba_mulliken</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ab273295fddb11078d804f227af7a512d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::shared_ptr&lt; SMatMat &gt;</type>
-      <name>m_O2bb_mulliken</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a036e2e9bc406cf44c59af8a6580898b7</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::shared_ptr&lt; SMatMat &gt;</type>
-      <name>m_O2aa_dirac</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a4a1560a5764ad1454f9557ff369372b5</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::shared_ptr&lt; SMatMat &gt;</type>
-      <name>m_O2ab_dirac</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>aac42e52c476f29ff1179fd9be789111f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::shared_ptr&lt; SMatMat &gt;</type>
-      <name>m_O2ba_dirac</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>abfedd4ed0bb060f4f6ae467efb928dac</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::shared_ptr&lt; SMatMat &gt;</type>
-      <name>m_O2bb_dirac</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>aa1233fe514f2df7e486ff86afc8ac0a7</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>bool</type>
-      <name>m_dirac_out_of_date</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>aaccc9d30faf9c4983019259137448f42</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>Operator_&lt; double &gt;</name>
-    <filename>classmolpro_1_1Operator__.html</filename>
-    <member kind="typedef">
-      <type>typename molpro::SMat_&lt; double &gt;</type>
-      <name>SMat</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ae1ef34578d969007b734457c6bc1d2f9</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename molpro::SMatMat_&lt; SMat_&lt; double &gt; &gt;</type>
-      <name>SMatMat</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a37715a8f038a9b1b30c7313162b0b13b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>double</type>
-      <name>value_type</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>afab25fe0985b9fa0d805ed025f8675a1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename SMat::scalar_type</type>
-      <name>scalar_type</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a9b4d3db6de1dab48cb24df9e103d721f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename SMat::M</type>
-      <name>M</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a241cf0330d2821aa482e9e444c77e869</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename SMat::Mconst</type>
-      <name>Mconst</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a74261107fa015ddb34132335d86d0af4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename SMat::V</type>
-      <name>V</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ab00213c3de4be018d16422be4e3615ba</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>Operator_</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ad7405980136ba27e76d96d4ef9046a88</anchor>
-      <arglist>(std::array&lt; dims_t, 2 &gt; dimensions, int rank=2, bool uhf=false, std::vector&lt; int &gt; hermiticity={1, 1}, std::vector&lt; int &gt; exchange={-1, -1}, unsigned int symmetry=0, bool covariant=true, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>Operator_</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a0bd136b96a55fa0944b0e0ba5943f5be</anchor>
-      <arglist>(dims_t dimensions, int rank=2, bool uhf=false, std::vector&lt; int &gt; hermiticity={1, 1}, std::vector&lt; int &gt; exchange={-1, -1}, unsigned int symmetry=0, bool covariant=true, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>Operator_</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>adf0acdfeffdfd837a0b421b6d7924f5c</anchor>
-      <arglist>(dim_t dimension, int rank=2, bool uhf=false, unsigned int symmetry=0, bool covariant=true, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>Operator_</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a7f77ca6066c3a89cde14ea50d4a2c424</anchor>
-      <arglist>(const Operator_&lt; double &gt; &amp;source)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~Operator_</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a01c7e471da062f7ad08aa4c8e90e7288</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type>Operator_&lt; double &gt; &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ab9db718a668d87b5a3383f0399e2989b</anchor>
-      <arglist>(const Operator_&lt; double &gt; &amp;source)</arglist>
-    </member>
-    <member kind="function">
-      <type>class Operator_</type>
-      <name>slice</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a006ae4dc28e42f8f120647c6f97ce4c1</anchor>
-      <arglist>(std::array&lt; dims_t, 2 &gt; dimensions, std::array&lt; dims_t, 2 &gt; offset={}, std::string description=&quot;&quot;) const</arglist>
-    </member>
-    <member kind="function">
-      <type>class Operator_</type>
-      <name>slice</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a765537c08e97be8a994fb8382a61f604</anchor>
-      <arglist>(dims_t dimensions, dims_t offset={{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}}, std::string description=&quot;&quot;) const</arglist>
-    </member>
-    <member kind="function">
-      <type>const SMat &amp;</type>
-      <name>O1</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>aec38276794abf3d4582e8865ee7e49aa</anchor>
-      <arglist>(bool spinUp=true) const</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat &amp;</type>
-      <name>O1</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>aa4551acbf71b32165d1eddf6bcdcee69</anchor>
-      <arglist>(bool spinUp=true)</arglist>
-    </member>
-    <member kind="function">
-      <type>const SMatMat &amp;</type>
-      <name>O2</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a6dca1a22715063777629a87ded042396</anchor>
-      <arglist>(bool spinUp1=true, bool spinUp2=true, bool mulliken=true, bool ensure=true) const</arglist>
-    </member>
-    <member kind="function">
-      <type>SMatMat &amp;</type>
-      <name>O2</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a0cfc712beccff1681e55161dda503746</anchor>
-      <arglist>(bool spinUp1=true, bool spinUp2=true)</arglist>
-    </member>
-    <member kind="function">
-      <type>const value_type &amp;</type>
-      <name>element</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a70901845f6938d7330cba6ddf2263a44</anchor>
-      <arglist>(int i, int isym, int j, int jsym, int k, int ksym, int l, int lsym, bool spinUp1=true, bool spinUp2=true, bool mulliken=true) const</arglist>
-    </member>
-    <member kind="function">
-      <type>value_type &amp;</type>
-      <name>element</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>a5f79ce00954d821a90f47653c876199e</anchor>
-      <arglist>(int i, int isym, int j, int jsym, int k, int ksym, int l, int lsym, bool spinUp1=true, bool spinUp2=true)</arglist>
-    </member>
-    <member kind="function">
-      <type>const value_type &amp;</type>
-      <name>element</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>abe5cbe7c2113d4073d1dd944d5205b02</anchor>
-      <arglist>(int i, int isym, int j, int jsym, bool spinUp1=true) const</arglist>
-    </member>
-    <member kind="function">
-      <type>value_type &amp;</type>
-      <name>element</name>
-      <anchorfile>classmolpro_1_1Operator__.html</anchorfile>
-      <anchor>ae2edad167011e906cb8b510bee0525e7</anchor>
+      <anchor>a9195b4cf55e56a4911b7628b5a75d152</anchor>
       <arglist>(int i, int isym, int j, int jsym, bool spinUp1=true)</arglist>
     </member>
     <member kind="function">
@@ -4270,8 +2932,8 @@
       <type>void</type>
       <name>operator()</name>
       <anchorfile>structmolpro_1_1gci_1_1Presidual.html</anchorfile>
-      <anchor>a4a709f24ae35aa65af8d2f9a0de2a875</anchor>
-      <arglist>(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;Pcoeff, ParameterVectorSet &amp;outputs) const</arglist>
+      <anchor>aee41b91dfa89124668c42c68f41ca37d</anchor>
+      <arglist>(const std::vector&lt; std::vector&lt; double &gt; &gt; &amp;Pcoeff, ParameterVectorSet &amp;outputs) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -4341,8 +3003,8 @@
       <type>void</type>
       <name>p_action</name>
       <anchorfile>classmolpro_1_1gci_1_1Problem.html</anchorfile>
-      <anchor>a515b9118c7ba0421fb55a841870d2bf8</anchor>
-      <arglist>(const std::vector&lt; std::vector&lt; value_t &gt;&gt; &amp;p_coefficients, const molpro::linalg::itsolv::CVecRef&lt; P &gt; &amp;pparams, const molpro::linalg::itsolv::VecRef&lt; container_t &gt; &amp;actions) const override</arglist>
+      <anchor>aca904ed702e775460cc8a52e74e77d7c</anchor>
+      <arglist>(const std::vector&lt; std::vector&lt; value_t &gt; &gt; &amp;p_coefficients, const molpro::linalg::itsolv::CVecRef&lt; P &gt; &amp;pparams, const molpro::linalg::itsolv::VecRef&lt; container_t &gt; &amp;actions) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -4355,7 +3017,7 @@
   <compound kind="struct">
     <name>molpro::gci::ctor_allocator::rebind</name>
     <filename>structmolpro_1_1gci_1_1ctor__allocator_1_1rebind.html</filename>
-    <templarg></templarg>
+    <templarg>typename U</templarg>
     <member kind="typedef">
       <type>ctor_allocator&lt; U, typename a_t::template rebind_alloc&lt; U &gt; &gt;</type>
       <name>other</name>
@@ -4573,7 +3235,7 @@
   <compound kind="class">
     <name>molpro::SMat_</name>
     <filename>classmolpro_1_1SMat__.html</filename>
-    <templarg></templarg>
+    <templarg>class T</templarg>
     <class kind="class">molpro::SMat_::SVD</class>
     <member kind="typedef">
       <type>Eigen::Map&lt; Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt;, Eigen::Unaligned, Eigen::Stride&lt; Eigen::Dynamic, Eigen::Dynamic &gt; &gt;</type>
@@ -4705,7 +3367,7 @@
       <type>SMat_ &amp;</type>
       <name>operator=</name>
       <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a101b66c8de2e0ebf4525078e77c02102</anchor>
+      <anchor>ae603a4accd1d6c9652c181771e08d55e</anchor>
       <arglist>(SMat_ const &amp;source)</arglist>
     </member>
     <member kind="function">
@@ -4852,21 +3514,21 @@
       <type>std::map&lt; size_t, T &gt;</type>
       <name>select_max_dot</name>
       <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a0f0818703e5fd58522ef17775f5b5d0a</anchor>
+      <anchor>a10384c9ec2facbf504ebde255dc81590</anchor>
       <arglist>(size_t n, const SMat_&lt; T &gt; &amp;y) const</arglist>
     </member>
     <member kind="function">
       <type>std::map&lt; size_t, T &gt;</type>
       <name>select_max_dot</name>
       <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>aa4bf47ca6cca88fa5459d23462d93e1e</anchor>
+      <anchor>a3aeb1f5db90d6b07799fd13b5131b8d2</anchor>
       <arglist>(size_t n, const std::map&lt; size_t, T &gt; &amp;y) const</arglist>
     </member>
     <member kind="function">
       <type>SMat_&lt; T &gt; &amp;</type>
       <name>operator=</name>
       <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>af98b315200c9f4b18ae4dd4737636371</anchor>
+      <anchor>a85f01a053dcffe1eafdc81ac1bebdf52</anchor>
       <arglist>(const std::map&lt; size_t, T &gt; &amp;source)</arglist>
     </member>
     <member kind="function">
@@ -5132,7 +3794,7 @@
       <type>std::tuple&lt; std::vector&lt; size_t &gt;, std::vector&lt; value_type &gt; &gt;</type>
       <name>select</name>
       <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>acf2c94dde6a37469cfd6787c9921ab89</anchor>
+      <anchor>a65936eb2839f700185e865c4c5346d85</anchor>
       <arglist>(const molpro::array&lt; value_type &gt; &amp;measure, const size_t maximumNumber=1000, const scalar_type threshold=0) const</arglist>
     </member>
     <member kind="function">
@@ -5155,598 +3817,6 @@
       <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
       <anchor>a31e6c8494b6db22c4e2ed74b4dc376c2</anchor>
       <arglist>(const char *dump, double *buffer)</arglist>
-    </member>
-    <member kind="variable">
-      <type>std::string</type>
-      <name>m_description</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a40c0103547dd73b67fe34b59e58c6bc8</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>SMat_&lt; double &gt;</name>
-    <filename>classmolpro_1_1SMat__.html</filename>
-    <member kind="typedef">
-      <type>Eigen::Map&lt; Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic &gt;, Eigen::Unaligned, Eigen::Stride&lt; Eigen::Dynamic, Eigen::Dynamic &gt; &gt;</type>
-      <name>M</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a0327b4b21be7f823b70447284ececf11</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>Eigen::Map&lt; const Eigen::Matrix&lt; double, Eigen::Dynamic, Eigen::Dynamic &gt;, Eigen::Unaligned, Eigen::Stride&lt; Eigen::Dynamic, Eigen::Dynamic &gt; &gt;</type>
-      <name>Mconst</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>ace72697d7f93c836aa30a2adcdac5f81</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>Eigen::Map&lt; Eigen::Matrix&lt; double, Eigen::Dynamic, 1 &gt; &gt;</type>
-      <name>V</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>abbe220caa385afb70fd47bcbe2be0487</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>double</type>
-      <name>value_type</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a0b0793833395ba3be28166f1d3921341</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>double</type>
-      <name>scalar_type</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a8b8c1114d47d84f7d7ed2924fe11ed23</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>af808f2a29da585e8ebc8dae3ca31c3b0</anchor>
-      <arglist>(dims_t dimensions, parity_t parity=parityNone, int symmetry=0, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a14857bfc39552244d6778a125f5ecdcd</anchor>
-      <arglist>(dims_t dimensions, molpro::array&lt; value_type &gt; &amp;buffer, parity_t parity=parityNone, int symmetry=0, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>adcc071139db4f4cb5d9aff40cc816e4f</anchor>
-      <arglist>(dims_t dimensions, value_type *buffer, parity_t parity=parityNone, int symmetry=0, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>ad75df24c8852f5384bf3e61fcbc0c1f6</anchor>
-      <arglist>(std::string space, parity_t parity=parityNone, int symmetry=0, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a64bd7f74bbc04f1c3ab4f4f900fe86cd</anchor>
-      <arglist>(std::string space, molpro::array&lt; value_type &gt; &amp;buffer, parity_t parity=parityNone, int symmetry=0, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a39e4d9da3065b19a3c0d8b9ae98ed3c3</anchor>
-      <arglist>(std::string space, value_type *buffer, parity_t parity=parityNone, int symmetry=0, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>af2cc7af6ba16f310f745724129d5c932</anchor>
-      <arglist>(SMat_ const *source, parity_t parity=parityUnspecified, int symmetry=9, unsigned int rank=0, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>aa1ee4ed1ddc82c615d84b96af006f99c</anchor>
-      <arglist>(SMat_ const *source, molpro::array&lt; value_type &gt; &amp;buffer, parity_t parity=parityUnspecified, int symmetry=9, unsigned int rank=0, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a82319192daa2d0194d4c8e6f56155632</anchor>
-      <arglist>(SMat_ const *source, value_type *buffer, parity_t parity, int symmetry=9, unsigned int rank=0, bool diagonal=false, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>ab99b3114ed6ddaeea1d471048aaf39ca</anchor>
-      <arglist>(SMat_ const &amp;source, int option=0)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a6a4f9846a6de8a97218b002256490d5d</anchor>
-      <arglist>(const char *dump, value_type *buffer=nullptr)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a7ca0b0ca854905e53878e6be96c994dc</anchor>
-      <arglist>(const molpro::bytestream &amp;bs, value_type *buffer=nullptr)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a250d4fcd59dd037c272d272fa0a0ca07</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a1598222c5621f038a6f8260f149f1e68</anchor>
-      <arglist>(const std::map&lt; size_t, double &gt; &amp;source)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a31e6c8494b6db22c4e2ed74b4dc376c2</anchor>
-      <arglist>(const char *dump, double *buffer)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~SMat_</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a5df30e81a0c10dd11c3f3c1d525459fa</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_ &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a101b66c8de2e0ebf4525078e77c02102</anchor>
-      <arglist>(SMat_ const &amp;source)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_&lt; double &gt; &amp;</type>
-      <name>operator=</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>af98b315200c9f4b18ae4dd4737636371</anchor>
-      <arglist>(const std::map&lt; size_t, double &gt; &amp;source)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_ &amp;</type>
-      <name>copy</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a8772e70926c11c6018ea80b84a2ba410</anchor>
-      <arglist>(SMat_ const &amp;source, dims_t sourceOffset={{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}})</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>splice</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a5d0e1b4ebd809e20903c469937e6037a</anchor>
-      <arglist>(SMat_ const &amp;source, dims_t sourceOffset={{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}}, dims_t offset={{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}})</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_</type>
-      <name>slice</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>aa430910cb57918a059992d8e1345e5f2</anchor>
-      <arglist>(dims_t dimensions, dims_t offset={{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0}}, std::string description=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_ &amp;</type>
-      <name>operator*=</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a212e6a6d64b026ba600d5ea713c78604</anchor>
-      <arglist>(value_type a)</arglist>
-    </member>
-    <member kind="function">
-      <type>const SMat_</type>
-      <name>operator*</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a209f34cc5b42189ac62b3b37d4f38ecf</anchor>
-      <arglist>(value_type a) const</arglist>
-    </member>
-    <member kind="function">
-      <type>const SMat_</type>
-      <name>operator*</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a5accc02756a9ed0c1f49a98a8d88704b</anchor>
-      <arglist>(SMat_ const &amp;other) const</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_ &amp;</type>
-      <name>operator+=</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a41ad7a4c85c10e0964c02b18d1a93ec7</anchor>
-      <arglist>(SMat_ const &amp;other)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_ &amp;</type>
-      <name>operator-=</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a085817f06053ef9175e2b6d065fec4c5</anchor>
-      <arglist>(SMat_ const &amp;other)</arglist>
-    </member>
-    <member kind="function">
-      <type>const SMat_</type>
-      <name>operator+</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>aa584ea3281c6576f0c07bb5de13430f0</anchor>
-      <arglist>(SMat_ const &amp;other) const</arglist>
-    </member>
-    <member kind="function">
-      <type>const SMat_</type>
-      <name>operator-</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a0db33e2542b6c7dd946fc3078b7fe337</anchor>
-      <arglist>(SMat_ const &amp;other) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>multiply</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a45ef1bf1087620d03f86ee3c8f111671</anchor>
-      <arglist>(SMat_ const &amp;a, SMat_ const &amp;b, value_type alpha=1.0, value_type beta=0.0)</arglist>
-    </member>
-    <member kind="function">
-      <type>scalar_type</type>
-      <name>operator&amp;</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>acb9f39683496e90b66f1a5a2f30a6347</anchor>
-      <arglist>(SMat_ const &amp;other) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>transpose</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>aa878713a29c0844e2cd3872156a3bc30</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>eval</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a02746993eafa2f8bc9c473a7bf7faba1</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>trim</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a2942690c1327698fa56541091033d9b4</anchor>
-      <arglist>(scalar_type cut=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>operator==</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a96a34d65a3c485318a1d38a7b185b326</anchor>
-      <arglist>(SMat_ const &amp;other) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>operator!=</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a8cb7ca96f47fff37ac68d4fa86ef9118</anchor>
-      <arglist>(SMat_ const &amp;other) const</arglist>
-    </member>
-    <member kind="function">
-      <type>molpro::array&lt; value_type &gt; *</type>
-      <name>data</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a54ad673f1ae269ec9777255219d74d20</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::map&lt; size_t, double &gt;</type>
-      <name>select_max_dot</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a0f0818703e5fd58522ef17775f5b5d0a</anchor>
-      <arglist>(size_t n, const SMat_&lt; double &gt; &amp;y) const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::map&lt; size_t, double &gt;</type>
-      <name>select_max_dot</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>aa4bf47ca6cca88fa5459d23462d93e1e</anchor>
-      <arglist>(size_t n, const std::map&lt; size_t, double &gt; &amp;y) const</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>size</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a991324ba20fa8d9dfedd0e39570e7d5e</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>max_symmetry</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a8539a7cb4cbe5a826ab5702b692565f2</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>symmetry</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a547b277343b47bd508c8a1a9b8265917</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>parity_t</type>
-      <name>parity</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a98d3aa28735f6b9767860241b411467d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>transposed</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a6b326d37c967bd710614bfbfe5d9b039</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>Diagonal</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a202742845c62542a214f49fd56768b4b</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>dimension</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a341a13f8db182f9827f4bda1160a287f</anchor>
-      <arglist>(unsigned int block_symmetry=0, unsigned int axis=0) const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>rank</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a1afadd176dc7464b07ba2e3b7910f0d7</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>block_size</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a50567b48730e40fbc63a98c503412acc</anchor>
-      <arglist>(unsigned int block_symmetry) const</arglist>
-    </member>
-    <member kind="function">
-      <type>molpro::array&lt; value_type &gt;</type>
-      <name>block</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>ac645aaea1fb648500512ab87e7a727a6</anchor>
-      <arglist>(unsigned int block_symmetry) const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::vector&lt; size_t &gt;</type>
-      <name>block_dimensions</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>ab93b3f5593b33760619295753b5d59d5</anchor>
-      <arglist>(unsigned int block_symmetry) const</arglist>
-    </member>
-    <member kind="function">
-      <type>dims_t</type>
-      <name>dimensions</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>ad6d93288414fcf17fe589aec43663ea6</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>block_transposed</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>ab2bff361bef7e21e8d5559c84f1149e5</anchor>
-      <arglist>(unsigned int block_symmetry) const</arglist>
-    </member>
-    <member kind="function">
-      <type>value_type</type>
-      <name>trace</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a5f9e9a4b80130050227a951867384dd3</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>scalar_type</type>
-      <name>norm</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a87da40b6dc99e6121a56a268e5cb7d89</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>assign</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a79992ebc8adb0f55ccbfcae9298cf496</anchor>
-      <arglist>(value_type value)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setIdentity</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a3b183f6027e4dd11375d990fb8d7f008</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>std::string</type>
-      <name>str</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a2a2f0729c8d277b56aac40f0fc9801d8</anchor>
-      <arglist>(std::string title, int level=0, int precision=Eigen::StreamPrecision) const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::string</type>
-      <name>str</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>af00df9fde8fd27b222612b604cec0aaf</anchor>
-      <arglist>(int verbosity=0, unsigned int columns=UINT_MAX) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>scal</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>aa0403579ec286fa82bba55b4dc50249c</anchor>
-      <arglist>(value_type a, bool scaleDiagonal=true)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>fill</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a847253cb6a578d49a64612400309bd67</anchor>
-      <arglist>(value_type a)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>axpy</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>ac795c5a262fae4bee4edaa94a71cf55e</anchor>
-      <arglist>(value_type a, const SMat_ &amp;x)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>axpy</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>ae9ce68b6801a554e81f4408409bd737f</anchor>
-      <arglist>(value_type a, const std::map&lt; size_t, value_type &gt; &amp;other)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_</type>
-      <name>transform</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a572642adea5faac95ffde6488280dc3c</anchor>
-      <arglist>(const SMat_ &amp;q, bool orthogonal=true) const</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_</type>
-      <name>diagonal</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a37d11915f8ea6ad10c476ec3370d1d33</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>ev</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a2cdd0f1342f2969068b4ea38188a8906</anchor>
-      <arglist>(SMat_ &amp;val, SMat_ *vec=nullptr, SMat_ *vali=nullptr, SMat_ *vecl=nullptr, std::string algorithm=&quot;lapack&quot;, std::string sort=&quot;ascending&quot;) const</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>ev</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a6beb9b03aa3126b8d2ebe6c4a0a8bee1</anchor>
-      <arglist>(SMat_&lt; double &gt; &amp;val, SMat_&lt; double &gt; *vec, SMat_&lt; double &gt; *vali, SMat_&lt; double &gt; *vecl, std::string algorithm, std::string sort) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>orthogonalize</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a02a41573d916efcca2e28475ce243b01</anchor>
-      <arglist>(const SMat_ *metric=nullptr, std::string algorithm=&quot;Gram-Schmidt&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_</type>
-      <name>exp</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a6b3a87a915e32f5ed1adf37c5ad117dd</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_</type>
-      <name>log</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a503cdf456709343ea17fc813454caddf</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_</type>
-      <name>sqrt</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a0f86776d92d5cf9667606b39525f9d40</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_</type>
-      <name>pow</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>ac352224d7a7d8b5643b51c497cef187b</anchor>
-      <arglist>(value_type p) const</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_</type>
-      <name>inverse</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a4e7dfbc96ba45996acb36ba60efdda5e</anchor>
-      <arglist>(scalar_type SVThresh=0.0) const</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_</type>
-      <name>solve</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>aaeced17693b785a25d29c67350865961</anchor>
-      <arglist>(const SMat_ &amp;rhs, std::string algorithm=&quot;ColPivHouseholderQR&quot;) const</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_</type>
-      <name>desymmetrise</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a634e0ddc74bc09838dde93545085661f</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>class molpro::bytestream</type>
-      <name>bytestream</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a957ab00af39f9506b9115df9cfacc561</anchor>
-      <arglist>(bool data=true)</arglist>
-    </member>
-    <member kind="function">
-      <type>molpro::bytestream</type>
-      <name>bytestream</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>aac569d073f21357ef567ef5117a0277f</anchor>
-      <arglist>(bool data)</arglist>
-    </member>
-    <member kind="function">
-      <type>scalar_type</type>
-      <name>dot</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a5ba0ca2bd576b95d256041c67aecfb74</anchor>
-      <arglist>(const SMat_ &amp;other) const</arglist>
-    </member>
-    <member kind="function">
-      <type>scalar_type</type>
-      <name>dot</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>a672d4f2699a86d74f2298ffaaa1ad28c</anchor>
-      <arglist>(const std::map&lt; size_t, value_type &gt; &amp;other) const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::tuple&lt; std::vector&lt; size_t &gt;, std::vector&lt; value_type &gt; &gt;</type>
-      <name>select</name>
-      <anchorfile>classmolpro_1_1SMat__.html</anchorfile>
-      <anchor>acf2c94dde6a37469cfd6787c9921ab89</anchor>
-      <arglist>(const molpro::array&lt; value_type &gt; &amp;measure, const size_t maximumNumber=1000, const scalar_type threshold=0) const</arglist>
     </member>
     <member kind="variable">
       <type>std::string</type>
@@ -5759,7 +3829,7 @@
   <compound kind="class">
     <name>molpro::SMatMat_</name>
     <filename>classmolpro_1_1SMatMat__.html</filename>
-    <templarg></templarg>
+    <templarg>class T</templarg>
     <member kind="typedef">
       <type>typename T::value_type</type>
       <name>value_type</name>
@@ -5995,7 +4065,7 @@
       <type>molpro::array&lt; value_type &gt; *</type>
       <name>data</name>
       <anchorfile>classmolpro_1_1SMatMat__.html</anchorfile>
-      <anchor>aa1406e19326a5fc24964f96d1a491125</anchor>
+      <anchor>a150bdddc19ff2e8ad5bcedae0eb53c7d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="variable">
@@ -6201,15 +4271,15 @@
       <type>const key_type &amp;</type>
       <name>key</name>
       <anchorfile>classmolpro_1_1gci_1_1String.html</anchorfile>
-      <anchor>a688f3280d32718a63b058806d3405830</anchor>
+      <anchor>ac18057b953dd1235715e72c7a7e71886</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>keygen</name>
       <anchorfile>classmolpro_1_1gci_1_1String.html</anchorfile>
-      <anchor>af61fb6a36c47ab68e59b85b8e7bf12b2</anchor>
-      <arglist>(const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;partialWeightArray)</arglist>
+      <anchor>a03332091c905f22c5326dcff7f99d205</anchor>
+      <arglist>(const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;partialWeightArray)</arglist>
     </member>
     <member kind="function">
       <type>std::string</type>
@@ -6413,21 +4483,21 @@
       <type>const SMat_ &amp;</type>
       <name>singularValues</name>
       <anchorfile>classmolpro_1_1SMat___1_1SVD.html</anchorfile>
-      <anchor>a3deb518c7ade02ef24f94d7bfe6c2ac6</anchor>
+      <anchor>a51e77ef8dd32c83ffd2aac65b07f43d0</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const SMat_ &amp;</type>
       <name>matrixU</name>
       <anchorfile>classmolpro_1_1SMat___1_1SVD.html</anchorfile>
-      <anchor>a8a0aec77c87e6cc2945dbde84b9281fd</anchor>
+      <anchor>a7de6e11a0df2717a2f55816cc8d8c676</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const SMat_ &amp;</type>
       <name>matrixV</name>
       <anchorfile>classmolpro_1_1SMat___1_1SVD.html</anchorfile>
-      <anchor>a72055bc4aebbf0859d0e6aec2da3c0f2</anchor>
+      <anchor>ad1ef9c4c598449ed3297f725a3ba138b</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -6631,7 +4701,7 @@
   <compound kind="class">
     <name>molpro::gci::VibOperator</name>
     <filename>classmolpro_1_1gci_1_1VibOperator.html</filename>
-    <templarg></templarg>
+    <templarg>class Container</templarg>
     <member kind="typedef">
       <type>VibTensEl&lt; Container &gt;</type>
       <name>tensor_el_t</name>
@@ -6678,14 +4748,14 @@
       <type>Container &amp;</type>
       <name>at</name>
       <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a304919a60bfec8d6490c2706a83344b5</anchor>
+      <anchor>aa1917a9ad48e504cfb06e696bbded831</anchor>
       <arglist>(const VibExcitation &amp;exc)</arglist>
     </member>
     <member kind="function">
       <type>class VibOperator &amp;</type>
       <name>operator+=</name>
       <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a331b3815ec48ba0cb65da6ab5e5aaa91</anchor>
+      <anchor>ae09bcc48aa0bf7a1805868d300d5d298</anchor>
       <arglist>(const VibOperator&lt; Container &gt; &amp;other)</arglist>
     </member>
     <member kind="function">
@@ -6694,122 +4764,6 @@
       <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
       <anchor>aac58aaf8e1084f0111612e4080588927</anchor>
       <arglist>(const VibOperator&lt; Container &gt; &amp;other) const</arglist>
-    </member>
-    <member kind="variable">
-      <type>tensor_t</type>
-      <name>tensor</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a57b439cf8a9cfbdbad149fe298451844</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::string</type>
-      <name>name</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a680887aba6018070a854b16b8b2bd8d3</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>size_t</type>
-      <name>hash</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a566419e41150b22fbfae722d1c6e3c73</anchor>
-      <arglist>(const VibExcitation &amp;exc)</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>int</type>
-      <name>m_nMode</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a263b399880eb5aa93ca679280790103b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>int</type>
-      <name>m_nModal</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>aadf572225745ad95000ec781e6ee01c7</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>parity_t</type>
-      <name>m_hermiticity</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>aec7e561d3ad258943c20fd15aeb145db</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>parity_t</type>
-      <name>m_exchange</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a2c1ef33c8b151465fef635e3c3274313</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>VibOperator&lt; double &gt;</name>
-    <filename>classmolpro_1_1gci_1_1VibOperator.html</filename>
-    <member kind="typedef">
-      <type>VibTensEl&lt; double &gt;</type>
-      <name>tensor_el_t</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a01780b3c54e522e172e32f18188baa34</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::map&lt; size_t, tensor_el_t &gt;</type>
-      <name>tensor_t</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a67b6811e2a5e38095de624f9eeeffa39</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>ns_VibOperator::parity_t</type>
-      <name>parity_t</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a6f58ed876f1cd79f9d95b282e5899945</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>VibOperator</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a8787ed578b4ab62d218f711a06191187</anchor>
-      <arglist>(int nMode, int nModal, parity_t hermiticity=parity_t::even, parity_t exchange=parity_t::even, std::string name_=&quot;&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type>auto</type>
-      <name>hermiticity</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a6f92ee96524c8cadb686130cfe2f5494</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>append</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>afaf6d384a3906cde4bdeff914a1ea356</anchor>
-      <arglist>(const double &amp;op, const VibExcitation &amp;vibExc)</arglist>
-    </member>
-    <member kind="function">
-      <type>double &amp;</type>
-      <name>at</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a304919a60bfec8d6490c2706a83344b5</anchor>
-      <arglist>(const VibExcitation &amp;exc)</arglist>
-    </member>
-    <member kind="function">
-      <type>class VibOperator &amp;</type>
-      <name>operator+=</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>a331b3815ec48ba0cb65da6ab5e5aaa91</anchor>
-      <arglist>(const VibOperator&lt; double &gt; &amp;other)</arglist>
-    </member>
-    <member kind="function">
-      <type>class VibOperator</type>
-      <name>operator+</name>
-      <anchorfile>classmolpro_1_1gci_1_1VibOperator.html</anchorfile>
-      <anchor>aac58aaf8e1084f0111612e4080588927</anchor>
-      <arglist>(const VibOperator&lt; double &gt; &amp;other) const</arglist>
     </member>
     <member kind="variable">
       <type>tensor_t</type>
@@ -6903,7 +4857,7 @@
   <compound kind="class">
     <name>molpro::gci::VibTensEl</name>
     <filename>classmolpro_1_1gci_1_1VibTensEl.html</filename>
-    <templarg></templarg>
+    <templarg>class Container</templarg>
     <member kind="typedef">
       <type>ns_VibOperator::parity_t</type>
       <name>parity_t</name>
@@ -7536,8 +5490,8 @@
   <compound kind="class">
     <name>molpro::gci::wavefunction::WavefunctionHandler</name>
     <filename>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandler.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>class AL</templarg>
+    <templarg>class AR</templarg>
     <member kind="function">
       <type>ProxyHandle</type>
       <name>lazy_handle</name>
@@ -7598,29 +5552,29 @@
       <type>molpro::linalg::itsolv::subspace::Matrix&lt; value_type &gt;</type>
       <name>gemm_inner</name>
       <anchorfile>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandler.html</anchorfile>
-      <anchor>aaf44474938db6e70f9f890a6b3832f90</anchor>
+      <anchor>a21511b37a61bfe7eab6cc2fed17df100</anchor>
       <arglist>(const molpro::linalg::itsolv::CVecRef&lt; AL &gt; &amp;xx, const molpro::linalg::itsolv::CVecRef&lt; AR &gt; &amp;yy) override</arglist>
     </member>
     <member kind="function">
       <type>std::map&lt; size_t, value_type_abs &gt;</type>
       <name>select_max_dot</name>
       <anchorfile>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandler.html</anchorfile>
-      <anchor>a924a451e95f366a7c558d2a2967c6765</anchor>
+      <anchor>af1081b49db4ee7d505a6e4952b7ae5bc</anchor>
       <arglist>(size_t n, const AL &amp;x, const AR &amp;y) override</arglist>
     </member>
     <member kind="function">
       <type>std::map&lt; size_t, value_type &gt;</type>
       <name>select</name>
       <anchorfile>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandler.html</anchorfile>
-      <anchor>a0cf446f0b4491f4d7679593a783eb236</anchor>
+      <anchor>a7798debdb3a6586f82de676c6f11d517</anchor>
       <arglist>(size_t n, const AL &amp;x, bool max=false, bool ignore_sign=false) override</arglist>
     </member>
   </compound>
   <compound kind="class">
     <name>molpro::gci::wavefunction::WavefunctionHandlerSparse</name>
     <filename>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>class AL</templarg>
+    <templarg>class AR</templarg>
     <member kind="function">
       <type>ProxyHandle</type>
       <name>lazy_handle</name>
@@ -7681,153 +5635,22 @@
       <type>molpro::linalg::itsolv::subspace::Matrix&lt; value_type &gt;</type>
       <name>gemm_inner</name>
       <anchorfile>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html</anchorfile>
-      <anchor>a421820f3c4912f6a54809cc26f91bf1c</anchor>
+      <anchor>adc421868f3115975c81eaee6d7f23612</anchor>
       <arglist>(const molpro::linalg::itsolv::CVecRef&lt; AL &gt; &amp;xx, const molpro::linalg::itsolv::CVecRef&lt; AR &gt; &amp;yy) override</arglist>
     </member>
     <member kind="function">
       <type>std::map&lt; size_t, value_type_abs &gt;</type>
       <name>select_max_dot</name>
       <anchorfile>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html</anchorfile>
-      <anchor>ab99549c430a98fb1472446cb487ae67f</anchor>
+      <anchor>a2b1b5e944f677f0af633b182c1730c5f</anchor>
       <arglist>(size_t n, const AL &amp;x, const AR &amp;y) override</arglist>
     </member>
     <member kind="function">
       <type>std::map&lt; size_t, value_type &gt;</type>
       <name>select</name>
       <anchorfile>classmolpro_1_1gci_1_1wavefunction_1_1WavefunctionHandlerSparse.html</anchorfile>
-      <anchor>ac52286cd3e09cf05821ac5f38b91ae8b</anchor>
+      <anchor>afb7e29d7a5d89d649e1bb7af37054edb</anchor>
       <arglist>(size_t n, const AL &amp;x, bool max=false, bool ignore_sign=false) override</arglist>
-    </member>
-  </compound>
-  <compound kind="namespace">
-    <name>molpro</name>
-    <filename>namespacemolpro.html</filename>
-    <namespace>molpro::gci</namespace>
-    <namespace>molpro::linalg</namespace>
-    <namespace>molpro::SymmetryMatrix</namespace>
-    <class kind="class">molpro::Operator_</class>
-    <class kind="class">molpro::SMat_</class>
-    <class kind="class">molpro::SMatMat_</class>
-    <member kind="typedef">
-      <type>typename molpro::Operator_&lt; double &gt;</type>
-      <name>Operator</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ac7045436261ae89fc1236ff3d70c9218</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; size_t &gt;</type>
-      <name>dim_t</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a67177c2ad49feab84008cc04c3bb1f7c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; dim_t &gt;</type>
-      <name>dims_t</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a7a136b7a21c942e40967ed5bab20ff2e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename molpro::SMat_&lt; double &gt;</type>
-      <name>SMat</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ad80f79742f183b105c60b295863d6718</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename molpro::SMatMat_&lt; molpro::SMat_&lt; double &gt; &gt;</type>
-      <name>SMatMat</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a68eb83545d98691e82c07cb7b980adbe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumeration">
-      <type></type>
-      <name>parity_t</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>parityNone</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6fab84d144528f1a54d906ec2d9922f3aec</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>parityEven</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6fa09ceea7356628ff7d1cbc1d0149544e7</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>parityOdd</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6fa5d5c6a3594b6f312d3d19b349ca8d25e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>parityOddPacked</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6fadf9df807b4f5e704d4dd447772943798</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="enumvalue">
-      <name>parityUnspecified</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a77b8d977180296c55c184036b65c5a6fa36d4c7d8181c3d6fc1f1519c27b6e543</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>aeb1a854b5d484750e84957171556c573</anchor>
-      <arglist>(std::ostream &amp;os, Operator_&lt; T &gt; const &amp;obj)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_&lt; T &gt;</type>
-      <name>operator*</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a5be765a88a29ee1d6f4fd32ce4afec05</anchor>
-      <arglist>(typename SMat_&lt; T &gt;::value_type a, SMat_&lt; T &gt; const &amp;b)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_&lt; T &gt;</type>
-      <name>transpose</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a85fc3fa2c992ee01ccea2509b9d76f37</anchor>
-      <arglist>(const SMat_&lt; T &gt; &amp;mat)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_&lt; T &gt;</type>
-      <name>eval</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a796fa89776bd8cfb5cf59059f67cadda</anchor>
-      <arglist>(const SMat_&lt; T &gt; &amp;mat)</arglist>
-    </member>
-    <member kind="function">
-      <type>SMat_&lt; T &gt;</type>
-      <name>trim</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ac578bd58532fe11d0ef06da0ad0443e2</anchor>
-      <arglist>(const SMat_&lt; T &gt; &amp;mat, typename SMat_&lt; T &gt;::scalar_type cut=0)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a2913f10101dccd0a0d37d4f3196af078</anchor>
-      <arglist>(std::ostream &amp;os, SMat_&lt; T &gt; const &amp;obj)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a2edea01905081b3094c90bc9fc891282</anchor>
-      <arglist>(std::ostream &amp;os, SMatMat_&lt; T &gt; const &amp;obj)</arglist>
     </member>
   </compound>
   <compound kind="namespace">
@@ -7839,39 +5662,39 @@
     <namespace>molpro::gci::schedule</namespace>
     <namespace>molpro::gci::utils</namespace>
     <namespace>molpro::gci::wavefunction</namespace>
-    <class kind="class">molpro::gci::State</class>
-    <class kind="class">molpro::gci::Wavefunction</class>
-    <class kind="class">molpro::gci::Run</class>
-    <class kind="struct">molpro::gci::residual</class>
-    <class kind="struct">molpro::gci::Presidual</class>
-    <class kind="struct">molpro::gci::meanfield_residual</class>
-    <class kind="struct">molpro::gci::updater</class>
-    <class kind="class">molpro::gci::Problem</class>
+    <class kind="class">molpro::gci::ctor_allocator</class>
     <class kind="class">molpro::gci::Determinant</class>
     <class kind="class">molpro::gci::Excitation</class>
     <class kind="class">molpro::gci::ExcitationSet</class>
     <class kind="class">molpro::gci::File</class>
+    <class kind="class">molpro::gci::HProduct</class>
+    <class kind="class">molpro::gci::HProductSet</class>
+    <class kind="struct">molpro::gci::meanfield_residual</class>
+    <class kind="class">molpro::gci::MixedOperator</class>
+    <class kind="class">molpro::gci::MixedOperatorSecondQuant</class>
+    <class kind="struct">molpro::gci::MixedOpTerm</class>
+    <class kind="class">molpro::gci::MixedWavefunction</class>
     <class kind="class">molpro::gci::Options</class>
     <class kind="class">molpro::gci::Orbitals</class>
     <class kind="class">molpro::gci::OrbitalSpace</class>
+    <class kind="class">molpro::gci::PersistentOperator</class>
+    <class kind="struct">molpro::gci::Presidual</class>
     <class kind="class">molpro::gci::Printable</class>
+    <class kind="class">molpro::gci::Problem</class>
+    <class kind="struct">molpro::gci::residual</class>
+    <class kind="class">molpro::gci::Run</class>
+    <class kind="class">molpro::gci::State</class>
     <class kind="class">molpro::gci::String</class>
     <class kind="class">molpro::gci::StringSet</class>
     <class kind="class">molpro::gci::SymmetrySpace</class>
-    <class kind="class">molpro::gci::ctor_allocator</class>
     <class kind="class">molpro::gci::TransitionDensity</class>
-    <class kind="class">molpro::gci::HProduct</class>
-    <class kind="class">molpro::gci::HProductSet</class>
-    <class kind="class">molpro::gci::VibOp</class>
-    <class kind="struct">molpro::gci::MixedOpTerm</class>
-    <class kind="class">molpro::gci::MixedOperator</class>
-    <class kind="class">molpro::gci::MixedWavefunction</class>
-    <class kind="struct">molpro::gci::VibSpace</class>
-    <class kind="class">molpro::gci::PersistentOperator</class>
-    <class kind="class">molpro::gci::MixedOperatorSecondQuant</class>
-    <class kind="class">molpro::gci::VibTensEl</class>
-    <class kind="class">molpro::gci::VibOperator</class>
+    <class kind="struct">molpro::gci::updater</class>
     <class kind="class">molpro::gci::VibExcitation</class>
+    <class kind="class">molpro::gci::VibOp</class>
+    <class kind="class">molpro::gci::VibOperator</class>
+    <class kind="struct">molpro::gci::VibSpace</class>
+    <class kind="class">molpro::gci::VibTensEl</class>
+    <class kind="class">molpro::gci::Wavefunction</class>
     <member kind="typedef">
       <type>std::vector&lt; Wavefunction &gt;</type>
       <name>ParameterVectorSet</name>
@@ -8090,21 +5913,21 @@
       <type>void</type>
       <name>constructDMcoupling</name>
       <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>a2368b28f705b3703dc6a052600799382</anchor>
-      <arglist>(std::map&lt; std::string, MixedOperatorSecondQuant::hel_t &gt; &amp;elHam2, std::map&lt; std::string, VibOperator&lt; MixedOperatorSecondQuant::hel_t &gt;&gt; &amp;mixedHam, const std::string &amp;fcidump_f, const std::vector&lt; double &gt; &amp;gamma, const std::vector&lt; double &gt; &amp;freq, int nmode, int nmodal)</arglist>
+      <anchor>a00ea32cefe4b13d64c83ad1055330704</anchor>
+      <arglist>(std::map&lt; std::string, MixedOperatorSecondQuant::hel_t &gt; &amp;elHam2, std::map&lt; std::string, VibOperator&lt; MixedOperatorSecondQuant::hel_t &gt; &gt; &amp;mixedHam, const std::string &amp;fcidump_f, const std::vector&lt; double &gt; &amp;gamma, const std::vector&lt; double &gt; &amp;freq, int nmode, int nmodal)</arglist>
     </member>
     <member kind="function">
       <type>std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>afe901d292779e127d2e208c7a5562c38</anchor>
+      <anchor>a04c09d39151e9d58aa86de11341ed3b1</anchor>
       <arglist>(std::ostream &amp;os, Printable const &amp;obj)</arglist>
     </member>
     <member kind="function">
       <type>std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>namespacemolpro_1_1gci.html</anchorfile>
-      <anchor>af11e0e1ee586418f66120d0e9aee5a8b</anchor>
+      <anchor>a234a367589725bdd9e5e8e0855a6007d</anchor>
       <arglist>(std::ostream &amp;o, const MixedOperatorSecondQuant &amp;op)</arglist>
     </member>
     <member kind="function">

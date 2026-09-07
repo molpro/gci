@@ -1,3 +1,29 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structmolpro_1_1gci_1_1ctor__allocator_1_1rebind.html" title=" " alt="" coords="5,5,197,47"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="31,5,141,31"/>
+<area shape="rect" id="Node000001" href="$classmolpro_1_1gci_1_1TransitionDensity.html" title=" " alt="" coords="222,5,438,31"/>
+<area shape="poly" id="edge3_Node000000_Node000001" title=" " alt="" coords="155,15,222,15,222,21,155,21"/>
+<area shape="rect" id="Node000002" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="5,128,167,153"/>
+<area shape="poly" id="edge13_Node000002_Node000001" title=" " alt="" coords="108,116,154,77,183,56,214,40,245,28,247,33,216,44,186,61,157,81,111,120"/>
+<area shape="rect" id="Node000003" href="$classmolpro_1_1gci_1_1MixedWavefunction.html" title="Mixed bosonic and fermionic wavefunction represented as configuration expansion in the direct product..." alt="" coords="215,55,445,80"/>
+<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="128,120,214,89,259,77,260,83,215,94,130,125"/>
+<area shape="rect" id="Node000004" href="$classmolpro_1_1gci_1_1Orbitals.html" title=" " alt="" coords="253,104,407,129"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="180,129,252,122,253,127,180,134"/>
+<area shape="rect" id="Node000005" href="$classmolpro_1_1gci_1_1State.html" title="Class represents a quantum&#45;mechanical state with or without reference to a particular representation." alt="" coords="261,153,399,179"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="180,148,261,156,261,162,180,153"/>
+<area shape="rect" id="Node000009" href="$classmolpro_1_1gci_1_1StringSet.html" title="The StringSet class holds a set of String objects, possibly the complete set for a given number of ob..." alt="" coords="249,203,411,228"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="130,156,215,187,264,200,262,205,214,193,128,161"/>
+<area shape="rect" id="Node000011" href="$classmolpro_1_1gci_1_1SymmetrySpace.html" title="General class to hold dimensions of symmetry blocks in a matrix or more general tensor...." alt="" coords="225,252,435,277"/>
+<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="125,158,168,188,182,202,192,215,201,226,216,237,245,249,243,254,213,242,197,230,187,218,178,205,165,192,122,163"/>
+<area shape="rect" id="Node000006" href="$classmolpro_1_1gci_1_1Determinant.html" title="A Slater determinant." alt="" coords="497,104,682,129"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="410,148,521,127,522,132,411,153"/>
+<area shape="rect" id="Node000007" href="$classmolpro_1_1gci_1_1String.html" title="A string, which is an ordered set of orbitals." alt="" coords="519,153,660,179"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="413,163,518,163,518,169,413,169"/>
+<area shape="rect" id="Node000008" href="$classmolpro_1_1gci_1_1Wavefunction.html" title="The Wavefunction class, which holds a configuration expansion in the tensor space defined by a hamilt..." alt="" coords="493,203,685,228"/>
+<area shape="poly" id="edge9_Node000005_Node000008" title=" " alt="" coords="411,179,522,200,521,205,410,184"/>
+<area shape="rect" id="Node000012" href="$classmolpro_1_1gci_1_1OrbitalSpace.html" title="The OrbitalSpace class: a container for an orbital space as specified via symmetries (1...." alt="" coords="496,252,683,277"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="449,262,496,262,496,267,449,267"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="27,203,145,228"/>
+<area shape="poly" id="edge14_Node000010_Node000009" title=" " alt="" coords="159,213,249,213,249,218,159,218"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="41,252,131,277"/>
+<area shape="poly" id="edge15_Node000013_Node000011" title=" " alt="" coords="145,262,225,262,225,267,145,267"/>
 </map>

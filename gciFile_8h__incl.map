@@ -1,5 +1,7 @@
 <map id="/__w/gci/gci/src/molpro/gci/gciFile.h" name="/__w/gci/gci/src/molpro/gci/gciFile.h">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,176,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="9,95,82,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="106,95,169,121"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,176,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="9,93,82,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,47,61,83,57,80,77,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="106,93,169,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="104,44,126,80,121,83,100,47"/>
 </map>

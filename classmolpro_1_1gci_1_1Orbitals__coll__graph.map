@@ -1,5 +1,7 @@
 <map id="molpro::gci::Orbitals" name="molpro::gci::Orbitals">
-<area shape="rect" id="node1" title=" " alt="" coords="109,124,263,151"/>
-<area shape="rect" id="node2" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="5,5,167,32"/>
-<area shape="rect" id="node3" href="$classmolpro_1_1SMat__.html" title=" " alt="" coords="191,5,381,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="109,123,263,148"/>
+<area shape="rect" id="Node000002" href="$classmolpro_1_1gci_1_1Printable.html" title="Base class for printable representation of object." alt="" coords="5,5,167,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,40,178,121,174,124,103,43"/>
+<area shape="rect" id="Node000003" href="$classmolpro_1_1SMat__.html" title=" " alt="" coords="191,5,381,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,43,198,124,194,121,265,40"/>
 </map>
